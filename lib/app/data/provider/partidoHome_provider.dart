@@ -21,7 +21,7 @@ class PartidoHomeProvider {
 
   Future<PartidoDataDetail> getPartidoHomeDetail(id) async {
     String url =
-        'http://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?lang=es&event=550625';
+        'http://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?lang=es&event=$id';
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var body = json.decode(response.body);

@@ -41,6 +41,7 @@ class PartidoHome extends GetView<PartidoHomeController> {
               child: MatchHead(controller.partido),
             ),),
           body: DefaultTabController(
+            initialIndex: 1,
             length: 3,
             child: Column(
               children: <Widget>[
@@ -54,19 +55,13 @@ class PartidoHome extends GetView<PartidoHomeController> {
                       tabs: [
                         Tab(
                             child: Text("Live",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline6)),
+                                style: Theme.of(context).textTheme.headline6)),
+                        Tab(
+                            child: Text("Info",
+                                style: Theme.of(context).textTheme.headline6)),
                         Tab(
                             child: Text("Alineacion",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline6)),
-                        Tab(
-                            child: Text("Resumen",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline6)),
+                                style: Theme.of(context).textTheme.headline6)),
                       ],
                     ),
                   ),
@@ -75,8 +70,8 @@ class PartidoHome extends GetView<PartidoHomeController> {
                   child: TabBarView(
                     children: [
                       PartidoCSLive(controller.partido),
-                      PartidoCSAlineacion(),
                       PartidoCSInfo(),
+                      PartidoCSAlineacion(),
                     ],
                   ),
                 ),
@@ -96,11 +91,7 @@ class PartidoHome extends GetView<PartidoHomeController> {
 
 class MatchHead extends GetView<PartidoHomeController> {
   final PartidoDataDetail partido ;
-
-
-
   const MatchHead(this.partido);
-
 
   Widget buildTeamHome() {
     return Expanded(
