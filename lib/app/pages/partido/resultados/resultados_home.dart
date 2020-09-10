@@ -19,47 +19,72 @@ class ResultadosTemporada extends GetWidget<ResultadosController> {
         return Text('esperando API request.');
       }
 
-      return Padding(
-        padding: const EdgeInsets.only(top: 54.0, left: 4, right: 4),
-        child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              childAspectRatio: MediaQuery.of(context).size.width /
-                  (MediaQuery.of(context).size.height / 4),
-            ),
-            itemCount: controller.temporada.length,
-            itemBuilder: (context, index) {
-              Week temporada = controller.temporada[index];
-
-              return GestureDetector(
-                onTap: () async {
-                  await controller.getDataPartidos(temporada.urlJornada);
-                  Get.toNamed('/jornada_detail', arguments: temporada);
-                },
-                child: Container(
-                  height: 20,
-                  margin: EdgeInsets.all(4.0),
-                  padding: EdgeInsets.all(4.0),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).canvasColor,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10),
-                        bottomLeft: Radius.circular(10),
-                        bottomRight: Radius.circular(10)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
+      return Scaffold(
+        backgroundColor: Colors.transparent,
+        body: SafeArea(
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(top: 18.0, left: 4, right: 4),
+                    child: Text(
+                      'Temporada 20/21',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
                   ),
-                  child: Center(child: Text(temporada.week)),
                 ),
-              );
-            }),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 54.0, left: 4, right: 4),
+                child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                      childAspectRatio: MediaQuery.of(context).size.width /
+                          (MediaQuery.of(context).size.height / 4),
+                    ),
+                    itemCount: controller.temporada.length,
+                    itemBuilder: (context, index) {
+                      Week temporada = controller.temporada[index];
+
+                      return GestureDetector(
+                        onTap: () async {
+                          await controller
+                              .getDataPartidos(temporada.urlJornada);
+                          Get.toNamed('/jornada_detail', arguments: temporada);
+                        },
+                        child: Container(
+                          height: 20,
+                          margin: EdgeInsets.all(4.0),
+                          padding: EdgeInsets.all(4.0),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).canvasColor,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset:
+                                    Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Center(child: Text(temporada.week)),
+                        ),
+                      );
+                    }),
+              ),
+            ],
+          ),
+        ),
       );
     });
   }

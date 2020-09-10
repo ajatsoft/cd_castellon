@@ -19,19 +19,37 @@ class Clasificacion extends GetView<ClasificacionController> {
         return Text('Error de red');
       }
 
-      return Padding(
-        padding: const EdgeInsets.only(top: 48.0),
-        child: SmartRefresher(
-          controller: controller.refreshController,
-          enablePullUp: false,
-          enablePullDown: true,
-          onRefresh: () => controller.refresh(),
-          // onLoading: () => controller.load(),
-          child: SingleChildScrollView(
-            child: CompetitionTable(controller.entries),
-          ),
-        ),
-      );
+      return Scaffold(
+          backgroundColor: Colors.transparent,
+          body: SafeArea(
+              child: Stack(children: [
+            Positioned.fill(
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 18.0, left: 4, right: 4),
+                  child: Text(
+                    'Clasificación',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: SmartRefresher(
+                controller: controller.refreshController,
+                header: WaterDropMaterialHeader(),
+                enablePullUp: false,
+                enablePullDown: true,
+                onRefresh: () => controller.refresh(),
+                // onLoading: () => controller.load(),
+                child: SingleChildScrollView(
+                  child: CompetitionTable(controller.entries),
+                ),
+              ),
+            )
+          ])));
     });
   }
 }

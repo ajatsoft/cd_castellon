@@ -15,56 +15,81 @@ class PartidoEstadisticas extends StatelessWidget {
   Widget build(BuildContext context) {
     var dateFormat = new DateFormat('dd-MM-yyyy HH:mm:ss');
     return Container(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(dateFormat.format(partido.date)),
-              ],
+      padding: EdgeInsets.all(20.0),
+      child: Column(
+        children: [
+          Card(
+            color: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(dateFormat.format(partido.date)),
+                ],
+              ),
             ),
-            Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Estadio: '),
-                    Text(partido.location),
-                  ],
+          ),
+          Column(
+            children: [
+              Card(
+                color: Colors.transparent,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Estadio: '),
+                      Text(partido.location),
+                    ],
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Asistencia: '),
-                    Text((c.attendance == null)
-                        ? 'no ddisponible'
-                        : c.attendance.toString()),
-                  ],
-                )
-              ],
+              ),
+              Card(
+                color: Colors.transparent,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Asistencia: '),
+                      Text((c.attendance == null)
+                          ? 'no ddisponible'
+                          : c.attendance.toString()),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Card(
+            color: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text("Partidos anteirores:"),
+                      Text(partido.competitors[0].form.toString()),
+                    ],
+                  ),
+                  Spacer(),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text("Partidos anteirores: "),
+                      Text(partido.competitors[1].form.toString()),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text("Partidos anteirores:"),
-                    Text(partido.competitors[0].form.toString()),
-                  ],
-                ),
-                Spacer(),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text("Partidos anteirores: "),
-                    Text(partido.competitors[1].form.toString()),
-                  ],
-                ),
-              ],
-            ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 }

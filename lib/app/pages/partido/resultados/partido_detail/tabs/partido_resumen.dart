@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:cd_castellon/app/data/model/partido.dart';
@@ -12,13 +11,6 @@ class PartidoResumen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    // int numerogoles =
-    //     (partido.homeGoals.length > partido.awayGoals.length == true)
-    //         ? partido.homeGoals.length
-    //         : partido.awayGoals.length;
-    // List<String> golHome = partido.homeGoals;
-    // List<String> golAway = partido.awayGoals;
 
     return SafeArea(
         bottom: false,

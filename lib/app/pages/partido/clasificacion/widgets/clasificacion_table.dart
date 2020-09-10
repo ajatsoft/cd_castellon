@@ -229,8 +229,8 @@ class CompetitionTable extends GetView<ClasificacionController> {
             4: IntrinsicColumnWidth(),
             5: IntrinsicColumnWidth(),
             6: IntrinsicColumnWidth(),
-            7: IntrinsicColumnWidth(),
-            8: IntrinsicColumnWidth(),
+            // 7: IntrinsicColumnWidth(),
+            // 8: IntrinsicColumnWidth(),
           },
           children: rows),
     );

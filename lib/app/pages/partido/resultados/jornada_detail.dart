@@ -11,7 +11,7 @@ class JornadaDetail extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    // Week jornadaName = Get.arguments;
+    Week jornadaName = Get.arguments;
     // print(controller.partidos[0].competitors[0].logo);
 
     return SafeArea(
@@ -19,11 +19,12 @@ class JornadaDetail extends StatelessWidget{
         top: false,
         child: Container(
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    colorFilter: ColorFilter.linearToSrgbGamma(),
-                    image: NetworkImage(
-                        "https://www.eysmunicipales.es/static/media/images/actualidad/el-estadio-municipal-de-castalia-en-castellon-contara-con-leds-en-sus-cuatro-torres-de-iluminacion.jpg"))),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.linearToSrgbGamma(),
+                image: AssetImage('images/Foto-web-estadio.jpg'),
+              ),
+            ),
             child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
                 child: Container(
@@ -33,7 +34,7 @@ class JornadaDetail extends StatelessWidget{
                     backgroundColor: Colors.transparent,
                     appBar: AppBar(
                       backgroundColor: Colors.transparent,
-                      // title: Text(jornadaName.week),
+                      title: Text(jornadaName.week),
                       elevation: 0,
                       centerTitle: true,
                     ),

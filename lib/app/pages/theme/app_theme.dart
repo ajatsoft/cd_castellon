@@ -26,7 +26,7 @@ final ThemeData appThemeData = ThemeData(
       endIndent: 100.0,
     ),
     iconTheme: IconThemeData(
-      color: Colors.white,
+      color: Colors.black,
     ),
 
     appBarTheme: AppBarTheme(brightness: Brightness.light),

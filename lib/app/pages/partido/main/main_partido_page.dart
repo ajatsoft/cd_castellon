@@ -33,29 +33,23 @@ class MainPartidoPage extends GetWidget<MainPartidoController> {
                   child: Scaffold(
                       backgroundColor: Colors.transparent,
                       key: _scaffoldKey,
-                      // appBar: CustomAppBar(
-                      //   "Plantilla",
-                      //   leadings: [
-                      //     CustomAppBarAction(
-                      //       () => _scaffoldKey.currentState.openDrawer(),
-                      //       Icons.menu,
-                      //     )
-                      //   ],
-                      // ),
                       drawer: AppDrawer(),
-                      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,
-                      floatingActionButton:
-                      FloatingActionButton(
+                      floatingActionButtonLocation:
+                          FloatingActionButtonLocation.miniStartTop,
+                      floatingActionButton: FloatingActionButton(
                         elevation: 0,
                         backgroundColor: Colors.transparent,
-                        onPressed:() => _scaffoldKey.currentState.openDrawer() ,
-                        child: new Icon(Icons.menu),),
+                        onPressed: () => _scaffoldKey.currentState.openDrawer(),
+                        child: new Icon(
+                          Icons.menu,
+                          color: Theme.of(context).iconTheme.color,
+                        ),
+                      ),
                       body: Obx(() => IndexedStack(
                             index: controller.currentIndex,
                             children: <Widget>[
                               PartidoHome(),
                               ResultadosTemporada(),
-
                               Clasificacion(),
                               EstadisticaTemporada(),
                             ],
@@ -117,61 +111,3 @@ class MainPartidoPage extends GetWidget<MainPartidoController> {
     );
   }
 }
-
-// class PartidoPage extends StatelessWidget {
-//   // final PartidoController controller = Get.put(PartidoController());
-//
-//   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-//
-//   final List<Widget> telas = [
-//     HomePartido(),
-//     ResultadosTemporada(),
-//     EstadisticaTemporada(),
-//     OtroPartido(),
-//   ];
-//
-//
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//       bottom: false,
-//       top: false,
-//       child: Container(
-//           decoration: BoxDecoration(
-//               image: DecorationImage(
-//                   fit: BoxFit.cover,
-//                   colorFilter: ColorFilter.linearToSrgbGamma(),
-//                   image: NetworkImage(
-//                       "https://www.eysmunicipales.es/static/media/images/actualidad/el-estadio-municipal-de-castalia-en-castellon-contara-con-leds-en-sus-cuatro-torres-de-iluminacion.jpg"))),
-//           child: BackdropFilter(
-//               filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
-//               child: Container(
-//                 decoration: BoxDecoration(color:Theme.of(context).canvasColor.withOpacity(0.5)),
-//       child: Scaffold(
-//         backgroundColor: Colors.transparent,
-//         key: _scaffoldKey,
-//         appBar: CustomAppBar(
-//           "Plantilla",
-//           leadings: [
-//             CustomAppBarAction(
-//                   () => _scaffoldKey.currentState.openDrawer(),
-//               Icons.menu,
-//             )
-//           ],
-//         ),
-//         drawer: AppDrawer(),
-//         body: Container(
-//           child: GetX<PartidoController>(
-//             init: PartidoController(),
-//             builder: (_) {
-// //            print(_.screen);
-//               return telas[_.screen];
-//             },
-//           ),
-//         ),
-//         bottomNavigationBar: CustomBottomNavigation(),
-//       ),),),),
-//     );
-//   }
-// }

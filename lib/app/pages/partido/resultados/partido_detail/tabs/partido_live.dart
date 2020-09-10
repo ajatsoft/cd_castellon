@@ -25,6 +25,7 @@ class PartidoLive extends StatelessWidget {
         extendBodyBehindAppBar: false,
         body: Obx(
           () => SmartRefresher(
+            header: WaterDropMaterialHeader(),
             controller: c.refreshController,
             enablePullDown: false,
             enablePullUp: true,

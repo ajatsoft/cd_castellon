@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
               "Noticias",
               leadings: [
                 CustomAppBarAction(
-                 () => _scaffoldKey.currentState.openDrawer(),
+                  () => _scaffoldKey.currentState.openDrawer(),
                   Icons.menu,
                 )
               ],
@@ -55,13 +55,14 @@ class HomePage extends StatelessWidget {
             ),
             bottomNavigationBar: FFNavigationBar(
               theme: FFNavigationBarTheme(
-itemWidth: 40,
+                itemWidth: 40,
                 barHeight: 40,
                 barBackgroundColor: Theme.of(context).backgroundColor,
                 selectedItemBorderColor: AColors.primary,
                 selectedItemBackgroundColor: AColors.accent,
                 selectedItemIconColor: Colors.white,
-                selectedItemLabelColor: Theme.of(context).textTheme.headline5.color,
+                selectedItemLabelColor:
+                    Theme.of(context).textTheme.headline5.color,
               ),
               onSelectTab: (index) => _.changeIndex(index),
               selectedIndex: _.currentIndex.value,

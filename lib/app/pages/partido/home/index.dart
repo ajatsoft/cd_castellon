@@ -24,6 +24,8 @@ class PartidoHome extends GetView<PartidoHomeController> {
         return Text('esperando API request.');
       }
       return  SmartRefresher(
+        header: WaterDropMaterialHeader(),
+
         controller: controller.refreshController,
         enablePullUp: false,
         enablePullDown: true,

@@ -32,11 +32,12 @@ class PartidoDetail extends StatelessWidget {
           top: false,
           child: Container(
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      colorFilter: ColorFilter.linearToSrgbGamma(),
-                      image: NetworkImage(
-                          "https://www.eysmunicipales.es/static/media/images/actualidad/el-estadio-municipal-de-castalia-en-castellon-contara-con-leds-en-sus-cuatro-torres-de-iluminacion.jpg"))),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.linearToSrgbGamma(),
+                  image: AssetImage('images/Foto-web-estadio.jpg'),
+                ),
+              ),
               child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
                   child: Container(
@@ -45,63 +46,66 @@ class PartidoDetail extends StatelessWidget {
                     child: Scaffold(
                       extendBody: true,
                       backgroundColor: Colors.transparent,
-                      body: DefaultTabController(
-                        length: 3,
-                        child: NestedScrollView(
-                          controller: _scrollController,
-                          headerSliverBuilder:
-                            (BuildContext context, bool innerBoxIsScrolled) {
-                          return <Widget>[
-                            SliverAppBar(
-                              backgroundColor: Colors.transparent,
-                              expandedHeight: 110.0,
-                              floating: true,
-                              pinned: true,
-                              flexibleSpace: FlexibleSpaceBar(
-                                  centerTitle: true,
-                                  title: Text(myTitle),
-                                  // title: MatchHead(match), //Text(myTitle),
-                                  collapseMode: CollapseMode.parallax,
-                                  background: MatchHead(partido)),
-                            ),
-                            SliverPersistentHeader(
-                              delegate: _SliverAppBarDelegate(
-                                TabBar(
-                                  labelPadding: EdgeInsets.symmetric(horizontal: 20),
-                                  isScrollable: true,
-                                  indicatorColor: Colors.white,
-                                  controller: _tabController,
-                                  tabs: <Widget>[
-                                    Tab(
-                                        child: Text("Live",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .headline6)),
-                                    Tab(
-                                        child: Text("Alineacion",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .headline6)),
-                                    Tab(
-                                        child: Text("Resumen",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .headline6)),
-                                  ],
+                      body: Padding(
+                        padding: const EdgeInsets.only(top: 18.0),
+                        child: DefaultTabController(
+                          length: 3,
+                          child: NestedScrollView(
+                            controller: _scrollController,
+                            headerSliverBuilder: (BuildContext context,
+                                bool innerBoxIsScrolled) {
+                              return <Widget>[
+                                SliverAppBar(
+                                  backgroundColor: Colors.transparent,
+                                  expandedHeight: 110.0,
+                                  floating: true,
+                                  pinned: true,
+                                  flexibleSpace: FlexibleSpaceBar(
+                                      centerTitle: true,
+                                      title: Text(myTitle),
+                                      // title: MatchHead(match), //Text(myTitle),
+                                      collapseMode: CollapseMode.parallax,
+                                      background: MatchHead(partido)),
                                 ),
-                              ),
-                              pinned: true,
+                                SliverPersistentHeader(
+                                  delegate: _SliverAppBarDelegate(
+                                    TabBar(
+                                      // labelPadding: EdgeInsets.symmetric(horizontal: 20),
+                                      isScrollable: true,
+                                      indicatorColor: Colors.white,
+                                      controller: _tabController,
+                                      tabs: <Widget>[
+                                        Tab(
+                                            child: Text("Live",
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .headline6)),
+                                        Tab(
+                                            child: Text("Alineacion",
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .headline6)),
+                                        Tab(
+                                            child: Text("Resumen",
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .headline6)),
+                                      ],
+                                    ),
+                                  ),
+                                  pinned: true,
+                                ),
+                              ];
+                            },
+                            body: TabBarView(
+                              children: [
+                                PartidoLive(partido),
+                                PartidoAlineacion(partido),
+                                PartidoEstadisticas(partido),
+                              ],
+                              controller: _tabController,
                             ),
-                          ];
-                        },
-                        body:  TabBarView(
-                          children: [
-                            PartidoLive(partido),
-                            PartidoAlineacion(partido),
-                            PartidoEstadisticas(partido),
-                          ],
-                          controller: _tabController,
-                        ),
+                          ),
                         ),
                       ),
                     ),
