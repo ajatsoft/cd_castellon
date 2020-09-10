@@ -1,7 +1,8 @@
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/controller/jugadorDetail_controller.dart';
-import 'package:cd_castellon/app/controller/plantilla_controller.dart';
+import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
 import 'package:cd_castellon/app/data/model/jugadores.dart';
 import 'package:cd_castellon/app/pages/plantilla/jugador_detail.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
@@ -17,7 +18,7 @@ class PlantillaTab extends StatelessWidget {
         builder: (_) {
           if (_.loading) {
             return Center(
-              child: LinearProgressIndicator(),
+              child: ColorLoader(),
             );
           }
           return GridView.builder(
@@ -40,7 +41,9 @@ class PlantillaTab extends StatelessWidget {
 
 class ItemPlayer extends StatelessWidget {
   final Jugador player;
+
   ItemPlayer({this.player});
+
   JugadorDetailController controller = Get.put(JugadorDetailController());
 
   @override

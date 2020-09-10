@@ -7,8 +7,6 @@ import 'package:cd_castellon/app/pages/partido/estadistica.dart';
 import 'package:cd_castellon/app/pages/partido/home/index.dart';
 import 'package:cd_castellon/app/pages/partido/resultados/resultados_home.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
-import 'package:cd_castellon/app/pages/widgets_general/appBar.dart';
-import 'package:cd_castellon/app/pages/widgets_general/customAppBarAction.dart';
 import 'package:cd_castellon/app/pages/widgets_general/drawer.dart';
 
 class MainPartidoPage extends GetWidget<MainPartidoController> {
@@ -16,19 +14,19 @@ class MainPartidoPage extends GetWidget<MainPartidoController> {
 
   @override
   Widget build(BuildContext context) {
-    Get.locale = Localizations.localeOf(Get.context) ?? Locale('en', 'US');
+    // Get.locale = Localizations.localeOf(Get.context) ?? Locale('en', 'US');
     return SafeArea(
         bottom: false,
         top: false,
         child: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    fit: BoxFit.cover,
-                    colorFilter: ColorFilter.linearToSrgbGamma(),
-                    image: NetworkImage(
-                        "https://www.eysmunicipales.es/static/media/images/actualidad/el-estadio-municipal-de-castalia-en-castellon-contara-con-leds-en-sus-cuatro-torres-de-iluminacion.jpg"))),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.linearToSrgbGamma(),
+              image: AssetImage('images/Foto-web-estadio.jpg'),
+            )),
             child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
+                filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
                 child: Container(
                   decoration: BoxDecoration(
                       color: Theme.of(context).canvasColor.withOpacity(0.5)),
@@ -71,19 +69,19 @@ class MainPartidoPage extends GetWidget<MainPartidoController> {
                                   icon: Icon(Icons.calendar_today),
                                   title: Text("Resultados")),
 
-                             BottomNavigationBarItem(
+                              BottomNavigationBarItem(
                                   icon: Icon(Icons.clear_all),
                                   title: Text("Clasificacion")),
-                             BottomNavigationBarItem(
+                              BottomNavigationBarItem(
                                   icon: Icon(Icons.insert_chart),
                                   title: Text("Estadistica")),
                             ],
-                            currentIndex: controller.currentIndex,
-                            onTap: controller.onTabTapped,
-                            unselectedItemColor: Colors.grey,
+                        currentIndex: controller.currentIndex,
+                        onTap: controller.onTabTapped,
+                        unselectedItemColor: Colors.grey,
                         selectedItemColor: AColors.primary,
-                            unselectedFontSize: 12,
-                            selectedFontSize: 12,
+                        unselectedFontSize: 10,
+                        selectedFontSize: 14,
                           ))),
                 ))));
   }

@@ -15,13 +15,7 @@ class CompetitionTable extends GetView<ClasificacionController> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(controller.modelClasificacion.name,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline6),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
+          padding: const EdgeInsets.only(top: 30),
           child:
               // buildDataTable(context),
               buildPositions(context),
@@ -126,21 +120,24 @@ class CompetitionTable extends GetView<ClasificacionController> {
             TableCell(
               child: (position.note != null)
                   ? Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 2, vertical: 8.0),
-                      child: getStatusIcon(position.note.rank))
+                  padding: const EdgeInsets.only(
+                      left: 4),
+                  child: getStatusIcon(position.note.rank))
                   : Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 2, vertical: 4),
-                      child: Icon(Icons.remove, size: 18)),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 0, vertical: 0),
+                  child: Icon(Icons.remove, size: 18)),
             ),
             TableCell(
               child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 8.0),
+                  const EdgeInsets.symmetric(horizontal: 0.0, vertical: 8.0),
                   child: Text(
                     position.stats[8].value.toString(),
-                    style: Theme.of(context).textTheme.bodyText2,
+                    style: Theme
+                        .of(context)
+                        .textTheme
+                        .bodyText2,
                     textAlign: TextAlign.right,
                   )),
             ),
@@ -248,21 +245,27 @@ class CompetitionTable extends GetView<ClasificacionController> {
             child: Container(
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 2.0, vertical: 8),
+                const EdgeInsets.symmetric(horizontal: 0.0, vertical: 8),
                 child: Text(
                   '',
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .caption,
                 ),
               ),
             ),
           ),
           TableCell(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 8),
               child: Text(
-                '#',
+                'Pos.',
                 textAlign: TextAlign.right,
-                style: Theme.of(context).textTheme.caption,
+                style: Theme
+                    .of(context)
+                    .textTheme
+                    .caption,
               ),
             ),
           ),
@@ -275,8 +278,11 @@ class CompetitionTable extends GetView<ClasificacionController> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
               child: Text(
-                'Team',
-                style: Theme.of(context).textTheme.caption,
+                'Equipo',
+                style: Theme
+                    .of(context)
+                    .textTheme
+                    .caption,
               ),
             ),
           ),

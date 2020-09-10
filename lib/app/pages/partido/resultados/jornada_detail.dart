@@ -43,30 +43,31 @@ class JornadaDetail extends StatelessWidget{
                             itemBuilder: (context, index) {
                               Event partidos = controller.partidos[index];
                               return GestureDetector(
-                                onTap: ()async {
-                                  await controller.gePartidoDetail(controller.partidos[index].id);
-                                  Get.toNamed('/partido_detail',
-                                      arguments: partidos);
-                                },
-                                child: Container(
-                                  margin: EdgeInsets.all(4.0),
-                                  padding: EdgeInsets.all(4.0),
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context).canvasColor,
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(10),
-                                        topRight: Radius.circular(10),
-                                        bottomLeft: Radius.circular(10),
-                                        bottomRight: Radius.circular(10)),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        spreadRadius: 5,
-                                        blurRadius: 7,
-                                        offset: Offset(
-                                            0, 3), // changes position of shadow
-                                      ),
-                                    ],
+                              onTap: () {
+                                controller.gePartidoDetail(
+                                    controller.partidos[index].id);
+                                Get.toNamed('/partido_detail',
+                                    arguments: partidos);
+                              },
+                              child: Container(
+                                margin: EdgeInsets.all(4.0),
+                                padding: EdgeInsets.all(4.0),
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).canvasColor,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 5,
+                                      blurRadius: 7,
+                                      offset: Offset(
+                                          0, 3), // changes position of shadow
+                                    ),
+                                  ],
                                   ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,

@@ -36,6 +36,7 @@ class PartidoProvider {
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var body = json.decode(response.body);
+      print(body);
       return Jornada.fromJson(body);
     } else {
       return throw Exception('Error getting scoreboard');

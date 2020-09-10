@@ -19,84 +19,64 @@ class PartidoLive extends StatelessWidget {
     //     child: Center(child: Text(partido.clock.toString()))
     // );
 
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Color(0x66383A47),
-            Color(0x22383A47),
-          ],
-        ),
-      ),
-      child:
-          // Theme(
-          //   data: Theme.of(context).copyWith(
-          //     accentColor: const Color(0xFF117E69).withOpacity(0.2),
-          //   ),
-          //   child:
-          SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          extendBodyBehindAppBar: false,
-          body:
-          Obx(
-                () => SmartRefresher(
-              controller: c.refreshController,
-              enablePullDown: false,
-              enablePullUp: true,
-              onRefresh: () => c.refresh(partido.id),
-              // onLoading: () => c.refresh(partido.id),
-              child:
-              Center(
-                child: Column(
-                  children: <Widget>[
-                    // const SizedBox(height: 16),
-                    // Text(
-                    //   '01 June 2020 16:00',
-                    //   // style: GoogleFonts.dosis(
-                    //   //   fontSize: 20,
-                    //   //   color: Colors.white.withOpacity(0.7),
-                    //   // ),
-                    // ),
-                    // _Scoreboard(),
-                   (c.firstHalf.length != 0)?
-                    Expanded(
-                      child: CustomScrollView(
-                        slivers: <Widget>[
-                          SliverList(
-                            delegate: SliverChildListDelegate(<Widget>[
-                              const _MessageTimeline(
-                                message: 'Inicio del partido!',
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        extendBodyBehindAppBar: false,
+        body: Obx(
+          () => SmartRefresher(
+            controller: c.refreshController,
+            enablePullDown: false,
+            enablePullUp: true,
+            onRefresh: () => c.refresh(partido.id),
+            // onLoading: () => c.refresh(partido.id),
+            child: Center(
+              child: Column(
+                children: <Widget>[
+                  // const SizedBox(height: 16),
+                  // Text(
+                  //   '01 June 2020 16:00',
+                  //   // style: GoogleFonts.dosis(
+                  //   //   fontSize: 20,
+                  //   //   color: Colors.white.withOpacity(0.7),
+                  //   // ),
+                  // ),
+                  // _Scoreboard(),
+                  (c.firstHalf.length != 0)
+                      ? Expanded(
+                          child: CustomScrollView(
+                            slivers: <Widget>[
+                              SliverList(
+                                delegate: SliverChildListDelegate(<Widget>[
+                                  const _MessageTimeline(
+                                    message: 'Inicio del partido!',
+                                  ),
+                                ]),
                               ),
-                            ]),
-                          ),
-                          _TimelineFootball(
-                            data:  c.firstHalf,
-                            partido: partido,
-                          ),
-                          SliverList(
-                            delegate: SliverChildListDelegate(<Widget>[
-                              const _MessageTimeline(
-                                message: 'Fin del partido!',
+                              _TimelineFootball(
+                                data: c.firstHalf,
+                                partido: partido,
                               ),
-                            ]),
+                              SliverList(
+                                delegate: SliverChildListDelegate(<Widget>[
+                                  const _MessageTimeline(
+                                    message: 'Fin del partido!',
+                                  ),
+                                ]),
+                              ),
+                              const SliverPadding(
+                                  padding: EdgeInsets.only(top: 20)),
+                            ],
                           ),
-
-                          const SliverPadding(padding: EdgeInsets.only(top: 20)),
-                        ],
-                      ),
-                    )
-                       :Container(child:Center(child: Text('Partido no iniciado'))),
-                  ],
-                ),
+                        )
+                      : Container(
+                          child: Center(child: Text('Partido no iniciado'))),
+                ],
               ),
             ),
           ),
         ),
       ),
-      // ),
     );
   }
 }

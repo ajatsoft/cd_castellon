@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/controller/news_controller.dart';
 import 'package:cd_castellon/app/data/model/post_entity.dart';
-import 'package:cd_castellon/app/pages/news/widgets/post_list_item.dart';
 import 'package:cd_castellon/app/pages/news/widgets/posts_list.dart';
 
 class SingleCategory extends StatelessWidget {
@@ -18,7 +17,13 @@ class SingleCategory extends StatelessWidget {
         builder: (_) {
           return Scaffold(
             appBar: AppBar(
-              title: Text(category.name),
+              backgroundColor: Colors.transparent,
+              iconTheme: Theme.of(context).iconTheme,
+              elevation: 0,
+              title: Text(
+                category.name,
+                style: Theme.of(context).textTheme.headline5,
+              ),
             ),
             body: PostsList2(category: category.id),
           );

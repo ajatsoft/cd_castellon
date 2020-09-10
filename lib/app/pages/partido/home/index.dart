@@ -1,6 +1,6 @@
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/data/model/modelPartidoDetail.dart';
 import 'package:cd_castellon/app/pages/partido/home/widget/alineacion.dart';
 import 'package:cd_castellon/app/pages/partido/home/widget/info.dart';
 import 'package:cd_castellon/app/pages/partido/home/widget/live.dart';
@@ -16,10 +16,7 @@ class PartidoHome extends GetView<PartidoHomeController> {
     return Obx(() {
       if (controller.isLoading) {
         return Center(
-          child: Text(
-            'cargando ...',
-            style: Get.textTheme.headline2,
-          ),
+          child: ColorLoader(),
         );
       }
 
@@ -35,11 +32,14 @@ class PartidoHome extends GetView<PartidoHomeController> {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(120),
+            preferredSize:
+                Size.fromHeight(MediaQuery.of(context).size.height * 0.17),
             child: Padding(
-              padding: const EdgeInsets.only(top: 30.0),
-              child: MatchHead(controller.partido),
-            ),),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.06),
+              child: MatchHead(),
+            ),
+          ),
           body: DefaultTabController(
             initialIndex: 1,
             length: 3,
@@ -80,18 +80,14 @@ class PartidoHome extends GetView<PartidoHomeController> {
           ),
 
 
-
         ),
       );
-
     });
   }
 }
 
 
 class MatchHead extends GetView<PartidoHomeController> {
-  final PartidoDataDetail partido ;
-  const MatchHead(this.partido);
 
   Widget buildTeamHome() {
     return Expanded(
@@ -106,11 +102,13 @@ class MatchHead extends GetView<PartidoHomeController> {
         child: Column(
           children: [
             Padding(
-              padding:
-              const EdgeInsets.only(left: 4.0),
-              child: (controller.partido.boxscore.form[0].team.logo != null)
-                  ? LogoIcon(controller.partido.boxscore.form[0].team.logo, 60, false)
-                  : LogoIconAsset(controller.partido.boxscore.form[0].team.id, 60, false)),
+                padding:
+                const EdgeInsets.only(left: 4.0),
+                child: (controller.partido.boxscore.form[0].team.logo != null)
+                    ? LogoIcon(
+                    controller.partido.boxscore.form[0].team.logo, 60, false)
+                    : LogoIconAsset(
+                    controller.partido.boxscore.form[0].team.id, 60, false)),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 30),
               child: Text(
@@ -124,6 +122,7 @@ class MatchHead extends GetView<PartidoHomeController> {
       ),
     );
   }
+
   Widget buildTeamAway() {
     return Expanded(
       flex: 4,
@@ -158,32 +157,30 @@ class MatchHead extends GetView<PartidoHomeController> {
 
   @override
   Widget build(BuildContext context) {
-    print('controller.scoreAwaycontroller.scoreAway${controller.scoreAway}');
     return Obx(() {
       if (controller.isLoading) {
         return Center(
-          child: Text(
-            'cargando ...',
-            style: Get.textTheme.headline2,
-          ),
+          child: ColorLoader(),
         );
       }
 
-      if (controller.scoreAway == null) {
+      if (controller.partido == null) {
         return Text('esperando API request.');
       }
-      return  Container(
-      color: Colors.transparent,
-      padding: const EdgeInsets.only(top: 40, left: defaultPadding, right: defaultPadding),
-      child: Row(
-        children: [
-          buildTeamHome(),
-          MatchDetailStatus( ),
-          buildTeamAway(),
-        ],
-      ),
-    );
-  });}
+      return Container(
+        color: Colors.transparent,
+        padding: const EdgeInsets.only(
+            top: 40, left: defaultPadding, right: defaultPadding),
+        child: Row(
+          children: [
+            buildTeamHome(),
+            MatchDetailStatus(),
+            buildTeamAway(),
+          ],
+        ),
+      );
+    });
+  }
 }
 
 class MatchDetailStatus extends GetView<PartidoHomeController> {
@@ -191,7 +188,6 @@ class MatchDetailStatus extends GetView<PartidoHomeController> {
 
   @override
   Widget build(BuildContext context) {
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,

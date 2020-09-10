@@ -1,8 +1,7 @@
 import 'package:cd_castellon/app/controller/jugadorDetail_controller.dart';
-import 'package:cd_castellon/app/controller/plantilla_controller.dart';
-import 'package:cd_castellon/app/data/provider/plantilla_provider.dart';
+import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
-import 'package:html/parser.dart';
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -293,7 +292,7 @@ class InfoPlayer extends StatelessWidget {
               ),
               (_.loading)
                   ? Center(
-                      child: LinearProgressIndicator(),
+                child: ColorLoader(),
                     )
                   : Column(
                       children: [
@@ -336,7 +335,7 @@ class InfoPlayer extends StatelessWidget {
               ),
               (_.loading2)
                   ? Center(
-                      child: LinearProgressIndicator(),
+                child: ColorLoader(),
                     )
                   : ListView.builder(
                       itemBuilder: (context, index) {

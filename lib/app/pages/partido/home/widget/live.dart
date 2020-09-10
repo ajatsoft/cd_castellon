@@ -1,3 +1,4 @@
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/data/model/modelPartidoDetail.dart';
@@ -15,10 +16,7 @@ class PartidoCSLive extends GetView<PartidoHomeController> {
     return Obx(() {
       if (controller.isLoading) {
         return Center(
-          child: Text(
-            'cargando ...',
-            style: Get.textTheme.headline2,
-          ),
+          child: ColorLoader(),
         );
       }
 
@@ -29,7 +27,7 @@ class PartidoCSLive extends GetView<PartidoHomeController> {
         backgroundColor: Colors.transparent,
         extendBodyBehindAppBar: false,
         body: Obx(
-          () => Column(
+              () => Column(
             children: <Widget>[
               // const SizedBox(height: 16),
               // Text(
@@ -41,36 +39,36 @@ class PartidoCSLive extends GetView<PartidoHomeController> {
               // ),
               // _Scoreboard(),
               (controller.eventos.length != 0)
-                  ? Expanded(
-                      child: CustomScrollView(
-                        slivers: <Widget>[
-                          SliverList(
-                            delegate: SliverChildListDelegate(<Widget>[
-                              const _MessageTimeline(
-                                message: 'Inicio del partido!',
-                              ),
-                            ]),
-                          ),
-                          _TimelineFootball(
-                            data: controller.eventos,
-                            partido: partido,
-                          ),
-                          SliverList(
-                            delegate: SliverChildListDelegate(<Widget>[
-                              const _MessageTimeline(
-                                message: 'Fin del partido!',
-                              ),
-                            ]),
-                          ),
-                          const SliverPadding(
-                              padding: EdgeInsets.only(top: 20)),
-                        ],
-                      ),
-                    )
-                  : Container(
+                      ? Expanded(
+                    child: CustomScrollView(
+                      slivers: <Widget>[
+                        SliverList(
+                          delegate: SliverChildListDelegate(<Widget>[
+                            const _MessageTimeline(
+                              message: 'Inicio del partido!',
+                            ),
+                          ]),
+                        ),
+                        _TimelineFootball(
+                          data: controller.eventos,
+                          partido: partido,
+                        ),
+                        SliverList(
+                          delegate: SliverChildListDelegate(<Widget>[
+                            const _MessageTimeline(
+                              message: 'Fin del partido!',
+                            ),
+                          ]),
+                        ),
+                        const SliverPadding(
+                            padding: EdgeInsets.only(top: 20)),
+                      ],
+                    ),
+                  )
+                      : Container(
                       child: Center(child: Text('Partido no iniciado'))),
-            ],
-          ),
+                ],
+              ),
         ),
       );
     });
@@ -89,7 +87,7 @@ class _TimelineFootball extends StatelessWidget {
     print(data[0].team.id);
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        (BuildContext context, int index) {
+            (BuildContext context, int index) {
           final KeyEvent event = data[index];
 
           final isLeftChild =
@@ -111,7 +109,7 @@ class _TimelineFootball extends StatelessWidget {
               width: 40,
               height: 40,
               indicator:
-                  _TimelineFootballIndicator(time: event.clock.displayValue),
+              _TimelineFootballIndicator(time: event.clock.displayValue),
               drawGap: true,
             ),
             topLineStyle: LineStyle(

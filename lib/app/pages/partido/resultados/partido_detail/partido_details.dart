@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/pages/partido/resultados/resultados_controller.dart';
@@ -6,7 +7,6 @@ import 'package:cd_castellon/app/data/model/partido.dart';
 import 'package:cd_castellon/app/pages/partido/resultados/partido_detail/tabs/partido_alineacion.dart';
 import 'package:cd_castellon/app/pages/partido/resultados/partido_detail/tabs/partido_estadisticas.dart';
 import 'package:cd_castellon/app/pages/partido/resultados/partido_detail/tabs/partido_live.dart';
-import 'package:cd_castellon/app/pages/partido/resultados/partido_detail/tabs/partido_resumen.dart';
 import 'package:cd_castellon/app/pages/partido/resultados/partido_detail/widgets/partido_detail_header.dart';
 
 class PartidoDetail extends StatelessWidget {
@@ -20,29 +20,36 @@ class PartidoDetail extends StatelessWidget {
     ScrollController _scrollController;
     TabController _tabController;
 
-    return SafeArea(
-        bottom: false,
-        top: false,
-        child: Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    colorFilter: ColorFilter.linearToSrgbGamma(),
-                    image: NetworkImage(
-                        "https://www.eysmunicipales.es/static/media/images/actualidad/el-estadio-municipal-de-castalia-en-castellon-contara-con-leds-en-sus-cuatro-torres-de-iluminacion.jpg"))),
-            child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).canvasColor.withOpacity(0.5)),
-                  child: Scaffold(
-                    extendBody: true,
-                    backgroundColor: Colors.transparent,
-                    body: DefaultTabController(
-                      length: 3,
-                      child: NestedScrollView(
-                        controller: _scrollController,
-                        headerSliverBuilder:
+    return Obx(() {
+      if (controller.isLoading) {
+        return Center(
+          child: ColorLoader(),
+        );
+      }
+
+      return SafeArea(
+          bottom: false,
+          top: false,
+          child: Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.linearToSrgbGamma(),
+                      image: NetworkImage(
+                          "https://www.eysmunicipales.es/static/media/images/actualidad/el-estadio-municipal-de-castalia-en-castellon-contara-con-leds-en-sus-cuatro-torres-de-iluminacion.jpg"))),
+              child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).canvasColor.withOpacity(0.5)),
+                    child: Scaffold(
+                      extendBody: true,
+                      backgroundColor: Colors.transparent,
+                      body: DefaultTabController(
+                        length: 3,
+                        child: NestedScrollView(
+                          controller: _scrollController,
+                          headerSliverBuilder:
                             (BuildContext context, bool innerBoxIsScrolled) {
                           return <Widget>[
                             SliverAppBar(
@@ -95,10 +102,11 @@ class PartidoDetail extends StatelessWidget {
                           ],
                           controller: _tabController,
                         ),
+                        ),
                       ),
                     ),
-                  ),
-                ))));
+                  ))));
+    });
 
 
   }

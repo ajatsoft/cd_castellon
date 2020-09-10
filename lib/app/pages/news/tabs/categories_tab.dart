@@ -1,3 +1,4 @@
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/controller/news_controller.dart';
@@ -14,29 +15,29 @@ class CategoriesTab extends StatelessWidget {
           NewsController.to.loadCategories();
         },
         builder: (_) {
-      if (_.loading) {
-        return Center(
-          child: LinearProgressIndicator(),
-        );
-      }
-      return ListView.builder(
-        itemBuilder: (context, index) {
-          final PostCategory category = _.categories[index];
-          return ListTile(
-            title: Text(category.name),
-            onTap: () {
-              Get.to(
-                SingleCategory(category),
+          if (_.loading) {
+            return Center(
+              child: ColorLoader(),
+            );
+          }
+          return ListView.builder(
+            itemBuilder: (context, index) {
+              final PostCategory category = _.categories[index];
+              return ListTile(
+                title: Text(category.name),
+                onTap: () {
+                  Get.to(
+                    SingleCategory(category),
+                  );
+                },
               );
             },
+            itemCount: _.categories.length,
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            physics: ClampingScrollPhysics(),
           );
-        },
-        itemCount: _.categories.length,
-        scrollDirection: Axis.vertical,
-        shrinkWrap: true,
-        physics: ClampingScrollPhysics(),
-      );
-    });
+        });
   }
 }
 

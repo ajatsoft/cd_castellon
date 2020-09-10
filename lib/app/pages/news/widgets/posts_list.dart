@@ -1,3 +1,4 @@
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/controller/news_controller.dart';
@@ -6,6 +7,7 @@ import 'package:cd_castellon/app/pages/news/widgets/post_list_item.dart';
 
 class PostsList extends StatelessWidget {
   PostsList({this.category = 0});
+
   List<PostEntity> posts = new List<PostEntity>();
   bool isLoading = false;
   int category = 0;
@@ -17,7 +19,7 @@ class PostsList extends StatelessWidget {
         builder: (_) {
           if (_.loading) {
             return Center(
-              child: LinearProgressIndicator(),
+              child: ColorLoader(),
             );
           }
           return ListView.builder(
@@ -52,6 +54,7 @@ class PostsList extends StatelessWidget {
 
 class PostsList2 extends StatelessWidget {
   int category;
+
   PostsList2({this.category});
 
   final NewsController controller = Get.find<NewsController>();
@@ -68,7 +71,7 @@ class PostsList2 extends StatelessWidget {
             controller.loadCategoryNews(category);
             isLoading = false;
             return Center(
-              child: LinearProgressIndicator(),
+              child: ColorLoader(),
             );
           }
           return ListView.builder(

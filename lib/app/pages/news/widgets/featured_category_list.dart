@@ -1,9 +1,8 @@
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/config.dart';
 import 'package:cd_castellon/app/controller/news_controller.dart';
 import 'package:cd_castellon/app/data/model/post_entity.dart';
-import 'package:cd_castellon/app/data/provider/news_api.dart';
 import 'package:cd_castellon/app/pages/news/widgets/post_card.dart';
 
 class FeaturedCategoryList extends StatelessWidget {
@@ -18,7 +17,7 @@ class FeaturedCategoryList extends StatelessWidget {
           if (_.loading) {
             _.loadFeaturedNews();
             return Center(
-              child: LinearProgressIndicator(),
+              child: ColorLoader(),
             );
           }
           return ListView.builder(

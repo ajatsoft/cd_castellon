@@ -14,32 +14,31 @@ class HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<NewsController>(
         init: NewsController(),
-    initState: (_) {
-    NewsController.to.onInit();
-    },
-    builder: (_) {
-    return  Container(
-        padding:  EdgeInsets.only(top: 8.0),
-
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              ListHeading(FEATURED_CATEGORY_TITLE, FEATURED_CATEGORY_ID),
-              Container(
-                height: 250.0,
-                child: FeaturedCategoryList(),
+        initState: (_) {
+          NewsController.to.onInit();
+        },
+        builder: (_) {
+          return Container(
+            padding: EdgeInsets.only(top: 8.0),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  ListHeading(FEATURED_CATEGORY_TITLE, FEATURED_CATEGORY_ID),
+                  Container(
+                    height: 250.0,
+                    child: FeaturedCategoryList(),
+                  ),
+                  ListHeading('Últimas', 0),
+                  Flexible(
+                    fit: FlexFit.loose,
+                    child: PostsList(),
+                  ),
+                ],
               ),
-              ListHeading('Últimas', 0),
-              Flexible(
-                fit: FlexFit.loose,
-                child: PostsList(),
-              ),
-            ],
-          ),
-        ),
-      );}
-    );
+            ),
+          );
+        });
   }
 }
 
@@ -68,8 +67,9 @@ class ListHeading extends StatelessWidget {
             },
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  color: AColors.accent.withAlpha(99),),
+                borderRadius: BorderRadius.circular(8.0),
+                color: AColors.accent.withAlpha(99),
+              ),
               padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
               child: Text('Mostrar todas'),
             ),

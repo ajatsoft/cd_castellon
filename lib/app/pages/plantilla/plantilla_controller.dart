@@ -2,22 +2,13 @@ import 'package:get/get.dart';
 import 'package:cd_castellon/app/data/model/cuerpo_tecnico.dart';
 import 'package:cd_castellon/app/data/model/jugadores.dart';
 import 'package:cd_castellon/app/data/provider/plantilla_provider.dart';
-//import 'package:get_flutter/models/home_model.dart';
-//import 'package:get_flutter/repository/home_repository.dart';
-
 import 'dart:async';
-import 'dart:convert';
 
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class PlantillaController extends GetxController {
 
-
-
-
   static PlantillaController get to => Get.find();
-//  Jugador data;
+
   List<Jugador> _jugadores = [];
   List<Jugador> get jugadores => _jugadores;
 
@@ -47,11 +38,13 @@ class PlantillaController extends GetxController {
 
 
   Future<void> loadJugadores() async {
+    print('loadJugadores');
     final data = await JugadoresAPI.instance.getJugadores();
+    print('loadJugadoresdata $data');
+
     this._jugadores = data;
     this._loading = false;
     update();
-
   }
 
   Future<void> loadCT() async {
@@ -66,32 +59,30 @@ class PlantillaController extends GetxController {
 
   ///TABS
   int index = 0;
+
   menu(int tab) {
     index = tab;
     update();
   }
-
-
-
 }
 
-class Post {
-  final int userId;
-  final int id;
-  final String title;
-  final String body;
-
-  Post({this.userId, this.id, this.title, this.body});
-
-  factory Post.fromJson(Map<String, dynamic> json) {
-    return Post(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
-      body: json['body'],
-    );
-  }
-}
+// class Post {
+//   final int userId;
+//   final int id;
+//   final String title;
+//   final String body;
+//
+//   Post({this.userId, this.id, this.title, this.body});
+//
+//   factory Post.fromJson(Map<String, dynamic> json) {
+//     return Post(
+//       userId: json['userId'],
+//       id: json['id'],
+//       title: json['title'],
+//       body: json['body'],
+//     );
+//   }
+// }
 
 //  void fetchDataApi() async {
 //    JugadoresAPI api = JugadoresAPI();

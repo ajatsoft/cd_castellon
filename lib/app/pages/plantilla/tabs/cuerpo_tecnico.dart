@@ -1,6 +1,7 @@
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/controller/plantilla_controller.dart';
+import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
 import 'package:cd_castellon/app/data/model/cuerpo_tecnico.dart';
 
 class CuerpoTecTab extends StatelessWidget {
@@ -11,7 +12,7 @@ class CuerpoTecTab extends StatelessWidget {
         builder: (_) {
           if (_.loading2) {
             return Center(
-              child: LinearProgressIndicator(),
+              child: ColorLoader(),
             );
           }
           return GridView.builder(
@@ -34,6 +35,7 @@ class CuerpoTecTab extends StatelessWidget {
 
 class ItemPersonal extends StatelessWidget {
   final CuerpoTecnico personal;
+
   ItemPersonal({this.personal});
 
   @override

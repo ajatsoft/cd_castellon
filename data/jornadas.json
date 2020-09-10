@@ -6,7 +6,7 @@
     },
     {
       "jornada": "Jornada 2",
-      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20190510-20190513"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20200918-20200921"
     },
     {
       "matches": [
@@ -122,202 +122,202 @@
         }
       ],
       "jornada": "Jornada 3",
-      "urlJornada": "jornada3"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20200925-20200928"
 
     },
     {
       "jornada": "Jornada 4",
-      "urlJornada": "jornada4"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201002-20200921"
 
     },
     {
       "jornada": "Jornada 5",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201009-20201012"
 
     },
     {
       "jornada": "Jornada 6",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201016-20201019"
 
     },
     {
       "jornada": "Jornada 7",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201020-20201022"
 
     },
     {
       "jornada": "Jornada 8",
-      "urlJornada": "jorna5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201023-20201026"
 
     },
     {
       "jornada": "Jornada 9",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201027-20201029"
 
     },
     {
       "jornada": "Jornada 10",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20200918-20200921"
 
     },
     {
       "jornada": "Jornada 11",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201106-20201109"
 
     },
     {
       "jornada": "Jornada 12",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201113-20201116"
 
     },
     {
       "jornada": "Jornada 13",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201120-20201123"
 
     },
     {
       "jornada": "Jornada 14",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201124-20201126"
 
     },
     {
       "jornada": "Jornada 15",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201127-20201130"
 
     },
     {
       "jornada": "Jornada 16",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201201-20201203"
 
     },
     {
       "jornada": "Jornada 17",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201204-20201207"
 
     },
     {
       "jornada": "Jornada 18",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201211-20201214"
 
     },
     {
       "jornada": "Jornada 19",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20201218-20201221"
 
     },
     {
       "jornada": "Jornada 20",
-      "urlJornada": "jornada"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210101-20210104"
 
     },
     {
       "jornada": "Jornada 21",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210108-20210111"
 
     },
     {
       "jornada": "Jornada 22",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210122-20210126"
 
     },
     {
       "jornada": "Jornada 23",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210129-202100201"
 
     },
     {
       "jornada": "Jornada 24",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210205-20210208"
 
     },
     {
       "jornada": "Jornada 25",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210212-20210215"
 
     },
     {
       "jornada": "Jornada 26",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210219-20210222"
 
     },
     {
       "jornada": "Jornada 27",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210226-20210301"
 
     },
     {
       "jornada": "Jornada 28",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210305-20210308"
 
     },
     {
       "jornada": "Jornada 29",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=202103012-202103015"
 
     },
     {
       "jornada": "Jornada 30",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210319-20210322"
 
     },
     {
       "jornada": "Jornada 31",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210326-20210329"
 
     },
     {
       "jornada": "Jornada 32",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210330-20210401"
 
     },
     {
       "jornada": "Jornada 33",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210402-20210405"
 
     },
     {
       "jornada": "Jornada 34",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210409-20210412"
 
     },
     {
       "jornada": "Jornada 35",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210416-20210419"
 
     },
     {
       "jornada": "Jornada 36",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210423-20210426"
 
     },
     {
       "jornada": "Jornada 37",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210430-20210503"
 
     },
     {
       "jornada": "Jornada 38",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210507-20210511"
 
     },
     {
       "jornada": "Jornada 39",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210514-20210517"
 
     },
     {
       "jornada": "Jornada 40",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210518-20210520"
 
     },
     {
       "jornada": "Jornada 41",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210521-20210524"
 
     },
     {
       "jornada": "Jornada 42",
-      "urlJornada": "jornada5"
+      "urlJornada": "https://site.web.api.espn.com/apis/v2/scoreboard/header?lang=es&sport=soccer&league=esp.2&dates=20210528-20210531"
 
     }
   ]

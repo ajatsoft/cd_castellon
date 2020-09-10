@@ -11,25 +11,33 @@ class JugadoresAPI {
 
 
   Future getJugadorDetail(url) async {
-//    print('=========================getJugadorDetail___API__=======================================');
+    print(
+        '=========================getJugadorDetail___API__=======================================');
     dynamic response2 = await http.get(url);
     final document2 = parse(response2.body);
-//    print('=========================getJugadorDetail___API__=======================================$response2');
+    print(
+        '=========================getJugadorDetail___API__=======================================$response2');
     final descripcion =
         document2.getElementsByClassName('gdlr-soccer-tab-content active');
     var descrp1 = descripcion[0].getElementsByTagName('p')[0].text;
-//    print('=========================getJugadorDetail___API__=======================================$descrp1');
+    print(
+        '=========================getJugadorDetail___API__=======================================$descrp1');
     final descrp2 = descripcion[0].getElementsByTagName('p')[1].text;
-//    print('=========================getJugadorDetail___API__=======================================$descrp2');
-    final descripcion2 =
-    document2.getElementsByClassName('gdlr-soccer-player-general-info-right-inner');
-    final lugarN = descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[0].text;
-    final fechaN = descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[1].text;
-    final altura = descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[2].text;
-    final peso = descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[3].text;
+    print(
+        '=========================getJugadorDetail___API__=======================================$descrp2');
+    final descripcion2 = document2
+        .getElementsByClassName('gdlr-soccer-player-general-info-right-inner');
+    final lugarN =
+        descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[0].text;
+    final fechaN =
+        descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[1].text;
+    final altura =
+        descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[2].text;
+    final peso =
+        descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[3].text;
 
     Jugador feed = Jugador(
-lugarN: lugarN,
+      lugarN: lugarN,
       fechaN: fechaN,
       altura: altura,
       peso: peso,
@@ -56,8 +64,6 @@ lugarN: lugarN,
       });
     }
 
-    final feed2 = Jugador(trayectoria: trayectori);
-//    trayectori.add(feed2);
 
     return trayectori;
   }
@@ -132,10 +138,6 @@ lugarN: lugarN,
 
         final aTag5 = m.getElementsByTagName('img')[0];
         final urlImage = aTag5.attributes['src'];
-
-        print(nombre);
-        print(profesion);
-        print(urlImage);
 
 
 

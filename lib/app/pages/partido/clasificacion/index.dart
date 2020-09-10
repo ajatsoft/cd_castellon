@@ -1,6 +1,6 @@
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/data/model/modelClasificacion.dart';
 import 'package:cd_castellon/app/pages/partido/clasificacion/widgets/clasificacion_table.dart';
 import 'controller.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -11,18 +11,17 @@ class Clasificacion extends GetView<ClasificacionController> {
     return Obx(() {
       if (controller.isLoading) {
         return Center(
-          child: Text(
-            'cargando ...',
-            style: Get.textTheme.headline2,
-          ),
+          child: ColorLoader(),
         );
       }
 
       if (controller.modelClasificacion == null) {
-        return Text('esperando API request.');
+        return Text('Error de red');
       }
 
-      return  SmartRefresher(
+      return Padding(
+        padding: const EdgeInsets.only(top: 48.0),
+        child: SmartRefresher(
           controller: controller.refreshController,
           enablePullUp: false,
           enablePullDown: true,
@@ -31,8 +30,8 @@ class Clasificacion extends GetView<ClasificacionController> {
           child: SingleChildScrollView(
             child: CompetitionTable(controller.entries),
           ),
-        );
-
+        ),
+      );
     });
   }
 }

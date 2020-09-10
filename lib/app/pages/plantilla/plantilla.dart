@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 
-import 'package:cd_castellon/app/controller/plantilla_controller.dart';
+import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
 import 'package:cd_castellon/app/pages/plantilla/tabs/cuerpo_tecnico.dart';
-import 'package:cd_castellon/app/pages/plantilla/tabs/otro.dart';
 import 'package:cd_castellon/app/pages/plantilla/tabs/plantilla.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 import 'package:cd_castellon/app/pages/widgets_general/appBar.dart';
@@ -20,13 +19,12 @@ class PlantillaPage extends StatelessWidget {
   final List<Widget> _children = [
     PlantillaTab(),
     CuerpoTecTab(),
-    OtroTab(),
+    // OtroTab(),
   ];
 
   @override
   Widget build(BuildContext context) {
     print("CONSTRUIDO");
-
     return GetBuilder<PlantillaController>(
         init: PlantillaController(),
         builder: (_) {
@@ -77,17 +75,17 @@ class PlantillaPage extends StatelessWidget {
                       selectedIndex: _.index,
                       items: [
                         FFNavigationBarItem(
-                          iconData: Icons.local_hospital,
+                          iconData: Icons.people,
                           label: 'Plantilla',
                         ),
                         FFNavigationBarItem(
-                          iconData: Icons.local_hospital,
+                          iconData: Icons.perm_contact_calendar,
                           label: 'Cuerpo Técnico',
                         ),
-                        FFNavigationBarItem(
-                          iconData: Icons.gps_fixed,
-                          label: 'Otros',
-                        )
+                        // FFNavigationBarItem(
+                        //   iconData: Icons.gps_fixed,
+                        //   label: 'Otros',
+                        // )
                       ],
                     );
                   }),
