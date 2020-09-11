@@ -26,7 +26,7 @@ class DetailPlayer extends StatelessWidget {
 //          print("*****************************+${_.jugadoreDetail2.trayectoria}");
         return Scaffold(
           appBar: CustomAppBar(
-            "${player.nombre}",
+            "${player.displayName}",
             leadings: [
               CustomAppBarAction(
                 () => Get.back(),
@@ -86,9 +86,9 @@ class DetailPlayer extends StatelessWidget {
                             },
                             blendMode: BlendMode.dstIn,
                             child: Hero(
-                              tag: player.imageurl,
-                              child: Image.network(
-                                player.imageurl,
+                              tag: player.id,
+                              child: Image.asset(
+                                controller.getPlayerIMG(player.id),
                               ),
                             ),
                           ),
@@ -96,9 +96,10 @@ class DetailPlayer extends StatelessWidget {
                             child: Align(
                               alignment: Alignment.bottomCenter,
                               child: Text(
-                                player.posicion,
+                                player.position.displayName.toString(),
                                 style: TextStyle(
-                                    background: Paint()..color = Colors.black54,
+                                    background: Paint()
+                                      ..color = Colors.black54,
                                     color: Colors.yellow,
                                     fontSize: 30,
                                     fontWeight: FontWeight.bold),
@@ -109,21 +110,21 @@ class DetailPlayer extends StatelessWidget {
                             top: 0,
                             right: 10,
                             child: Text(
-                              player.numero,
+                              player.jersey ?? '',
                               style: TextStyle(
                                   color: AColors.secondary.withAlpha(200),
                                   fontFamily: 'Juventus',
                                   fontSize: 80),
                             ),
                           ),
-                          Positioned(
-                            top: 0,
-                            left: 10,
-                            child: Info(),
-                          )
+                          // Positioned(
+                          //   top: 0,
+                          //   left: 10,
+                          //   child: Info(),
+                          // )
                         ],
                       ),
-                      InfoPlayer(),
+                      // InfoPlayer(),
                     ],
                   ),
                 ),
@@ -136,221 +137,221 @@ class DetailPlayer extends StatelessWidget {
   }
 }
 
-class Info extends StatelessWidget {
-  PlantillaController controller = Get.put(PlantillaController());
-
-  @override
-  Widget build(BuildContext context) {
-    print('===== ===== init infoPlayer ===== ===== ');
-    return GetBuilder<JugadorDetailController>(
-        init: JugadorDetailController(),
-        builder: (_) {
-          print('===== ===== init JugadorDetailController ===== ===== ');
-
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 4.0),
-                child: Container(
-                  padding: EdgeInsets.only(
-                    left: 2,
-                    right: 2,
-                  ),
-                  color: Colors.black26,
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text("Lugar nacimiento:",
-                            style: TextStyle(fontSize: 12)),
-                        (_.loading)
-                            ? Padding(
-                                padding: EdgeInsets.only(left: 0),
-                                child: CircularProgressIndicator())
-                            : Text(
-                                _.jugadoreDetail.lugarN.length > 21
-                                    ? _.jugadoreDetail.lugarN.length > 3
-                                        ? '${_.jugadoreDetail.lugarN.substring(0, 21)}...'
-                                        : _.jugadoreDetail.lugarN
-                                    : _.jugadoreDetail.lugarN,
-                                style: TextStyle(
-                                    fontFamily: 'Oswald', fontSize: 15))
-                      ]),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 4.0),
-                child: Container(
-                  padding: EdgeInsets.only(
-                    left: 2,
-                    right: 2,
-                  ),
-                  color: Colors.black26,
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text("Fecha nacimiento:",
-                            style: TextStyle(fontSize: 12)),
-                        (_.loading)
-                            ? Padding(
-                                padding: EdgeInsets.only(left: 0),
-                                child: CircularProgressIndicator())
-                            : Text(_.jugadoreDetail.fechaN,
-                                style: TextStyle(
-                                    fontFamily: 'Oswald', fontSize: 15))
-                      ]),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 4.0),
-                child: Container(
-                  padding: EdgeInsets.only(
-                    left: 2,
-                    right: 2,
-                  ),
-                  color: Colors.black26,
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text("Altura/Peso:", style: TextStyle(fontSize: 12)),
-                        FittedBox(
-                          fit: BoxFit.cover,
-                          child: Row(
-                            children: [
-                              (_.loading)
-                                  ? Padding(
-                                      padding: EdgeInsets.only(left: 0),
-                                      child: CircularProgressIndicator())
-                                  : Text(_.jugadoreDetail.altura,
-                                      style: TextStyle(
-                                          fontFamily: 'Oswald', fontSize: 15)),
-                              Text(' / ',
-                                  style: TextStyle(
-                                      fontFamily: 'Oswald', fontSize: 15)),
-                              (_.loading)
-                                  ? Padding(
-                                      padding: EdgeInsets.only(left: 0),
-                                      child: CircularProgressIndicator())
-                                  : Text(_.jugadoreDetail.peso,
-                                      style: TextStyle(
-                                          fontFamily: 'Oswald', fontSize: 15)),
-                            ],
-                          ),
-                        )
-                      ]),
-                ),
-              ),
-            ],
-          );
-        });
-  }
-}
-
-class InfoPlayer extends StatelessWidget {
-  PlantillaController controller = Get.put(PlantillaController());
-
-  @override
-  Widget build(BuildContext context) {
-    print('===== ===== init infoPlayer ===== ===== ');
-    return GetBuilder<JugadorDetailController>(
-        init: JugadorDetailController(),
-        builder: (_) {
-          print('===== ===== init JugadorDetailController ===== ===== ');
-
-          return Column(
-            children: [
-              Padding(
-                  padding: EdgeInsets.only(top: 6),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.only(
-                          left: 10,
-                          right: 10,
-                        ),
-                        color: Colors.yellow,
-                        child: Text("Info",
-                            style: TextStyle(
-                                fontFamily: 'Oswald',
-                                color: Colors.black,
-                                fontSize: 20)),
-                      ),
-//                            Text("DISTRIBUTION", style: TextStyle( fontFamily: 'Oswald', fontSize: 12)),
-//                            Text("ATTACK", style: TextStyle(
-//                                fontFamily: 'Oswald',
-//                                fontSize: 12)),
-//                            Text("DISCIPLINE", style: TextStyle( fontFamily: 'Oswald', fontSize: 12)),
-                    ],
-                  )),
-              Container(
-                height: 3,
-                color: Colors.yellow,
-              ),
-              (_.loading)
-                  ? Center(
-                child: ColorLoader(),
-                    )
-                  : Column(
-                      children: [
-                        Container(
-                          child: Text(_.jugadoreDetail.descripcion1),
-                        ),
-                        Container(
-                          child: Text(_.jugadoreDetail.descripcion2),
-                        ),
-                      ],
-                    ),
-              Padding(
-                  padding: EdgeInsets.only(top: 6),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.only(
-                          left: 10,
-                          right: 10,
-                        ),
-                        color: Colors.yellow,
-                        child: Text("Trayectoria",
-                            style: TextStyle(
-                                fontFamily: 'Oswald',
-                                color: Colors.black,
-                                fontSize: 20)),
-                      ),
-//                            Text("DISTRIBUTION", style: TextStyle( fontFamily: 'Oswald', fontSize: 12)),
-//                            Text("ATTACK", style: TextStyle(
-//                                fontFamily: 'Oswald',
-//                                fontSize: 12)),
-//                            Text("DISCIPLINE", style: TextStyle( fontFamily: 'Oswald', fontSize: 12)),
-                    ],
-                  )),
-              Container(
-                height: 3,
-                color: Colors.yellow,
-              ),
-              (_.loading2)
-                  ? Center(
-                child: ColorLoader(),
-                    )
-                  : ListView.builder(
-                      itemBuilder: (context, index) {
-                        final trayectorias = _.jugadoreDetail2[index];
-                        return Text(trayectorias);
-                      },
-                      itemCount: _.jugadoreDetail2.length,
-                      scrollDirection: Axis.vertical,
-                      shrinkWrap: true,
-                      physics: ClampingScrollPhysics(),
-                    )
-            ],
-          );
-        });
-  }
-}
+// class Info extends StatelessWidget {
+//   PlantillaController controller = Get.put(PlantillaController());
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     print('===== ===== init infoPlayer ===== ===== ');
+//     return GetBuilder<JugadorDetailController>(
+//         init: JugadorDetailController(),
+//         builder: (_) {
+//           print('===== ===== init JugadorDetailController ===== ===== ');
+//
+//           return Column(
+//             mainAxisAlignment: MainAxisAlignment.start,
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               Padding(
+//                 padding: EdgeInsets.only(top: 4.0),
+//                 child: Container(
+//                   padding: EdgeInsets.only(
+//                     left: 2,
+//                     right: 2,
+//                   ),
+//                   color: Colors.black26,
+//                   child: Column(
+//                       mainAxisAlignment: MainAxisAlignment.start,
+//                       crossAxisAlignment: CrossAxisAlignment.start,
+//                       children: <Widget>[
+//                         Text("Lugar nacimiento:",
+//                             style: TextStyle(fontSize: 12)),
+//                         (_.loading)
+//                             ? Padding(
+//                             padding: EdgeInsets.only(left: 0),
+//                             child: CircularProgressIndicator())
+//                             : Text(
+//                             _.jugadoreDetail.lugarN.length > 21
+//                                 ? _.jugadoreDetail.lugarN.length > 3
+//                                 ? '${_.jugadoreDetail.lugarN.substring(0, 21)}...'
+//                                 : _.jugadoreDetail.lugarN
+//                                 : _.jugadoreDetail.lugarN,
+//                             style: TextStyle(
+//                                 fontFamily: 'Oswald', fontSize: 15))
+//                       ]),
+//                 ),
+//               ),
+//               Padding(
+//                 padding: EdgeInsets.only(top: 4.0),
+//                 child: Container(
+//                   padding: EdgeInsets.only(
+//                     left: 2,
+//                     right: 2,
+//                   ),
+//                   color: Colors.black26,
+//                   child: Column(
+//                       mainAxisAlignment: MainAxisAlignment.start,
+//                       crossAxisAlignment: CrossAxisAlignment.start,
+//                       children: <Widget>[
+//                         Text("Fecha nacimiento:",
+//                             style: TextStyle(fontSize: 12)),
+//                         (_.loading)
+//                             ? Padding(
+//                             padding: EdgeInsets.only(left: 0),
+//                             child: CircularProgressIndicator())
+//                             : Text(_.jugadoreDetail.fechaN,
+//                             style: TextStyle(
+//                                 fontFamily: 'Oswald', fontSize: 15))
+//                       ]),
+//                 ),
+//               ),
+//               Padding(
+//                 padding: EdgeInsets.only(top: 4.0),
+//                 child: Container(
+//                   padding: EdgeInsets.only(
+//                     left: 2,
+//                     right: 2,
+//                   ),
+//                   color: Colors.black26,
+//                   child: Column(
+//                       mainAxisAlignment: MainAxisAlignment.start,
+//                       crossAxisAlignment: CrossAxisAlignment.start,
+//                       children: <Widget>[
+//                         Text("Altura/Peso:", style: TextStyle(fontSize: 12)),
+//                         FittedBox(
+//                           fit: BoxFit.cover,
+//                           child: Row(
+//                             children: [
+//                               (_.loading)
+//                                   ? Padding(
+//                                   padding: EdgeInsets.only(left: 0),
+//                                   child: CircularProgressIndicator())
+//                                   : Text(_.jugadoreDetail.altura,
+//                                   style: TextStyle(
+//                                       fontFamily: 'Oswald', fontSize: 15)),
+//                               Text(' / ',
+//                                   style: TextStyle(
+//                                       fontFamily: 'Oswald', fontSize: 15)),
+//                               (_.loading)
+//                                   ? Padding(
+//                                   padding: EdgeInsets.only(left: 0),
+//                                   child: CircularProgressIndicator())
+//                                   : Text(_.jugadoreDetail.peso,
+//                                   style: TextStyle(
+//                                       fontFamily: 'Oswald', fontSize: 15)),
+//                             ],
+//                           ),
+//                         )
+//                       ]),
+//                 ),
+//               ),
+//             ],
+//           );
+//         });
+//   }
+// }
+//
+// class InfoPlayer extends StatelessWidget {
+//   PlantillaController controller = Get.put(PlantillaController());
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     print('===== ===== init infoPlayer ===== ===== ');
+//     return GetBuilder<JugadorDetailController>(
+//         init: JugadorDetailController(),
+//         builder: (_) {
+//           print('===== ===== init JugadorDetailController ===== ===== ');
+//
+//           return Column(
+//             children: [
+//               Padding(
+//                   padding: EdgeInsets.only(top: 6),
+//                   child: Row(
+//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: <Widget>[
+//                       Container(
+//                         padding: EdgeInsets.only(
+//                           left: 10,
+//                           right: 10,
+//                         ),
+//                         color: Colors.yellow,
+//                         child: Text("Info",
+//                             style: TextStyle(
+//                                 fontFamily: 'Oswald',
+//                                 color: Colors.black,
+//                                 fontSize: 20)),
+//                       ),
+// //                            Text("DISTRIBUTION", style: TextStyle( fontFamily: 'Oswald', fontSize: 12)),
+// //                            Text("ATTACK", style: TextStyle(
+// //                                fontFamily: 'Oswald',
+// //                                fontSize: 12)),
+// //                            Text("DISCIPLINE", style: TextStyle( fontFamily: 'Oswald', fontSize: 12)),
+//                     ],
+//                   )),
+//               Container(
+//                 height: 3,
+//                 color: Colors.yellow,
+//               ),
+//               (_.loading)
+//                   ? Center(
+//                 child: ColorLoader(),
+//               )
+//                   : Column(
+//                 children: [
+//                   Container(
+//                     child: Text(_.jugadoreDetail.descripcion1),
+//                   ),
+//                   Container(
+//                     child: Text(_.jugadoreDetail.descripcion2),
+//                   ),
+//                 ],
+//               ),
+//               Padding(
+//                   padding: EdgeInsets.only(top: 6),
+//                   child: Row(
+//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: <Widget>[
+//                       Container(
+//                         padding: EdgeInsets.only(
+//                           left: 10,
+//                           right: 10,
+//                         ),
+//                         color: Colors.yellow,
+//                         child: Text("Trayectoria",
+//                             style: TextStyle(
+//                                 fontFamily: 'Oswald',
+//                                 color: Colors.black,
+//                                 fontSize: 20)),
+//                       ),
+// //                            Text("DISTRIBUTION", style: TextStyle( fontFamily: 'Oswald', fontSize: 12)),
+// //                            Text("ATTACK", style: TextStyle(
+// //                                fontFamily: 'Oswald',
+// //                                fontSize: 12)),
+// //                            Text("DISCIPLINE", style: TextStyle( fontFamily: 'Oswald', fontSize: 12)),
+//                     ],
+//                   )),
+//               Container(
+//                 height: 3,
+//                 color: Colors.yellow,
+//               ),
+//               (_.loading2)
+//                   ? Center(
+//                 child: ColorLoader(),
+//               )
+//                   : ListView.builder(
+//                 itemBuilder: (context, index) {
+//                   final trayectorias = _.jugadoreDetail2[index];
+//                   return Text(trayectorias);
+//                 },
+//                 itemCount: _.jugadoreDetail2.length,
+//                 scrollDirection: Axis.vertical,
+//                 shrinkWrap: true,
+//                 physics: ClampingScrollPhysics(),
+//               )
+//             ],
+//           );
+//         });
+//   }
+// }

@@ -1,10 +1,9 @@
+import 'package:cd_castellon/app/controller/jugadorDetail_controller.dart';
 import 'package:cd_castellon/app/data/model/players.dart';
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/controller/jugadorDetail_controller.dart';
 import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
-import 'package:cd_castellon/app/data/model/jugadores.dart';
 import 'package:cd_castellon/app/pages/plantilla/jugador_detail.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 
@@ -13,25 +12,25 @@ class PlantillaTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<PlantillaController>(
         init: PlantillaController(),
-        initState: (_) {
-          PlantillaController.to.loadJugadores();
-        },
+        // initState: (_) {
+        //   PlantillaController.to.loadJugadores();
+        // },
         builder: (_) {
-          if (_.loading) {
-            return Center(
-              child: ColorLoader(),
-            );
-          }
+          // if (_.loading) {
+          //   return Center(
+          //     child: ColorLoader(),
+          //   );
+          // }
           return GridView.builder(
             gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
             itemBuilder: (context, index) {
-              final AthleteCS jugador = _.playerCS[index];
+              final AthleteCS jugador = _.modelJugadores.athletes[index];
               return ItemPlayer(
                 player: jugador,
               );
             },
-            itemCount: _.jugadores.length,
+            itemCount: _.modelJugadores.athletes.length,
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             physics: ClampingScrollPhysics(),
@@ -64,17 +63,17 @@ class ItemPlayer extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             Hero(
-              tag: player.imageurl,
+              tag: player.id,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12.0),
-                child: Image.network(
-                  player.imageurl,
+                child: Image.asset(
+                  controller.getPlayerIMG(player.id),
                 ),
               ),
             ),
             Positioned(
               right: 0,
-              child: Text(player.numero,
+              child: Text(player.jersey.toString(),
                   style: TextStyle(
                       fontFamily: 'Juventus',
                       color: AColors.secondary,
@@ -87,10 +86,11 @@ class ItemPlayer extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
-                  child: Text(player.nombre,
+                  child: Text(player.displayName,
                       textAlign: TextAlign.start,
                       style: TextStyle(
-                          background: Paint()..color = Colors.black54,
+                          background: Paint()
+                            ..color = Colors.black54,
                           fontFamily: 'Oswald',
                           fontWeight: FontWeight.bold,
                           color: AColors.primary,

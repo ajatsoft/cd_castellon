@@ -15,18 +15,19 @@ class PlantillaController extends GetxController {
 
   final PlantillaRepository repository;
 
-  final _isLoading = false.obs;
+  final _isLoadingj = false.obs;
 
-  get isLoading => _isLoading.value;
+  get isLoading => _isLoadingj.value;
 
   Jugadores modelJugadores;
 
   List<AthleteCS> get playerCS => modelJugadores.athletes;
 
   void getJugadores() async {
-    _isLoading.value = true;
+    _isLoadingj.value = true;
     modelJugadores = await repository.getJugadores();
-    _isLoading.value = false;
+    print(playerCS[0].displayName);
+    _isLoadingj.value = false;
   }
 
   List<Jugador> _jugadores = [];
@@ -50,7 +51,7 @@ class PlantillaController extends GetxController {
   void onInit() {
     getJugadores();
     this.loadCT();
-    this.loadJugadores();
+    // this.loadJugadores();
     super.onReady();
   }
 
@@ -59,16 +60,15 @@ class PlantillaController extends GetxController {
     super.onReady();
   }
 
-
-  Future<void> loadJugadores() async {
-    print('loadJugadores');
-    final data = await JugadoresAPI.instance.getJugadores();
-    print('loadJugadoresdata $data');
-
-    this._jugadores = data;
-    this._loading = false;
-    update();
-  }
+  // Future<void> loadJugadores() async {
+  //   print('loadJugadores');
+  //   final data = await JugadoresAPI.instance.getJugadores();
+  //   print('loadJugadoresdata $data');
+  //
+  //   this._jugadores = data;
+  //   // this._loading = false;
+  //   update();
+  // }
 
   Future<void> loadCT() async {
     final data = await JugadoresAPI.instance.getCT();
@@ -76,7 +76,6 @@ class PlantillaController extends GetxController {
     this._loading2 = false;
     update();
   }
-
 
   ///TABS
   final _currentIndex = 0.obs;

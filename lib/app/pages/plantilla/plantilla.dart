@@ -15,13 +15,6 @@ import 'package:cd_castellon/app/pages/widgets_general/drawer.dart';
 class PlantillaPage extends GetView<PlantillaController> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  //
-  final List<Widget> _children = [
-    PlantillaTab(),
-    CuerpoTecTab(),
-    // OtroTab(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Obx(() {

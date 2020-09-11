@@ -344,8 +344,8 @@ class Link {
   final Language language;
   final List<LinkRel> rel;
   final String href;
-  final Text text;
-  final Text shortText;
+  final Text_v text;
+  final Text_v shortText;
   final bool isExternal;
   final bool isPremium;
 
@@ -410,7 +410,7 @@ final linkRelValues = EnumValues({
   "transfers": LinkRel.TRANSFERS
 });
 
-enum Text {
+enum Text_v {
   PERFIL_JUGADOR,
   ESTADSTICAS,
   SPLITS,
@@ -422,14 +422,14 @@ enum Text {
 }
 
 final textValues = EnumValues({
-  "Bio": Text.BIO,
-  "Estadísticas": Text.ESTADSTICAS,
-  "Noticias": Text.NOTICIAS,
-  "Partidos": Text.PARTIDOS,
-  "Perfil de Jugador": Text.PERFIL_DE_JUGADOR,
-  "Perfil jugador": Text.PERFIL_JUGADOR,
-  "Splits": Text.SPLITS,
-  "Transfers": Text.TRANSFERS
+  "Bio": Text_v.BIO,
+  "Estadísticas": Text_v.ESTADSTICAS,
+  "Noticias": Text_v.NOTICIAS,
+  "Partidos": Text_v.PARTIDOS,
+  "Perfil de Jugador": Text_v.PERFIL_DE_JUGADOR,
+  "Perfil jugador": Text_v.PERFIL_JUGADOR,
+  "Splits": Text_v.SPLITS,
+  "Transfers": Text_v.TRANSFERS
 });
 
 class Position {

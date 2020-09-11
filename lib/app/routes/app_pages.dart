@@ -1,5 +1,6 @@
 import 'package:cd_castellon/app/pages/contacto/contacto_binding.dart';
 import 'package:cd_castellon/app/pages/contacto/contacto_page.dart';
+import 'package:cd_castellon/app/pages/partido/home/controller.dart';
 import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_binding.dart';
 import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_page.dart';
 import 'package:cd_castellon/app/pages/plantilla/binding.dart';
@@ -40,10 +41,11 @@ class AppPages {
       ClasificacionBinding(),
       PartidoHomeBinding()
     ]),
-    GetPage(name: Routes.jornada_detail, page: () => JornadaDetail()),
-    GetPage(name: Routes.partido_detail, page: () => PartidoDetail()),
-    GetPage(
-        name: Routes.resultados_temporada, page: () => ResultadosTemporada()),
+
+    // GetPage(name: Routes.jornada_detail, page: () => JornadaDetail()),
+    // GetPage(name: Routes.partido_detail, page: () => PartidoDetail()),
+    // GetPage(
+    //     name: Routes.resultados_temporada, page: () => ResultadosTemporada()),
     GetPage(
         name: Routes.patrocinadores,
         page: () => PatrocinadoresPage(),
