@@ -1,3 +1,4 @@
+import 'package:cd_castellon/app/data/model/players.dart';
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,9 +24,9 @@ class PlantillaTab extends StatelessWidget {
           }
           return GridView.builder(
             gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
             itemBuilder: (context, index) {
-              final Jugador jugador = _.jugadores[index];
+              final AthleteCS jugador = _.playerCS[index];
               return ItemPlayer(
                 player: jugador,
               );
@@ -40,7 +41,7 @@ class PlantillaTab extends StatelessWidget {
 }
 
 class ItemPlayer extends StatelessWidget {
-  final Jugador player;
+  final AthleteCS player;
 
   ItemPlayer({this.player});
 
@@ -50,8 +51,8 @@ class ItemPlayer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        controller.loadJugadorDetail(player.url);
-        controller.loadJugadorDetail2(player.url);
+        // controller.loadJugadorDetail(player.url);
+        // controller.loadJugadorDetail2(player.url);
 
 //        JugadorDetailController.to.setUrl(player.url);
         Get.to(DetailPlayer(player: player));

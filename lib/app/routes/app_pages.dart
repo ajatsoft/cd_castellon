@@ -2,6 +2,7 @@ import 'package:cd_castellon/app/pages/contacto/contacto_binding.dart';
 import 'package:cd_castellon/app/pages/contacto/contacto_page.dart';
 import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_binding.dart';
 import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_page.dart';
+import 'package:cd_castellon/app/pages/plantilla/binding.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/pages/partido/clasificacion/binding.dart';
 import 'package:cd_castellon/app/pages/partido/home/binding.dart';
@@ -30,9 +31,9 @@ class AppPages {
       page: () => HomePage(),
     ),
     GetPage(
-      name: Routes.plantilla,
-      page: () => PlantillaPage(),
-    ),
+        name: Routes.plantilla,
+        page: () => PlantillaPage(),
+        binding: PlantillaBinding()),
     GetPage(name: Routes.mainPartido, page: () => MainPartidoPage(), bindings: [
       MainPartidoBindings(),
       ResultadosBinding(),

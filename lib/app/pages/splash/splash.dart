@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/controller/splash_controller.dart';
+import 'package:cd_castellon/app/pages/splash/splash_controller.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 
 class SplashScreen extends StatelessWidget {

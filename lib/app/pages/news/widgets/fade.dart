@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/controller/news_controller.dart';
+import 'package:cd_castellon/app/pages/news/news_controller.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 
 class Fade extends StatelessWidget {

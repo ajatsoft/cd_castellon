@@ -78,9 +78,9 @@ class AppDrawer extends GetView {
                   ],
                 ),
                 onTap: () {
+                  Get.offAndToNamed("/news");
                   ThemeController.to.modoDark.value =
                       !ThemeController.to.modoDark.value;
-
                   if (ThemeController.to.modoDark.value) {
                     ThemeController.to.changeTheme(ThemeMode.dark);
                   } else {

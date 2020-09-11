@@ -1,14 +1,35 @@
 import 'package:cd_castellon/app/data/model/cuerpo_tecnico.dart';
 import 'package:cd_castellon/app/data/model/jugadores.dart';
+import 'package:cd_castellon/app/data/model/players.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
+import 'dart:convert';
+
+const baseUrl =
+    'http://site.api.espn.com/apis/site/v2/sports/soccer/ESP.2/teams/4438/roster?lang=es';
+
+class PlantillaProvider {
+  var client = new http.Client();
+
+  Future<Jugadores> getJugadores() async {
+    var response = await http.get(baseUrl);
+    if (response.statusCode == 200) {
+      var body = json.decode(response.body);
+      print(body);
+      return Jugadores.fromJson(body);
+    } else {
+      return throw Exception('Error getting scoreboard');
+    }
+  }
+}
 
 class JugadoresAPI {
   JugadoresAPI._internal();
-  static JugadoresAPI _instance = JugadoresAPI._internal();
-  static JugadoresAPI get instance => _instance;
 
+  static JugadoresAPI _instance = JugadoresAPI._internal();
+
+  static JugadoresAPI get instance => _instance;
 
   Future getJugadorDetail(url) async {
     print(

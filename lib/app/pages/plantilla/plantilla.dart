@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
@@ -11,9 +12,8 @@ import 'package:cd_castellon/app/pages/widgets_general/appBar.dart';
 import 'package:cd_castellon/app/pages/widgets_general/customAppBarAction.dart';
 import 'package:cd_castellon/app/pages/widgets_general/drawer.dart';
 
-class PlantillaPage extends StatelessWidget {
+class PlantillaPage extends GetView<PlantillaController> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
 
   //
   final List<Widget> _children = [
@@ -24,19 +24,26 @@ class PlantillaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("CONSTRUIDO");
-    return GetBuilder<PlantillaController>(
-        init: PlantillaController(),
-        builder: (_) {
-          return Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/logo.png"),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.srgbToLinearGamma(),
-              ),
+    return Obx(() {
+      if (controller.isLoading) {
+        return Center(
+          child: ColorLoader(),
+        );
+      }
+
+      if (controller.modelJugadores == null) {
+        return Text('Error de red');
+      }
+
+      return Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/logo.png"),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.srgbToLinearGamma(),
             ),
-            child: Scaffold(
+          ),
+          child: Scaffold(
               key: _scaffoldKey,
               resizeToAvoidBottomPadding: false,
               drawer: AppDrawer(),
@@ -49,49 +56,41 @@ class PlantillaPage extends StatelessWidget {
                   )
                 ],
               ),
-              body: _children[_.index],
-              bottomNavigationBar: GetBuilder<PlantillaController>(
-                  init: PlantillaController(),
-                  builder: (_) {
-                    return FFNavigationBar(
-                      theme: FFNavigationBarTheme(
-                        itemWidth: 40,
-                        barHeight: 40,
-                        barBackgroundColor: Theme
-                            .of(context)
-                            .backgroundColor,
-                        selectedItemBorderColor: AColors.primary,
-                        selectedItemBackgroundColor: AColors.accent,
-                        selectedItemIconColor: Colors.white,
-                        selectedItemLabelColor: Theme
-                            .of(context)
-                            .textTheme
-                            .headline5
-                            .color,
-                      ),
-                      onSelectTab: (index) {
-                        _.menu(index);
-                      },
-                      selectedIndex: _.index,
-                      items: [
-                        FFNavigationBarItem(
-                          iconData: Icons.people,
-                          label: 'Plantilla',
-                        ),
-                        FFNavigationBarItem(
-                          iconData: Icons.perm_contact_calendar,
-                          label: 'Cuerpo Técnico',
-                        ),
-                        // FFNavigationBarItem(
-                        //   iconData: Icons.gps_fixed,
-                        //   label: 'Otros',
-                        // )
-                      ],
-                    );
-                  }),
-            ),
-          );
-        });
-  }
+              body: Obx(() =>
+                  IndexedStack(
+                    index: controller.currentIndex,
+                    children: <Widget>[
+                      PlantillaTab(),
+                      CuerpoTecTab(),
+                    ],
+                  )),
+              bottomNavigationBar: Obx(() =>
+                  BottomNavigationBar(
+                    currentIndex: controller.currentIndex,
+                    onTap: controller.onTabTapped,
+                    unselectedItemColor: Colors.grey,
+                    selectedItemColor: AColors.primary,
+                    unselectedFontSize: 10,
+                    selectedFontSize: 14,
+                    items: [
+                      BottomNavigationBarItem(
+                          icon: Icon(Icons.people),
+                          title: Text("Plantilla")),
 
+                      BottomNavigationBarItem(
+                          icon: Icon(Icons.perm_contact_calendar),
+                          title: Text("Cuerpo Técnico")),
+
+
+                      // FFNavigationBarItem(
+                      //   iconData: Icons.gps_fixed,
+                      //   label: 'Otros',
+                      // )
+                    ],
+
+                  ),
+              )
+          ));
+    });
+  }
 }

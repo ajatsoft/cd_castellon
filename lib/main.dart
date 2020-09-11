@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/controller/theme_controller.dart';
 import 'package:cd_castellon/app/routes/app_pages.dart';
 import 'package:cd_castellon/app/translations/app_translations.dart';
+import 'app/pages/partido/home/controller.dart';
 import 'app/pages/partido/resultados/resultados_binding.dart';
 import 'app/pages/theme/app_theme.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Get.isDarkMode ? Colors.white : Colors.black));
   WidgetsFlutterBinding.ensureInitialized();
   Get.lazyPut<ThemeController>(() => ThemeController());
   ThemeController.to.getThemeMode();
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialBinding: ResultadosBinding(),
+      // initialBinding: ResultadosBinding(),
       initialRoute: Routes.initial,
       theme: appThemeData,
       darkTheme: appDarkThemeData,

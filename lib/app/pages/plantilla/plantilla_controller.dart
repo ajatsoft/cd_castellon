@@ -1,30 +1,54 @@
+import 'package:cd_castellon/app/data/model/players.dart';
+import 'package:cd_castellon/app/data/repository/plantilla_repository.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/data/model/cuerpo_tecnico.dart';
 import 'package:cd_castellon/app/data/model/jugadores.dart';
 import 'package:cd_castellon/app/data/provider/plantilla_provider.dart';
 import 'dart:async';
 
-
 class PlantillaController extends GetxController {
-
   static PlantillaController get to => Get.find();
 
+  PlantillaController({
+    this.repository,
+  });
+
+  final PlantillaRepository repository;
+
+  final _isLoading = false.obs;
+
+  get isLoading => _isLoading.value;
+
+  Jugadores modelJugadores;
+
+  List<AthleteCS> get playerCS => modelJugadores.athletes;
+
+  void getJugadores() async {
+    _isLoading.value = true;
+    modelJugadores = await repository.getJugadores();
+    _isLoading.value = false;
+  }
+
   List<Jugador> _jugadores = [];
+
   List<Jugador> get jugadores => _jugadores;
 
   List<CuerpoTecnico> _personal = [];
+
   List<CuerpoTecnico> get personal => _personal;
 
-
   bool _loading = true;
+
   bool get loading => _loading;
 
   bool _loading2 = true;
+
   bool get loading2 => _loading2;
 
 
   @override
   void onInit() {
+    getJugadores();
     this.loadCT();
     this.loadJugadores();
     super.onReady();
@@ -34,7 +58,6 @@ class PlantillaController extends GetxController {
   void onReady() {
     super.onReady();
   }
-
 
 
   Future<void> loadJugadores() async {
@@ -52,46 +75,21 @@ class PlantillaController extends GetxController {
     this._personal = data;
     this._loading2 = false;
     update();
-
   }
-
 
 
   ///TABS
-  int index = 0;
+  final _currentIndex = 0.obs;
 
-  menu(int tab) {
-    index = tab;
-    update();
+  set currentIndex(value) => this._currentIndex.value = value;
+
+  get currentIndex => this._currentIndex.value;
+
+  changeTab(int index) {
+    this.currentIndex = index;
+  }
+
+  onTabTapped(int index) {
+    this.currentIndex = index;
   }
 }
-
-// class Post {
-//   final int userId;
-//   final int id;
-//   final String title;
-//   final String body;
-//
-//   Post({this.userId, this.id, this.title, this.body});
-//
-//   factory Post.fromJson(Map<String, dynamic> json) {
-//     return Post(
-//       userId: json['userId'],
-//       id: json['id'],
-//       title: json['title'],
-//       body: json['body'],
-//     );
-//   }
-// }
-
-//  void fetchDataApi() async {
-//    JugadoresAPI api = JugadoresAPI();
-//
-//    final response = await api.getJugadores();
-//    if (response == null) {
-//      Get.snackbar("Erro", "Não foi possivel conectar ao servidor.");
-//    } else {
-//      data = response;
-//      update();
-//    }
-//  }

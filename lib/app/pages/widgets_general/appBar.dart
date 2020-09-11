@@ -56,7 +56,7 @@ Widget build(BuildContext context) {
                   bottom: 5,
                   child: Row(
                     children: actions,
-                  ),
+                    ),
                 ),
               ],
             ),

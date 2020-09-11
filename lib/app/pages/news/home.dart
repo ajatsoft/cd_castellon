@@ -1,7 +1,7 @@
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/controller/news_controller.dart';
+import 'package:cd_castellon/app/pages/news/news_controller.dart';
 import 'package:cd_castellon/app/pages/news/tabs/categories_tab.dart';
 import 'package:cd_castellon/app/pages/news/tabs/home_tab.dart';
 import 'package:cd_castellon/app/pages/news/widgets/fade.dart';
@@ -41,43 +41,36 @@ class HomePage extends StatelessWidget {
                 Fade(),
                 Container(
                   alignment: Alignment.center,
-                  child: SafeArea(
-                    child: IndexedStack(
-                      index: _.currentIndex.value,
-                      children: <Widget>[
-                        HomeTab(),
-                        CategoriesTab(),
-                      ],
+                    child: SafeArea(
+                      child: Obx(
+                        () => IndexedStack(
+                          index: _.currentIndex,
+                          children: <Widget>[
+                            HomeTab(),
+                            CategoriesTab(),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            bottomNavigationBar: FFNavigationBar(
-              theme: FFNavigationBarTheme(
-                itemWidth: 40,
-                barHeight: 40,
-                barBackgroundColor: Theme.of(context).backgroundColor,
-                selectedItemBorderColor: AColors.primary,
-                selectedItemBackgroundColor: AColors.accent,
-                selectedItemIconColor: Colors.white,
-                selectedItemLabelColor:
-                    Theme.of(context).textTheme.headline5.color,
+                ],
               ),
-              onSelectTab: (index) => _.changeIndex(index),
-              selectedIndex: _.currentIndex.value,
-              items: [
-                FFNavigationBarItem(
-                  iconData: Icons.home,
-                  label: 'Inicio',
+              bottomNavigationBar: Obx(
+                () => BottomNavigationBar(
+                  currentIndex: _.currentIndex,
+                  onTap: _.onTabTapped,
+                  unselectedItemColor: Colors.grey,
+                  selectedItemColor: AColors.primary,
+                  unselectedFontSize: 10,
+                  selectedFontSize: 14,
+                  items: [
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.home), title: Text("Inicio")),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.category), title: Text("Categorias")),
+                  ],
                 ),
-                FFNavigationBarItem(
-                  iconData: Icons.category,
-                  label: 'Categorias',
-                ),
-              ],
-            ),
-          );
+              ));
         });
   }
 }

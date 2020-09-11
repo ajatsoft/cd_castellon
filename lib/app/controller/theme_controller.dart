@@ -1,3 +1,4 @@
+import 'package:cd_castellon/app/pages/partido/resultados/resultados_controller.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,6 +9,7 @@ class ThemeController extends GetxController {
   Future<SharedPreferences> sharedPreferences = SharedPreferences.getInstance();
 
   ThemeMode _themeMode;
+
   ThemeMode get themeMode => _themeMode;
   RxBool modoDark = true.obs;
 

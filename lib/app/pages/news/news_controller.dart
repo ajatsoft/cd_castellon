@@ -85,7 +85,6 @@ class NewsController extends GetxController {
     update(["categoryNews"]);
     print('loadCategoryNews....category $category');
     print('loadCategoryNews....categoriaActualizada $categoriaActualizada');
-
   }
 
   Future<void> loadCategories() async {
@@ -95,15 +94,24 @@ class NewsController extends GetxController {
     update();
   }
 
-  final currentIndex = 0.obs;
+  final _currentIndex = 0.obs;
 
-  void changeIndex(int index) {
-    currentIndex.value = index;
-    update();
+  set currentIndex(value) => this._currentIndex.value = value;
+
+  get currentIndex => this._currentIndex.value;
+
+  changeTab(int index) {
+    this.currentIndex = index;
+  }
+
+  onTabTapped(int index) {
+    this.currentIndex = index;
   }
 
   RxBool finished = RxBool(false);
+
   setFinished(bool finished) => this.finished.value = finished;
   RxBool visible = RxBool(false);
+
   setVisible(bool visible) => this.visible.value = visible;
 }

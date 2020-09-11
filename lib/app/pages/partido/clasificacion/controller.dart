@@ -14,18 +14,25 @@ class ClasificacionController extends GetxController {
   ClasificacionController({
     this.repository,
   });
+
   final ClasificacionRepository repository;
 
   final _isLoading = false.obs;
+
   get isLoading => _isLoading.value;
 
   Standings modelClasificacion;
   Child modelChild;
   Entry modelEquipo;
 
+  List<Child> get datos => modelClasificacion.children;
+
+  List<Entry> get entries => datos[0].standings.entries;
+
   @override
   void onInit() {
-    print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INIT ClasificacionController  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
+    print(
+        '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INIT ClasificacionController  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
 
     getClasificacion();
   }
@@ -37,9 +44,6 @@ class ClasificacionController extends GetxController {
   }
 
 
-
-  List<Child> get datos => modelClasificacion.children;
-  List<Entry> get entries => datos[0].standings.entries;
 
 
   RefreshController refreshController = RefreshController();

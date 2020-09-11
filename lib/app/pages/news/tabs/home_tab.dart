@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:cd_castellon/app/config.dart';
-import 'package:cd_castellon/app/controller/news_controller.dart';
+import 'package:cd_castellon/app/pages/news/news_controller.dart';
 import 'package:cd_castellon/app/data/model/post_entity.dart';
 import 'package:cd_castellon/app/pages/news/widgets/single_category.dart';
 import 'package:cd_castellon/app/pages/news/widgets/featured_category_list.dart';
