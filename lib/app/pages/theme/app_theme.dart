@@ -5,11 +5,8 @@ import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 
 final ThemeData appThemeData = ThemeData(
     brightness: Brightness.light,
-
     visualDensity: VisualDensity.adaptivePlatformDensity,
-
     primaryColor: AColors.primary,
-
     accentColor: AColors.accent,
     backgroundColor: AColors.light,
     buttonColor: AColors.primary,
@@ -28,9 +25,7 @@ final ThemeData appThemeData = ThemeData(
     iconTheme: IconThemeData(
       color: Colors.black,
     ),
-
     appBarTheme: AppBarTheme(brightness: Brightness.light),
-
     fontFamily: 'Euclid');
 
 
@@ -61,10 +56,7 @@ final ThemeData appDarkThemeData = ThemeData(
     iconTheme: IconThemeData(
       color: Colors.white,
     ),
-
-
     appBarTheme: AppBarTheme(brightness: Brightness.dark),
-
     fontFamily: 'Euclid');
 
 

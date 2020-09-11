@@ -35,7 +35,7 @@ class PartidoDetail extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.linearToSrgbGamma(),
-                  image: AssetImage('images/Foto-web-estadio.jpg'),
+                  image: AssetImage('assets/images/Foto-web-estadio.jpg'),
                 ),
               ),
               child: BackdropFilter(

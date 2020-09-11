@@ -29,7 +29,7 @@ class Watermark extends StatelessWidget {
                       BlendMode.clear,
                     ),
                     image: AssetImage(
-                      "images/logo.png",
+                      "assets/images/logo.png",
                     ),
                     fit: BoxFit.cover,
                   ),

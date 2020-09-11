@@ -22,7 +22,7 @@ class JornadaDetail extends StatelessWidget{
               image: DecorationImage(
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.linearToSrgbGamma(),
-                image: AssetImage('images/Foto-web-estadio.jpg'),
+                image: AssetImage('assets/images/Foto-web-estadio.jpg'),
               ),
             ),
             child: BackdropFilter(
@@ -144,8 +144,7 @@ class JornadaDetail extends StatelessWidget{
           shape: BoxShape.circle,
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage(
-                'images/castellon.png'),
+            image: AssetImage('assets/images/castellon.png'),
           ),
         ),);
     } else if (team == "FC Cartagena") {
@@ -157,7 +156,7 @@ class JornadaDetail extends StatelessWidget{
           image: DecorationImage(
             fit: BoxFit.fill,
             image: AssetImage(
-                'images/carthagene.png'),
+                'assets/images/carthagene.png'),
           ),
         ),);
     }else if (team == "CD Sabadell") {
@@ -169,7 +168,7 @@ class JornadaDetail extends StatelessWidget{
           image: DecorationImage(
             fit: BoxFit.fill,
             image: AssetImage(
-                'images/sabadell.png'),
+                'assets/images/sabadell.png'),
           ),
         ),);
     } else {
@@ -181,7 +180,7 @@ class JornadaDetail extends StatelessWidget{
           image: DecorationImage(
             fit: BoxFit.fill,
             image: AssetImage(
-                'images/ud-logrones.png'),
+                'assets/images/ud-logrones.png'),
           ),
         ),);
     }
@@ -197,7 +196,7 @@ class JornadaDetail extends StatelessWidget{
           image: DecorationImage(
             fit: BoxFit.fill,
             image: AssetImage(
-                'images/castellon.png'),
+                'assets/images/castellon.png'),
           ),
         ),);
     } else if (team == "FC Cartagena") {
@@ -209,7 +208,7 @@ class JornadaDetail extends StatelessWidget{
           image: DecorationImage(
             fit: BoxFit.fill,
             image: AssetImage(
-                'images/carthagene.png'),
+                'assets/images/carthagene.png'),
           ),
         ),);
     }else if (team == "CD Sabadell") {
@@ -221,7 +220,7 @@ class JornadaDetail extends StatelessWidget{
           image: DecorationImage(
             fit: BoxFit.fill,
             image: AssetImage(
-                'images/sabadell.png'),
+                'assets/images/sabadell.png'),
           ),
         ),);
     } else {
@@ -233,7 +232,7 @@ class JornadaDetail extends StatelessWidget{
           image: DecorationImage(
             fit: BoxFit.fill,
             image: AssetImage(
-                'images/ud-logrones.png'),
+                'assets/images/ud-logrones.png'),
           ),
         ),);
     }

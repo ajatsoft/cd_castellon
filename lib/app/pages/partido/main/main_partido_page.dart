@@ -23,7 +23,7 @@ class MainPartidoPage extends GetWidget<MainPartidoController> {
                 image: DecorationImage(
               fit: BoxFit.cover,
               colorFilter: ColorFilter.linearToSrgbGamma(),
-              image: AssetImage('images/Foto-web-estadio.jpg'),
+              image: AssetImage('assets/images/Foto-web-estadio.jpg'),
             )),
             child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),

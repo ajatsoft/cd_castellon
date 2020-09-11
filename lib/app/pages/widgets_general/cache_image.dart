@@ -16,7 +16,7 @@ class CachedImage extends StatelessWidget {
       imageUrl: url,
       fit: BoxFit.cover,
       placeholder: (_, __) => Image.asset(
-        'images/placeholder.jpg',
+        'assets/images/placeholder.jpg',
         width: width,
         height: height,
       ),

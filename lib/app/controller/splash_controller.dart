@@ -12,7 +12,7 @@ class SplashController extends GetxController {
   }
 
   startTime() async {
-    var duration = new Duration(seconds: 1);
+    var duration = new Duration(milliseconds: 1500);
     return new Timer(duration, route);
   }
 

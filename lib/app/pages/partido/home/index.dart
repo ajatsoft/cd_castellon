@@ -260,22 +260,22 @@ class LogoIconAsset extends StatelessWidget {
     try {
       if (team == "4438") {
         return Image.asset(
-          'images/castellon.png',
+          'assets/images/castellon.png',
           height: height,
         );
       } else if (team == "5419") {
         return Image.asset(
-          'images/carthagene.png',
+          'assets/images/carthagene.png',
           height: height,
         );
       } else if (team == "11487") {
         return Image.asset(
-          'images/sabadell.png',
+          'assets/images/sabadell.png',
           height: height,
         );
       } else {
         return Image.asset(
-          'images/ud-logrones.png',
+          'assets/images/ud-logrones.png',
           height: height,
         );
       }

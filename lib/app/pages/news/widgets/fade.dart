@@ -18,7 +18,7 @@ class Fade extends StatelessWidget {
           bottom: 50,
           child: AnimatedOpacity(
             opacity: controller.visible.value ? 1.0 : 0.02,
-            duration: Duration(milliseconds: 500),
+            duration: Duration(milliseconds: 2500),
             onEnd: () => controller.setFinished(true),
             child: Hero(
               tag: "logo",
@@ -27,7 +27,7 @@ class Fade extends StatelessWidget {
                   color: Get.isDarkMode ? AColors.dark : AColors.light,
                   image: DecorationImage(
                     image: AssetImage(
-                      "images/logo.png",
+                      "assets/images/logo.png",
                     ),
                     fit: BoxFit.cover,
                   ),

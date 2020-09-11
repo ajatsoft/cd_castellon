@@ -31,7 +31,7 @@ class PlantillaPage extends StatelessWidget {
           return Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("images/logo.png"),
+                image: AssetImage("assets/images/logo.png"),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.srgbToLinearGamma(),
               ),

@@ -224,8 +224,7 @@ logoHome(team) {
         shape: BoxShape.circle,
         image: DecorationImage(
           fit: BoxFit.fill,
-          image: AssetImage(
-              'images/castellon.png'),
+          image: AssetImage('assets/images/castellon.png'),
         ),
       ),);
   } else if (team == "FC Cartagena") {
@@ -237,7 +236,7 @@ logoHome(team) {
         image: DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage(
-              'images/carthagene.png'),
+              'assets/images/carthagene.png'),
         ),
       ),);
   }else if (team == "CD Sabadell") {
@@ -249,7 +248,7 @@ logoHome(team) {
         image: DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage(
-              'images/sabadell.png'),
+              'assets/images/sabadell.png'),
         ),
       ),);
   } else {
@@ -261,7 +260,7 @@ logoHome(team) {
         image: DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage(
-              'images/ud-logrones.png'),
+              'assets/images/ud-logrones.png'),
         ),
       ),);
   }
@@ -277,7 +276,7 @@ logoAway(team) {
         image: DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage(
-              'images/castellon.png'),
+              'assets/images/castellon.png'),
         ),
       ),);
   } else if (team == "FC Cartagena") {
@@ -289,7 +288,7 @@ logoAway(team) {
         image: DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage(
-              'images/carthagene.png'),
+              'assets/images/carthagene.png'),
         ),
       ),);
   }else if (team == "CD Sabadell") {
@@ -301,7 +300,7 @@ logoAway(team) {
         image: DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage(
-              'images/sabadell.png'),
+              'assets/images/sabadell.png'),
         ),
       ),);
   } else {
@@ -313,7 +312,7 @@ logoAway(team) {
         image: DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage(
-              'images/ud-logrones.png'),
+              'assets/images/ud-logrones.png'),
         ),
       ),);
   }

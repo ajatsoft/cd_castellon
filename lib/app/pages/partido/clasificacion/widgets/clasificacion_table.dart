@@ -390,22 +390,22 @@ class LogoIconAsset extends StatelessWidget {
     try {
       if (team == "Castellon") {
         return Image.asset(
-          'images/castellon.png',
+          'assets/images/castellon.png',
           height: height,
         );
       } else if (team == "FC Cartagena") {
         return Image.asset(
-          'images/carthagene.png',
+          'assets/images/carthagene.png',
           height: height,
         );
       } else if (team == "CD Sabadell") {
         return Image.asset(
-          'images/sabadell.png',
+          'assets/images/sabadell.png',
           height: height,
         );
       } else {
         return Image.asset(
-          'images/ud-logrones.png',
+          'assets/images/ud-logrones.png',
           height: height,
         );
       }

@@ -1,7 +1,9 @@
-
+import 'package:cd_castellon/app/pages/contacto/contacto_binding.dart';
+import 'package:cd_castellon/app/pages/contacto/contacto_page.dart';
+import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_binding.dart';
+import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_page.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/pages/partido/clasificacion/binding.dart';
-import 'package:cd_castellon/app/pages/partido/clasificacion/index.dart';
 import 'package:cd_castellon/app/pages/partido/home/binding.dart';
 import 'package:cd_castellon/app/pages/partido/resultados/resultados_binding.dart';
 
@@ -19,18 +21,35 @@ part './app_routes.dart';
 
 class AppPages {
   static final pages = [
-    GetPage(name: Routes.initial, page:()=> SplashScreen(),),
-    GetPage(name: Routes.news, page:()=> HomePage(),),
-    GetPage(name: Routes.plantilla, page:()=> PlantillaPage(),),
-    GetPage(name: Routes.mainPartido, page:()=> MainPartidoPage(),bindings: [
-  MainPartidoBindings(), ResultadosBinding(), ClasificacionBinding(), PartidoHomeBinding()]),
-    // GetPage(name: Routes.clasificacion, page:()=> Clasificacion(),bindings: [
-    //   ClasificacionBinding(), ResultadosBinding(),
-    //   // FavorBinding(),
-    //   // FilterBinding()
-    // ]),
-    GetPage(name: Routes.jornada_detail, page:()=> JornadaDetail()),
-    GetPage(name: Routes.partido_detail, page:()=> PartidoDetail()),
-    GetPage(name: Routes.resultados_temporada, page:()=> ResultadosTemporada()),
+    GetPage(
+      name: Routes.initial,
+      page: () => SplashScreen(),
+    ),
+    GetPage(
+      name: Routes.news,
+      page: () => HomePage(),
+    ),
+    GetPage(
+      name: Routes.plantilla,
+      page: () => PlantillaPage(),
+    ),
+    GetPage(name: Routes.mainPartido, page: () => MainPartidoPage(), bindings: [
+      MainPartidoBindings(),
+      ResultadosBinding(),
+      ClasificacionBinding(),
+      PartidoHomeBinding()
+    ]),
+    GetPage(name: Routes.jornada_detail, page: () => JornadaDetail()),
+    GetPage(name: Routes.partido_detail, page: () => PartidoDetail()),
+    GetPage(
+        name: Routes.resultados_temporada, page: () => ResultadosTemporada()),
+    GetPage(
+        name: Routes.patrocinadores,
+        page: () => PatrocinadoresPage(),
+        binding: PatrocinadoresBinding()),
+    GetPage(
+        name: Routes.contacto,
+        page: () => ContactoPage(),
+        binding: ContactoBinding()),
   ];
 }
