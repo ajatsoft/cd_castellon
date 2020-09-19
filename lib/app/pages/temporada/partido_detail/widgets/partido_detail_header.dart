@@ -101,7 +101,8 @@ class MatchHead extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      padding: const EdgeInsets.only(top: 40, left: defaultPadding, right: defaultPadding),
+      padding: const EdgeInsets.only(
+          top: 0, left: defaultPadding, right: defaultPadding),
       child: Row(
         children: [
           buildTeamHome(),

@@ -1,11 +1,12 @@
+import 'dart:ui';
+
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/partido/resultados/resultados_controller.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
 import 'package:cd_castellon/app/data/model/partido.dart';
 
-class ResultadosTemporada extends GetWidget<ResultadosController> {
-
+class ResultadosTemporadaPage extends GetWidget<ResultadosController> {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
@@ -16,35 +17,41 @@ class ResultadosTemporada extends GetWidget<ResultadosController> {
       }
 
       if (controller.temporada == null) {
-        return Text('esperando API request.');
+        return Text('Error en red.');
       }
 
-      return Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SafeArea(
-          child: Stack(
-            children: [
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.only(top: 18.0, left: 4, right: 4),
-                    child: Text(
-                      'Temporada 20/21',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+      return SafeArea(
+        bottom: false,
+        top: false,
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.linearToSrgbGamma(),
+              image: AssetImage('assets/images/Foto-web-estadio.jpg'),
+            ),
+          ),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Theme.of(context).canvasColor.withOpacity(0.5)),
+              child: Scaffold(
+                backgroundColor: Colors.transparent,
+                appBar: AppBar(
+                  backgroundColor: Colors.transparent,
+                  title: Text('Temporada 20/21'),
+                  elevation: 0,
+                  centerTitle: true,
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 54.0, left: 4, right: 4),
-                child: GridView.builder(
+                body: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4,
-                      childAspectRatio: MediaQuery.of(context).size.width /
-                          (MediaQuery.of(context).size.height / 4),
+                      childAspectRatio: (context.isLandscape)
+                          ? MediaQuery.of(context).size.width /
+                              (MediaQuery.of(context).size.height / 3)
+                          : MediaQuery.of(context).size.width /
+                              (MediaQuery.of(context).size.height / 4),
                     ),
                     itemCount: controller.temporada.length,
                     itemBuilder: (context, index) {
@@ -70,10 +77,10 @@ class ResultadosTemporada extends GetWidget<ResultadosController> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 5,
-                                blurRadius: 7,
+                                spreadRadius: 1,
+                                blurRadius: 2,
                                 offset:
-                                    Offset(0, 3), // changes position of shadow
+                                Offset(1, 3), // changes position of shadow
                               ),
                             ],
                           ),
@@ -82,7 +89,7 @@ class ResultadosTemporada extends GetWidget<ResultadosController> {
                       );
                     }),
               ),
-            ],
+            ),
           ),
         ),
       );

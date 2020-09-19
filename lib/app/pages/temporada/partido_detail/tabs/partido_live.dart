@@ -1,8 +1,8 @@
+import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/data/model/modelPartidoDetail.dart';
 import 'package:cd_castellon/app/data/model/partido.dart';
-import 'package:cd_castellon/app/pages/partido/resultados/partido_detail/partido_detail_controller.dart';
+import 'package:cd_castellon/app/pages/temporada/partido_detail/partido_detail_controller.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -24,7 +24,7 @@ class PartidoLive extends StatelessWidget {
         backgroundColor: Colors.transparent,
         extendBodyBehindAppBar: false,
         body: Obx(
-          () => SmartRefresher(
+              () => SmartRefresher(
             header: WaterDropMaterialHeader(),
             controller: c.refreshController,
             enablePullDown: false,
@@ -45,33 +45,33 @@ class PartidoLive extends StatelessWidget {
                   // _Scoreboard(),
                   (c.firstHalf.length != 0)
                       ? Expanded(
-                          child: CustomScrollView(
-                            slivers: <Widget>[
-                              SliverList(
-                                delegate: SliverChildListDelegate(<Widget>[
-                                  const _MessageTimeline(
-                                    message: 'Inicio del partido!',
-                                  ),
-                                ]),
-                              ),
-                              _TimelineFootball(
-                                data: c.firstHalf,
-                                partido: partido,
-                              ),
-                              SliverList(
-                                delegate: SliverChildListDelegate(<Widget>[
-                                  const _MessageTimeline(
-                                    message: 'Fin del partido!',
-                                  ),
-                                ]),
-                              ),
-                              const SliverPadding(
-                                  padding: EdgeInsets.only(top: 20)),
-                            ],
-                          ),
-                        )
+                    child: CustomScrollView(
+                      slivers: <Widget>[
+                        SliverList(
+                          delegate: SliverChildListDelegate(<Widget>[
+                            const _MessageTimeline(
+                              message: 'Inicio del partido!',
+                            ),
+                          ]),
+                        ),
+                        _TimelineFootball(
+                          data: c.firstHalf,
+                          partido: partido,
+                        ),
+                        SliverList(
+                          delegate: SliverChildListDelegate(<Widget>[
+                            const _MessageTimeline(
+                              message: 'Fin del partido!',
+                            ),
+                          ]),
+                        ),
+                        const SliverPadding(
+                            padding: EdgeInsets.only(top: 20)),
+                      ],
+                    ),
+                  )
                       : Container(
-                          child: Center(child: Text('Partido no iniciado'))),
+                      child: Center(child: Text('Partido no iniciado'))),
                 ],
               ),
             ),
@@ -92,7 +92,7 @@ class _TimelineFootball extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        (BuildContext context, int index) {
+            (BuildContext context, int index) {
           final KeyEvent event = data[index];
 
           final isLeftChild = event.team.id == partido.competitors[0].id;
@@ -113,7 +113,7 @@ class _TimelineFootball extends StatelessWidget {
               width: 40,
               height: 40,
               indicator:
-                  _TimelineFootballIndicator(time: event.clock.displayValue),
+              _TimelineFootballIndicator(time: event.clock.displayValue),
               drawGap: true,
             ),
             topLineStyle: LineStyle(
@@ -222,6 +222,15 @@ class _TimelineFootballChild extends StatelessWidget {
   }
 
   Widget _buildIconByAction(action) {
+    if (action == 'Sustitución') {
+      final imageAsset = 'assets/football/Sustitucion.png';
+      print(imageAsset);
+      return Image.asset(
+        imageAsset,
+        height: 20,
+        width: 20,
+      );
+    }
     final imageAsset =
         'assets/football/${action.toString().split('.').last}.png';
     print(imageAsset);
@@ -336,28 +345,28 @@ enum Team {
   away,
 }
 
-enum Action {
-  goal,
-  yellowCard,
-  redCard,
-  offside,
-  foul,
-  injury,
-  stoppageTime,
-}
+// enum Action {
+//   goal,
+//   yellowCard,
+//   redCard,
+//   offside,
+//   foul,
+//   injury,
+//   stoppageTime,
+// }
 
-class FootballData {
-  const FootballData({
-    this.team,
-    this.action,
-    this.title,
-    this.subtitle,
-    this.time,
-  });
-
-  final Team team;
-  final Action action;
-  final String title;
-  final String subtitle;
-  final String time;
-}
+// class FootballData {
+//   const FootballData({
+//     this.team,
+//     this.action,
+//     this.title,
+//     this.subtitle,
+//     this.time,
+//   });
+//
+//   final Team team;
+//   final Action action;
+//   final String title;
+//   final String subtitle;
+//   final String time;
+// }

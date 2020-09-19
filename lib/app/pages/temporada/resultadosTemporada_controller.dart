@@ -1,5 +1,7 @@
+import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/data/model/modelPartidoDetail.dart';
+
+// import 'package:cd_castellon/app/data/model/livePartidoModel2.bak';
 import 'package:cd_castellon/app/data/model/partido.dart';
 import 'package:cd_castellon/app/data/repository/partido_repository.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -11,8 +13,6 @@ class ResultadosController extends GetxController {
 
   static ResultadosController get to => Get.find();
 
-  RefreshController refreshController = RefreshController();
-
   final _isLoading = false.obs;
 
   get isLoading => _isLoading.value;
@@ -20,7 +20,7 @@ class ResultadosController extends GetxController {
   Temporada modelTemporada;
   Jornada modelJornada;
 
-  PartidoDataDetail modelPratidoDataDetail;
+  LivePartidoDataDetail modelPratidoDataDetail;
 
   Boxscore form;
   Header header;
@@ -28,7 +28,8 @@ class ResultadosController extends GetxController {
 
   @override
   void onInit() {
-    print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INIT RESULTADOS CONTR0LLER');
+    print(
+        '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INIT RESULTADOS CONTR0LLER');
     _getData();
   }
 
@@ -50,11 +51,22 @@ class ResultadosController extends GetxController {
     _isLoading.value = false;
   }
 
-  void loadLiveData(id) async {
-    refreshController.requestRefresh();
-    modelPratidoDataDetail = await repository.getPartidoDetail(id);
+  RefreshController refreshController = RefreshController();
+
+  Future refresh(id) async {
+    modelPratidoDataDetail =
+    await repository.getPartidoDetail(id);
     refreshController.refreshCompleted();
+    print('refresh');
+    update();
   }
+
+  //
+  // void loadLiveData(id) async {
+  //   refreshController.requestRefresh();
+  //   modelPratidoDataDetail = await repository.getPartidoDetail(id);
+  //   refreshController.refreshCompleted();
+  // }
 
   List<Week> get temporada => modelTemporada?.temporada;
 
@@ -65,7 +77,7 @@ class ResultadosController extends GetxController {
   ///
   get attendance => modelPratidoDataDetail.gameInfo.attendance;
 
-  List<Evento> get formGameEvents =>
+  List<FormEvent> get formGameEvents =>
       modelPratidoDataDetail.boxscore?.form[1].events;
 
   Participante get datospartidoHome =>
@@ -74,16 +86,17 @@ class ResultadosController extends GetxController {
   Participante get datospartidoAway =>
       modelPratidoDataDetail.header?.competitions[0].competitors[1];
 
-  CompetitorTeam get equipospartidoHome =>
+  TeamTeam get equipospartidoHome =>
       modelPratidoDataDetail.header?.competitions[0].competitors[0].team;
 
-  CompetitorTeam get equipospartidoAway =>
+  TeamTeam get equipospartidoAway =>
       modelPratidoDataDetail.header?.competitions[0].competitors[1].team;
 
-  List<PartidoDataDetailRoster> get alineacion =>
+  List<LivePartidoDataDetailRoster> get alineacion =>
       modelPratidoDataDetail.rosters;
 
   RxList<KeyEvent> get evento => modelPratidoDataDetail.keyEvents.obs;
+
 
   final _screen = 0.obs;
 

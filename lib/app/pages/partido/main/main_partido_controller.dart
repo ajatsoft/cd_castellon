@@ -10,7 +10,7 @@ class MainPartidoController extends GetxController {
 
   @override
   void onInit() {
-    controllerHome.getPartidoHome();
+    // controllerHome.getPartidoHome();
     print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INIT MainPartidoController  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
   }
 

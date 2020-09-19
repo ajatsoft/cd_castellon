@@ -1,3 +1,4 @@
+import 'package:cd_castellon/app/pages/nextPartido/nextPartido_controller.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 import 'package:cd_castellon/app/pages/widgets_general/appBar.dart';
 import 'package:cd_castellon/app/pages/widgets_general/customAppBarAction.dart';
@@ -14,7 +15,7 @@ class PatrocinadoresPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<PatrocinadoresController>(
+    return GetBuilder<NextPartidoController>(
       builder: (_) => Scaffold(
         backgroundColor: Get.isDarkMode ? AColors.dark : Colors.white70,
         body: Stack(
@@ -26,30 +27,30 @@ class PatrocinadoresPage extends StatelessWidget {
                   Row(
                     children: [
                       CustomAppBarAction(
-                        () => Get.back(),
-                        Icons.arrow_back_ios,
+                                () => Get.back(),
+                            Icons.arrow_back_ios,
+                          ),
+                          SizedBox(width: 16),
+                          Text(
+                            "Patrocinadores",
+                            style: TextStyle(
+                              fontSize: 21,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(width: 16),
-                      Text(
-                        "Patrocinadores",
-                        style: TextStyle(
-                          fontSize: 21,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      SizedBox(height: 40),
+                      // Tabs(),
+                      // SizedBox(height: 8),
+                      SlidingCardsView(),
                     ],
                   ),
-                  SizedBox(height: 40),
-                  // Tabs(),
-                  // SizedBox(height: 8),
-                  SlidingCardsView(),
-                ],
-              ),
+                ),
+                ExhibitionBottomSheet(), //use this or ScrollableExhibitionSheet
+              ],
             ),
-            ExhibitionBottomSheet(), //use this or ScrollableExhibitionSheet
-          ],
-        ),
-      ),
+          ),
     );
   }
 }

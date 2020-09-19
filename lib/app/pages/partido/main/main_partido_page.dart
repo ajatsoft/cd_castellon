@@ -2,10 +2,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/pages/partido/main/main_partido_controller.dart';
-import 'package:cd_castellon/app/pages/partido/clasificacion/index.dart';
+import 'package:cd_castellon/app/pages/clasificacion/clasificacion_page.dart';
 import 'package:cd_castellon/app/pages/partido/estadistica.dart';
 import 'package:cd_castellon/app/pages/partido/home/index.dart';
-import 'package:cd_castellon/app/pages/partido/resultados/resultados_home.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_home.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 import 'package:cd_castellon/app/pages/widgets_general/drawer.dart';
 
@@ -49,8 +49,8 @@ class MainPartidoPage extends GetWidget<MainPartidoController> {
                             index: controller.currentIndex,
                             children: <Widget>[
                               PartidoHome(),
-                              ResultadosTemporada(),
-                              Clasificacion(),
+                              ResultadosTemporadaPage(),
+                              ClasificacionPage(),
                               EstadisticaTemporada(),
                             ],
                           )),

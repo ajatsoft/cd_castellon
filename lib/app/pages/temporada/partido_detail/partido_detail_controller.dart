@@ -1,5 +1,5 @@
-import 'package:cd_castellon/app/data/model/modelPartidoDetail.dart';
-import 'package:cd_castellon/app/pages/partido/resultados/resultados_controller.dart';
+import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -18,7 +18,7 @@ class PartidoDetailController extends GetxController {
 
   void refresh(id) async {
     // _firstHalf.clear();
-    await controller.gePartidoDetail(id);
+    // await controller.gePartidoDetail(id);
     refreshController.refreshCompleted();
   }
 }

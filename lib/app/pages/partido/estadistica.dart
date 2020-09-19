@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/partido/resultados/resultados_controller.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
 
 class EstadisticaTemporada extends GetWidget<ResultadosController> {
   @override

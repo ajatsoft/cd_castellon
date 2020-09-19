@@ -1,18 +1,20 @@
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/partido/resultados/resultados_controller.dart';
+
+// import 'package:cd_castellon/app/pages/resultados/resultadosTemporada_controller.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 
 class CustomBottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: Colors.transparent,
+        color: Colors.transparent,
         clipBehavior: Clip.hardEdge,
         shape: CircularNotchedRectangle(),
         child: GetX<ResultadosController>(
           builder: (_) => BottomNavigationBar(
-            backgroundColor: Colors.transparent,
+              backgroundColor: Colors.transparent,
               type: BottomNavigationBarType.shifting,
               currentIndex: _.screen,
               onTap: (index) => _.screen = index,

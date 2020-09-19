@@ -1,77 +1,59 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/config.dart';
-import 'package:cd_castellon/app/data/model/modelPartidoDetail.dart';
-import 'package:cd_castellon/app/pages/partido/resultados/resultados_controller.dart';
-import 'package:cd_castellon/app/data/model/partido.dart';
 
-class PartidoAlineacion extends StatelessWidget {
-  final Event jornada;
+import '../nextPartido_controller.dart';
 
-  PartidoAlineacion(this.jornada);
-  final ResultadosController c = Get.put(ResultadosController());
-
+class NextPartidoAlineacion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(padding: EdgeInsets.all(0), children: [
-      Row(children: [
-        Expanded(
-            flex: 5,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 18.0),
-              child:
-                  Center(child: Text(c.alineacion[0].team.displayName ?? '')),
-            )),
-        Expanded(
-            flex: 5,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 18.0),
-              child:
-                  Center(child: Text(c.alineacion[1].team.displayName ?? '')),
-            )),
-      ]),
-      Padding(
-          padding: const EdgeInsets.all(2.0),
-          child: Center(
-            child: Text(
-              '11 Titular',
-              style: Theme.of(context).textTheme.caption,
-            ),
-          )),
-      Row(children: [
-        Expanded(
-            flex: 5,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: buildLineupTitulares(context, c.alineacion[0].roster),
-            )),
-        Expanded(
-            flex: 5,
-            child: buildLineupTitulares(context, c.alineacion[1].roster)),
-      ]),
-      Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Center(
-            child: Text(
-              'Banquillo',
-              style: Theme.of(context).textTheme.caption,
-            ),
-          )),
-      Container(
-        child: Row(children: [
-          Expanded(
-              flex: 5,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: buildLineupSuplentes(context, c.alineacion[0].roster),
-              )),
-          Expanded(
-              flex: 5,
-              child: buildLineupSuplentes(context, c.alineacion[1].roster)),
-        ]),
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: Container(
+        child: GetX<NextPartidoController>(
+          builder: (_) {
+            return ListView(padding: EdgeInsets.all(0), children: [
+              Row(children: [
+                Expanded(
+                    flex: 5,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: buildLineupTitulares(
+                          context, _.alineacionPH[0].roster),
+                    )),
+                Expanded(
+                    flex: 5,
+                    child: buildLineupTitulares(
+                        context, _.alineacionPH[1].roster)),
+              ]),
+              Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Center(
+                    child: Text(
+                      'Banquillo',
+                      style: Theme.of(context).textTheme.caption,
+                    ),
+                  )),
+              Container(
+                child: Row(children: [
+                  Expanded(
+                      flex: 5,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: buildLineupSuplentes(
+                            context, _.alineacionPH[0].roster),
+                      )),
+                  Expanded(
+                      flex: 5,
+                      child: buildLineupSuplentes(
+                          context, _.alineacionPH[1].roster)),
+                ]),
+              ),
+            ]);
+          },
+        ),
       ),
-    ]);
+    );
   }
 }
 
@@ -111,20 +93,17 @@ Widget buildLineupTitulares(BuildContext context, List<RosterRoster> players) {
                           flex: 85,
                           child: Stack(
                             children: [
-                              Text(
-                                player.athlete.displayName,
-                                style: Theme.of(context).textTheme.caption,
-                                textAlign: TextAlign.start,
-                              overflow: TextOverflow.ellipsis),
-
+                              Text(player.athlete.displayName,
+                                  style: Theme.of(context).textTheme.caption,
+                                  textAlign: TextAlign.start,
+                                  overflow: TextOverflow.ellipsis),
                               Positioned(
-                               right: 0,
-                                  child: Container(
-                                      height: 20,
-                                      width: 40,
-                                      child: eventosAlineacion(player.plays)),
-                                ),
-
+                                right: 0,
+                                child: Container(
+                                    height: 20,
+                                    width: 40,
+                                    child: eventosAlineacion(player.plays)),
+                              ),
                             ],
                           ),
                         ),
@@ -143,7 +122,7 @@ Widget buildLineupTitulares(BuildContext context, List<RosterRoster> players) {
                                 child: Container(
                                   padding: const EdgeInsets.only(left: 2.0),
                                   child: Icon(
-                                    Icons.replay,
+                                    Icons.autorenew,
                                     color: Colors.green,
                                     size: 15,
                                   ),
@@ -210,29 +189,28 @@ Widget buildLineupSuplentes(BuildContext context, List<RosterRoster> players) {
                       overflow: TextOverflow.ellipsis),
                 ),
               ),
-        Expanded(
-          flex: 8,
-          child: Stack(
-            children: [
-              Text(
-                player.athlete.displayName,
-                style: Theme.of(context).textTheme.caption,
-                textAlign: TextAlign.start,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                softWrap: false,
+              Expanded(
+                flex: 8,
+                child: Stack(
+                  children: [
+                    Text(
+                      player.athlete.displayName,
+                      style: Theme.of(context).textTheme.caption,
+                      textAlign: TextAlign.start,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
+                    ),
+                    Positioned(
+                      right: 0,
+                      child: Container(
+                          height: 20,
+                          width: 40,
+                          child: eventosAlineacion(player.plays)),
+                    ),
+                  ],
+                ),
               ),
-              Positioned(
-                right: 0,
-                child: Container(
-                    height: 20,
-                    width: 40,
-                    child: eventosAlineacion(player.plays)),
-              ),
-
-            ],
-          ),
-        ),
             ])
           : Container();
     },
@@ -242,7 +220,7 @@ Widget buildLineupSuplentes(BuildContext context, List<RosterRoster> players) {
         // color: Colors.transparent,
       );
     },
-    itemCount:  players?.length ?? 0,
+    itemCount: players?.length ?? 0,
   );
 }
 
@@ -260,51 +238,55 @@ Widget eventosAlineacion(List<Play> player) {
             (player != null)
                 ? (player2.scoringPlay)
                     ? Stack(
-                      children: [
-                        Container(
-                            child: Icon(
-                              Icons.fiber_manual_record,
-                              size: 14,
-                            )),
-                        Container(
-                            child: Text(
-                              player2.clock.displayValue, style: TextStyle(fontSize: 12),
-                            )),
-                      ],
-                    )
+                        children: [
+                          Container(
+                              child: Image.asset(
+                            'assets/football/white_ball.png',
+                            height: 15,
+                            width: 15,
+                          )),
+                          Container(
+                              child: Text(
+                            player2.clock.displayValue,
+                            style: TextStyle(fontSize: 12),
+                          )),
+                        ],
+                      )
                     : Container()
                 : Container(),
             (player2.redCard)
                 ? Stack(
-                  children: [
-                    Container(
-                        child: Icon(
-                          Icons.fiber_manual_record,
-                          color: Colors.red,
-                          size: 14,
-                        )),
-                    Container(
-                        child: Text(
-                          player2.clock.displayValue, style: TextStyle(fontSize: 12),
-                        )),
-                  ],
-                )
+                    children: [
+                      Container(
+                          child: Icon(
+                        Icons.fiber_manual_record,
+                        color: Colors.red,
+                        size: 16,
+                      )),
+                      Container(
+                          child: Text(
+                        player2.clock.displayValue,
+                        style: TextStyle(fontSize: 12),
+                      )),
+                    ],
+                  )
                 : Container(),
             (player2.yellowCard)
                 ? Stack(
-                  children: [
-                    Container(
-                        child: Icon(
-                          Icons.fiber_manual_record,
-                          color: Colors.yellow,
-                          size: 14,
-                        )),
-                    Container(
-                        child: Text(
-                            player2.clock.displayValue, style: TextStyle(fontSize: 12),
-                        )),
-                  ],
-                )
+                    children: [
+                      Container(
+                          child: Icon(
+                        Icons.sim_card_alert,
+                        color: Colors.yellow,
+                        size: 16,
+                      )),
+                      Container(
+                          child: Text(
+                        player2.clock.displayValue,
+                        style: TextStyle(fontSize: 12),
+                      )),
+                    ],
+                  )
                 : Container(),
             // (player2.substitution)
             //     ? Container(

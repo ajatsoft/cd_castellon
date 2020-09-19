@@ -1,4 +1,4 @@
-import 'package:cd_castellon/app/data/model/modelPartidoDetail.dart';
+import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 import 'package:cd_castellon/app/data/model/partido.dart';
 import 'package:cd_castellon/app/data/provider/partido_provider.dart';
 
@@ -14,7 +14,7 @@ class PartidoRepository {
     return partidoProvider.getDataPartidos(jornada);
   }
 
-  Future<PartidoDataDetail> getPartidoDetail(id) async {
+  Future<LivePartidoDataDetail> getPartidoDetail(id) async {
     return partidoProvider.getPartidoDetail(id);
   }
 }

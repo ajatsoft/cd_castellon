@@ -1,4 +1,4 @@
-import 'package:cd_castellon/app/data/model/modelPartidoDetail.dart';
+import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 import 'package:cd_castellon/app/data/model/partidoHome_model.dart';
 import 'package:cd_castellon/app/data/provider/partidoHome_provider.dart';
 
@@ -12,12 +12,7 @@ class PartidoHomeRepository {
     return partidoHomeProvider.getPartidoHome();
   }
 
-Future<PartidoDataDetail> getPartidoHomeDetail(id) async {
+  Future<LivePartidoDataDetail> getPartidoHomeDetail(id) async {
     return partidoHomeProvider.getPartidoHomeDetail(id);
   }
-
-
-
-
-
 }

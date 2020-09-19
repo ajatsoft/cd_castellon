@@ -23,6 +23,8 @@ dependencies:
   shared_preferences: ^0.5.10
   font_awesome_flutter: ^8.8.1
   share: ^0.6.5
+  web_scraper:
+
 
 
 
@@ -48,6 +50,7 @@ flutter:
   assets:
     - data/
     - assets/football/
+    - assets/icon/
     - assets/images/
     - assets/jugadores/
     - assets/

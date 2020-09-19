@@ -1,9 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/partido/resultados/resultados_controller.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
 import 'package:cd_castellon/app/data/model/partido.dart';
-
+import 'package:intl/intl.dart';
 
 class JornadaDetail extends StatelessWidget{
 
@@ -13,6 +13,7 @@ class JornadaDetail extends StatelessWidget{
   Widget build(BuildContext context) {
     Week jornadaName = Get.arguments;
     // print(controller.partidos[0].competitors[0].logo);
+    var dateFormat = new DateFormat('dd-MM-yyyy HH:mm:ss');
 
     return SafeArea(
         bottom: false,
@@ -69,63 +70,87 @@ class JornadaDetail extends StatelessWidget{
                                           0, 3), // changes position of shadow
                                     ),
                                   ],
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 4.0),
-                                        child: (partidos.competitors[0].logo == '')
-                                            ? logoHome(partidos.competitors[0].name)
-                                            : Container(
-                                                width: 30.0,
-                                                height: 30.0,
-                                                decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  image: DecorationImage(
-                                                    fit: BoxFit.fill,
-                                                    image: NetworkImage(
-                                                        partidos.competitors[0].logo),
-                                                  ),
-                                                )),
-                                      ),
-                                      Expanded(
-                                        child: Center(
-                                            child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(partidos.competitors[0].name),
-                                        )),
-                                      ),
-                                      Text("${partidos.competitors[0].score}"),
-                                      Text(" - "),
-                                      Text("${partidos.competitors[1].score}"),
-                                      Expanded(
-                                        child: Center(
-                                            child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(partidos.competitors[1].name),
-                                        )),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 4.0),
-                                        child: (partidos.competitors[1].logo == '')
-                                            ? logoAway(partidos.competitors[1].name)
-                                            : Container(
-                                                width: 30.0,
-                                                height: 30.0,
-                                                decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  image: DecorationImage(
-                                                    fit: BoxFit.fill,
-                                                    image: NetworkImage(
-                                                        partidos.competitors[1].logo),
-                                                  ),
-                                                )),
-                                      ),
-                                    ],
-                                  ),
+                                ),
+                                child: Column(
+
+                                  children: [
+                                    Text(dateFormat
+                                        .format(DateTime.parse(
+                                        partidos.date.add(Duration(hours: 2))
+                                            .toIso8601String()))),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment
+                                          .center,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                          const EdgeInsets.only(left: 4.0),
+                                          child: (partidos.competitors[0]
+                                              .logo == '')
+                                              ? logoHome(
+                                              partidos.competitors[0].name)
+                                              : Container(
+                                              width: 30.0,
+                                              height: 30.0,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: DecorationImage(
+                                                  fit: BoxFit.fill,
+                                                  image: NetworkImage(
+                                                      partidos.competitors[0]
+                                                          .logo),
+                                                ),
+                                              )),
+                                        ),
+                                        Expanded(
+                                          child: Center(
+                                              child: Padding(
+                                                padding: const EdgeInsets.all(
+                                                    8.0),
+                                                child: Text(
+                                                    partidos.competitors[0]
+                                                        .name),
+                                              )),
+                                        ),
+                                        Text(
+                                            "${partidos.competitors[0].score}"),
+                                        Text(" - "),
+                                        Text(
+                                            "${partidos.competitors[1].score}"),
+                                        Expanded(
+                                          child: Center(
+                                              child: Padding(
+                                                padding: const EdgeInsets.all(
+                                                    8.0),
+                                                child: Text(
+                                                    partidos.competitors[1]
+                                                        .name),
+                                              )),
+                                        ),
+                                        Padding(
+                                          padding:
+                                          const EdgeInsets.only(left: 4.0),
+                                          child: (partidos.competitors[1]
+                                              .logo == '')
+                                              ? logoAway(
+                                              partidos.competitors[1].name)
+                                              : Container(
+                                              width: 30.0,
+                                              height: 30.0,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: DecorationImage(
+                                                  fit: BoxFit.fill,
+                                                  image: NetworkImage(
+                                                      partidos.competitors[1]
+                                                          .logo),
+                                                ),
+                                              )),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                                 ),
                               );
                             }),

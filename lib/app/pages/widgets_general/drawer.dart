@@ -10,91 +10,266 @@ class AppDrawer extends GetView {
     return Container(
       key: Key('container-drawer'),
       width: 260,
+      height: Get.height,
       child: Drawer(
-          child: Container(
-            height: Get.height,
-        child: SafeArea(
-          child: Column(
-            children: <Widget>[
-              FittedBox(child: CustomDrawerHeaderWidget()),
-              ListTile(
-                onTap: () {
-                  Get.offAndToNamed("/news");
-                },
-                title: Text("Noticias"),
-                trailing: Icon(FontAwesomeIcons.newspaper),
-              ),
-              Divider(),
-              ListTile(
-                onTap: () {
-                  Get.offAndToNamed("/mainPartido");
-                },
-                title: Text("Temporada"),
-                trailing: Icon(FontAwesomeIcons.calendarWeek),
-              ),
-              Divider(),
-              ListTile(
-                onTap: () {
-                  Get.offAndToNamed("/plantilla");
-                },
-                title: Text("Plantilla"),
-                trailing: Icon(Icons.supervised_user_circle),
-              ),
-              Divider(),
-              ListTile(
-                onTap: () {
-                  Get.offAndToNamed("/patrocinadores");
-                },
-                title: Text("Patrocinadores"),
-                trailing: Icon(Icons.public),
-              ),
-              Divider(),
-              ListTile(
-                onTap: () {
-                  Get.offAndToNamed("/contacto");
-                },
-                title: Text("Contacto"),
-                trailing: Icon(Icons.alternate_email),
-              ),
-              Divider(),
-              Spacer(),
-              Divider(),
-              GestureDetector(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+          child: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListView(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              children: <Widget>[
+                FittedBox(child: CustomDrawerHeaderWidget()),
+                Stack(
                   children: [
-                    Text('Cambiar a: '),
-                    Container(
-                        child: isModoDark
-                            ? Text('Tema Claro')
-                            : Text('Tema Oscuro')),
-                    SizedBox(
-                      width: 10.0,
+                    ListTile(
+                      onTap: () {
+                        Get.offAndToNamed("/news");
+                      },
+                      title: Text(
+                        "Noticias",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      trailing: Icon(FontAwesomeIcons.newspaper),
                     ),
-                    Icon(
-                      Icons.brightness_4,
-                      color: isModoDark ? Colors.white : Colors.black,
-                    ),
+                    Opacity(
+                      opacity: 0.1,
+                      child: Container(
+                        width: Get.width,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/noticias.jpg"),
+                          ),
+                        ),
+                      ),
+                    )
                   ],
                 ),
-                onTap: () {
-                  Get.offAndToNamed("/news");
-                  ThemeController.to.modoDark.value =
-                      !ThemeController.to.modoDark.value;
-                  if (ThemeController.to.modoDark.value) {
-                    ThemeController.to.changeTheme(ThemeMode.dark);
-                  } else {
-                    ThemeController.to.changeTheme(ThemeMode.light);
-                  }
-                },
-              ),
-              Divider(),
-              SizedBox(
-                height: 12,
-              )
+                Divider(height: 1, indent: 1.0, endIndent: 1.0),
+                Stack(
+                  children: [
+                    ListTile(
+                      onTap: () {
+                        Get.offAndToNamed("/nextpartido");
+                      },
+                      title: Text(
+                        "Próximo partido",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      trailing: Icon(FontAwesomeIcons.futbol),
+                    ),
+                    Opacity(
+                      opacity: 0.1,
+                      child: Container(
+                        width: Get.width,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/campo_futbol.jpg"),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Divider(height: 1, indent: 100.0, endIndent: 100.0),
+                Stack(
+                  children: [
+                    ListTile(
+                      onTap: () {
+                        Get.offAndToNamed("/clasificacion");
+                      },
+                      title: Text(
+                        "Clasificación",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      trailing: Icon(FontAwesomeIcons.list),
+                    ),
+                    Opacity(
+                      opacity: 0.1,
+                      child: Container(
+                        width: Get.width,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/campo_futbol.jpg"),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Divider(height: 1, indent: 100.0, endIndent: 100.0),
+                Stack(
+                  children: [
+                    ListTile(
+                      onTap: () {
+                        Get.offAndToNamed("/resultadosTemporada");
+                      },
+                      title: Text(
+                        "Resultados Temporada",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      trailing: Icon(FontAwesomeIcons.calendar),
+                    ),
+                    Opacity(
+                      opacity: 0.1,
+                      child: Container(
+                        width: Get.width,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/campo_futbol.jpg"),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Divider(height: 1, indent: 1.0, endIndent: 1.0),
+                GestureDetector(
+                  onTap: () {
+                    Get.offAndToNamed("/plantilla");
+                  },
+                  child: Stack(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          "Plantilla",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(FontAwesomeIcons.userFriends),
+                      ),
+                      Opacity(
+                        opacity: 0.1,
+                        child: Container(
+                          width: Get.width,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/plantilla.jpeg"),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Divider(height: 1, indent: 1.0, endIndent: 1.0),
+                GestureDetector(
+                  onTap: () {
+                    Get.offAndToNamed("/patrocinadores");
+                  },
+                  child: Stack(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          "Patrocinadores",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(FontAwesomeIcons.moneyBill),
+                      ),
+                      Opacity(
+                        opacity: 0.1,
+                        child: Container(
+                          width: Get.width,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage(
+                                  "assets/images/patrocinadores.jpeg"),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Divider(height: 1, indent: 1.0, endIndent: 1.0),
+                GestureDetector(
+                  onTap: () {
+                    Get.offAndToNamed("/contacto");
+                  },
+                  child: Stack(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          "Contacto",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(Icons.alternate_email),
+                      ),
+                      Opacity(
+                        opacity: 0.1,
+                        child: Container(
+                          width: Get.width,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/contacto.jpg"),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Divider(height: 1, indent: 1.0, endIndent: 1.0),
+                SizedBox(
+                  height: 32,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Divider(height: 1, indent: 100.0, endIndent: 100.0),
+                GestureDetector(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Cambiar a: '),
+                      Container(
+                          child: isModoDark
+                              ? Text('Tema Claro')
+                              : Text('Tema Oscuro')),
+                      SizedBox(
+                        width: 8.0,
+                      ),
+                      Icon(
+                        Icons.brightness_4,
+                        color: isModoDark ? Colors.white : Colors.black,
+                      ),
+                    ],
+                  ),
+                  onTap: () {
+                    Get.offAndToNamed("/news");
+                    ThemeController.to.modoDark.value =
+                        !ThemeController.to.modoDark.value;
+                    if (ThemeController.to.modoDark.value) {
+                      ThemeController.to.changeTheme(ThemeMode.dark);
+                    } else {
+                      ThemeController.to.changeTheme(ThemeMode.light);
+                    }
+                  },
+                ),
+                Divider(height: 1, indent: 100.0, endIndent: 100.0),
+                SizedBox(
+                  height: 12.0,
+                )
+              ],
+            ),
             ],
           ),
-        ),
       )),
     );
   }
@@ -139,7 +314,6 @@ class CustomDrawerHeaderWidget extends StatelessWidget {
                 ),
               ),
             ),
-
           ],
         ),
       ),

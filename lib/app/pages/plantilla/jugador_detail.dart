@@ -1,5 +1,4 @@
 import 'package:cd_castellon/app/controller/jugadorDetail_controller.dart';
-import 'package:cd_castellon/app/data/model/players.dart';
 import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
@@ -11,7 +10,7 @@ import 'package:cd_castellon/app/pages/widgets_general/appBar.dart';
 import 'package:cd_castellon/app/pages/widgets_general/customAppBarAction.dart';
 
 class DetailPlayer extends StatelessWidget {
-  final AthleteCS player;
+  final Jugador player;
 
   DetailPlayer({this.player});
 

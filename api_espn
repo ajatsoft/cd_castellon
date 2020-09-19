@@ -1,0 +1,116 @@
+
+
+///            VIDEORESUMEN
+https://www.elcorreo.com/deportes/futbol/la-liga/liga-segunda/videoresumen-partidos-segunda-jornada41-20200717203801-ntrc.html
+
+
+
+
+Equipos Liga 2ª
+http://site.api.espn.com/apis/site/v2/sports/soccer/ESP.2/teams
+lugo:7266
+4438
+
+partidos
+http://site.api.espn.com/apis/site/v2/sports/soccer/ESP.2/scoreboard
+http://site.api.espn.com/apis/site/v2/sports/soccer/ESP.2/scoreboard?lang=es&region=gb&calendartype=whitelist&limit=100&dates=20200912&league=ESP.2
+
+
+
+
+partido
+http://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=521973
+
+
+http://site.api.espn.com/apis/site/v2/sports/soccer/ESP.2/scoreboard?dates=20200912
+http://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=574011
+
+https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=esp.2&dates=20190510-20190513
+https://site.web.api.espn.com/apis/v2/summary/rosters?sport=soccer&league=esp.2&event=574011
+550820
+
+
+clasificacion:
+http://site.api.espn.com/apis/v2/sports/soccer/ESP.2/standings
+
+
+todos los jugadores del equipo(roster)
+http://site.api.espn.com/apis/site/v2/sports/soccer/ESP.2/teams/7266/roster
+
+jugadores:
+222617 Serge Leuko:
+http://sports.core.api.espn.com/v2/sports/soccer/athletes/222617
+equipos anteriopres estadisticas:
+http://sports.core.api.espn.com/v2/sports/soccer/athletes/222617/statisticslog
+año anteriror:
+http://sports.core.api.espn.com/v2/sports/soccer/leagues/esp.2/seasons/2019/types/1/athletes/222617/statistics/0?lang=es&
+
+
+
+
+
+noticias:
+https://www.espn.com/soccer/?xhr=1
+
+
+
+
+
+
+
+
+
+
+Game Information:
+http://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=577831
+
+
+
+You can also find info about a NCAAMBB player here:
+https://site.web.api.espn.com/apis/common/v3/sports/soccer/mens-college-basketball/athletes/:athleteId
+
+and it seems like player stats are also available through this route:
+https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/athletes/:athleteId/splits
+
+For players...
+
+https://site.web.api.espn.com/apis/common/v3/sports/:sport/:league_abbrev/athletes/:athlete_id
+
+Example for nfl player:
+
+https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/athletes/101
+
+The endpoints are janky af they keep timing out, I have to hit them multiple times sometimes
+
+
+Well i can at least get the schedule this way,
+https://secure.espn.com/core/mens-college-basketball/schedule?xhr=1&render=true&device=desktop&country=us&lang=en&region=us&site=espn&edition-host=espn.com&site-type=full&date=20191120
+
+
+Thank you for the reply, I do understand you need a date, that was just a reference URL.
+Example: http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?lang=en&region=us&limit=500&date=20191121
+I only see 6 events, but if you go to the site https://www.espn.com/mens-college-basketball/schedule you will see there are a "LOT" more then 6.
+looks like the URL is only returning results for teams in the top 25. Looks like 50 is the ID for the Division 1 group, so if you use that in the URL params, it should work. I tried http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?lang=en&region=us&limit=500&dates=20191121&groups=50 and that returned 47 results, which seems accurate when compared to the list on the schedule page.
+
+
+Try this:
+
+https://site.api.espn.com/apis/site/v2/sports/cricket/19430/summary?event=1183532
+
+1183532 is the event ID for Australia v Pakistan
+19430 represents any 5 digit number in my investigations
+
+
+
+Team-based:
+Info: https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/4575101
+Statistics: https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/4575101/splits
+
+Solo athlete:
+Info: http://sports.core.api.espn.com/v2/sports/golf/athletes/2
+Statistics overview: http://sports.core.api.espn.com/v2/sports/golf/athletes/2/statisticslog
+Specific statistics: http://sports.core.api.espn.com/v2/sports/golf/leagues/pga/seasons/2001/types/2/athletes/2/statistics/0
+
+
+Here an example to get a specific event id detail
+http://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard/:eventId

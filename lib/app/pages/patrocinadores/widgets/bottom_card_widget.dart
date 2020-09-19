@@ -198,7 +198,7 @@ class ExpandedEventItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius),
-            color: AColors.dark,
+            color: AColors.light,
           ),
           padding: EdgeInsets.only(left: height).add(EdgeInsets.all(8)),
           child: _buildContent(),

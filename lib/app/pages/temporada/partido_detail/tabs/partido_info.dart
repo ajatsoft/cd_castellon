@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/partido/resultados/resultados_controller.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
 import 'package:cd_castellon/app/data/model/partido.dart';
 import 'package:intl/intl.dart';
 
@@ -16,7 +16,7 @@ class PartidoEstadisticas extends StatelessWidget {
     var dateFormat = new DateFormat('dd-MM-yyyy HH:mm:ss');
     return Container(
       padding: EdgeInsets.all(20.0),
-      child: Column(
+      child: ListView(
         children: [
           Card(
             color: Colors.transparent,

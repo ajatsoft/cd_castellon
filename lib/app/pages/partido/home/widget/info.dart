@@ -1,4 +1,4 @@
-import 'package:cd_castellon/app/data/model/modelPartidoDetail.dart';
+import 'package:cd_castellon/app/data/model/livePartidoModel2.bak';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -28,8 +28,8 @@ class PartidoCSInfo extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text('Fecha y hora: '),
-                              Text(dateFormat
-                                  .format(DateTime.parse(_.competition.date))),
+                              // Text(dateFormat
+                              //     .format(DateTime.parse(_.competition.date))),
                             ],
                           ),
                         ),

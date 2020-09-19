@@ -1,13 +1,13 @@
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/data/model/modelPartidoDetail.dart';
+import 'package:cd_castellon/app/data/model/livePartidoModel2.bak';
 import 'package:timeline_tile/timeline_tile.dart';
 
 import '../controller.dart';
 
 class PartidoCSLive extends GetView<PartidoHomeController> {
-  final PartidoDataDetail partido;
+  final LivePartidoDataDetail partido;
 
   PartidoCSLive(this.partido);
 
@@ -79,7 +79,7 @@ class _TimelineFootball extends StatelessWidget {
   const _TimelineFootball({Key key, this.data, this.partido}) : super(key: key);
 
   final List<KeyEvent> data;
-  final PartidoDataDetail partido;
+  final LivePartidoDataDetail partido;
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,7 @@ class _TimelineFootball extends StatelessWidget {
     print(data[0].team.id);
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
+        (BuildContext context, int index) {
           final KeyEvent event = data[index];
 
           final isLeftChild =

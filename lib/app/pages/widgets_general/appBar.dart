@@ -2,6 +2,62 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
+class CustomAppBar2 extends PreferredSize {
+  final Widget wd;
+  final double height;
+  final List<Widget> leadings;
+  final List<Widget> actions;
+
+  CustomAppBar2(
+    this.wd, {
+    this.leadings = const [],
+    this.actions = const [],
+    this.height = 200,
+  });
+
+  @override
+  Size get preferredSize => Size.fromHeight(height);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: preferredSize.height,
+      color: Colors.transparent,
+      alignment: Alignment.center,
+      child: SafeArea(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                    left: 5,
+                    top: 5,
+                    bottom: 5,
+                    child: Row(
+                      children: leadings,
+                    ),
+                  ),
+                  Container(child: child),
+                  Positioned(
+                    right: 25,
+                    top: 5,
+                    bottom: 5,
+                    child: Row(
+                      children: actions,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 class CustomAppBar extends PreferredSize {
 final String title;

@@ -20,10 +20,10 @@ class PartidoHome extends GetView<PartidoHomeController> {
         );
       }
 
-      if (controller.competition == null) {
-        return Text('esperando API request.');
-      }
-      return  SmartRefresher(
+      // if (controller.competition == null) {
+      //   return Text('esperando API request.');
+      // }
+      return SmartRefresher(
         header: WaterDropMaterialHeader(),
 
         controller: controller.refreshController,
@@ -71,7 +71,7 @@ class PartidoHome extends GetView<PartidoHomeController> {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      PartidoCSLive(controller.partido),
+                      // PartidoCSLive(controller.partido),
                       PartidoCSInfo(),
                       PartidoCSAlineacion(),
                     ],

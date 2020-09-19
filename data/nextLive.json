@@ -1,0 +1,124 @@
+{
+  "team": {
+    "id": "19139",
+    "uid": "s:600~t:19139",
+    "slug": "dalian-professional",
+    "location": "Dalian Professional",
+    "name": "Dalian Professional",
+    "abbreviation": "DAL",
+    "displayName": "Dalian Professional",
+    "shortDisplayName": "Dalian",
+    "color": "0000e5",
+    "alternateColor": "C60000",
+    "isActive": true,
+    "logos": [
+      {
+        "href": "https://a.espncdn.com/i/teamlogos/soccer/500/19139.png",
+        "width": 500,
+        "height": 500,
+        "alt": "",
+        "rel": [
+          "full",
+          "default"
+        ]
+      },
+      {
+        "href": "https://a.espncdn.com/i/teamlogos/soccer/500-dark/19139.png",
+        "width": 500,
+        "height": 500,
+        "alt": "",
+        "rel": [
+          "full",
+          "dark"
+        ]
+      }
+    ],
+    "record": {},
+    "groups": {
+      "id": "1"
+    },
+    "links": [
+      {
+        "language": "es",
+        "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+        ],
+        "href": "http://espndeportes.espn.com/futbol/equipo/_/id/19139/dalian-professional",
+        "text": "Sede",
+        "shortText": "Sede",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "es",
+        "rel": [
+          "stats",
+          "desktop",
+          "team"
+        ],
+        "href": "http://espndeportes.espn.com/futbol/equipo/estadisticas/_/id/19139/dalian-professional",
+        "text": "Estadísticas",
+        "shortText": "Estadísticas",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "es",
+        "rel": [
+          "schedule",
+          "desktop",
+          "team"
+        ],
+        "href": "http://espndeportes.espn.com/futbol/equipo/calendario/_/id/19139/dalian-professional",
+        "text": "Calendario",
+        "shortText": "Calendario",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "es",
+        "rel": [
+          "scores",
+          "sportscenter",
+          "app",
+          "team"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:19139&amp;section=scores",
+        "text": "Scores",
+        "shortText": "Scores",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "es",
+        "rel": [
+          "results",
+          "desktop",
+          "team"
+        ],
+        "href": "http://espndeportes.espn.com/futbol/equipo/resultados/_/id/19139/dalian-professional",
+        "text": "Results",
+        "shortText": "Results",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "es",
+        "rel": [
+          "squad",
+          "desktop",
+          "team"
+        ],
+        "href": "http://espndeportes.espn.com/futbol/equipo/plantel/_/id/19139/dalian-professional",
+        "text": "Squad",
+        "shortText": "Squad",
+        "isExternal": false,
+        "isPremium": false
+      }
+    ],
+    "nextEvent": [],
+    "standingSummary": "22° en Súper Liga China"
+  }
+}

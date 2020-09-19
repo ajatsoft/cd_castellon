@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/data/model/modelClasificacion.dart';
-import 'package:cd_castellon/app/pages/partido/clasificacion/controller.dart';
+import 'package:cd_castellon/app/pages/clasificacion/clasificacion_controller.dart';
 
 class CompetitionTable extends GetView<ClasificacionController> {
   final List<Entry> entries;
@@ -14,12 +14,7 @@ class CompetitionTable extends GetView<ClasificacionController> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 30),
-          child:
-              // buildDataTable(context),
-              buildPositions(context),
-        ),
+        buildPositions(context),
       ],
       // padding:
       // child:
@@ -176,7 +171,7 @@ class CompetitionTable extends GetView<ClasificacionController> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  '${position.stats[0].value.toString()}-${position.stats[2].value.toString()}-${position.stats[1].value.toString()}',
+                  position.stats[0].value.toString(),
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
               ),
@@ -185,7 +180,34 @@ class CompetitionTable extends GetView<ClasificacionController> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  '${position.stats[4].value.toString()}:${position.stats[5].value.toString()}',
+                  position.stats[2].value.toString(),
+                  style: Theme.of(context).textTheme.bodyText2,
+                ),
+              ),
+            ),
+            TableCell(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  position.stats[1].value.toString(),
+                  style: Theme.of(context).textTheme.bodyText2,
+                ),
+              ),
+            ),
+            TableCell(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  position.stats[4].value.toString(),
+                  style: Theme.of(context).textTheme.bodyText2,
+                ),
+              ),
+            ),
+            TableCell(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  position.stats[5].value.toString(),
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
               ),
@@ -226,11 +248,14 @@ class CompetitionTable extends GetView<ClasificacionController> {
             1: IntrinsicColumnWidth(),
             2: IntrinsicColumnWidth(),
             3: IntrinsicColumnWidth(),
-            4: IntrinsicColumnWidth(),
+            // 4: IntrinsicColumnWidth(),
             5: IntrinsicColumnWidth(),
             6: IntrinsicColumnWidth(),
             // 7: IntrinsicColumnWidth(),
-            // 8: IntrinsicColumnWidth(),
+            8: IntrinsicColumnWidth(),
+            9: IntrinsicColumnWidth(),
+            // 10: IntrinsicColumnWidth(),
+            // 11: IntrinsicColumnWidth(),
           },
           children: rows),
     );
@@ -288,10 +313,17 @@ class CompetitionTable extends GetView<ClasificacionController> {
           ),
           TableCell(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
-              child: Text(
-                'Pj',
-                style: Theme.of(context).textTheme.caption,
+
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  'Pj',
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .caption,
+                ),
               ),
             ),
           ),
@@ -299,8 +331,11 @@ class CompetitionTable extends GetView<ClasificacionController> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
               child: Text(
-                'G-E-P',
-                style: Theme.of(context).textTheme.caption,
+                'G',
+                style: Theme
+                    .of(context)
+                    .textTheme
+                    .caption,
               ),
             ),
           ),
@@ -308,13 +343,52 @@ class CompetitionTable extends GetView<ClasificacionController> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
               child: Text(
-                'GF/GC',
-                style: Theme.of(context).textTheme.caption,
+                'E',
+                style: Theme
+                    .of(context)
+                    .textTheme
+                    .caption,
+              ),
+            ),
+          ),
+          TableCell(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
+              child: Text(
+                'P',
+                style: Theme
+                    .of(context)
+                    .textTheme
+                    .caption,
+              ),
+            ),
+          ),
+          TableCell(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
+              child: Text(
+                'GF',
+                style: Theme
+                    .of(context)
+                    .textTheme
+                    .caption,
                 textAlign: TextAlign.center,
               ),
             ),
           ),
-
+          TableCell(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
+              child: Text(
+                'GC',
+                style: Theme
+                    .of(context)
+                    .textTheme
+                    .caption,
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
           TableCell(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),

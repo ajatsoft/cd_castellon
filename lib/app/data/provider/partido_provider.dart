@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:cd_castellon/app/data/model/modelPartidoDetail.dart';
+import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 import 'package:cd_castellon/app/data/model/partido.dart';
 import 'package:http/http.dart' as http;
 
@@ -43,14 +43,14 @@ class PartidoProvider {
     }
   }
 
-  Future<PartidoDataDetail> getPartidoDetail(id) async {
+  Future<LivePartidoDataDetail> getPartidoDetail(id) async {
     print('provider================ $id');
     String url =
-        'http://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?lang=es&event=$id';
+        'http://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?lang=es&region=us&tz=Europe/Madrid&event=$id';
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var body = json.decode(response.body);
-      return PartidoDataDetail.fromJson(body);
+      return LivePartidoDataDetail.fromJson(body);
     } else {
       return throw Exception('Error getting scoreboard');
     }
