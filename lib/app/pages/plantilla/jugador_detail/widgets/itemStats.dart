@@ -1,4 +1,6 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ItemStat extends StatelessWidget {
   String statName;
@@ -8,24 +10,35 @@ class ItemStat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: 110,
-        padding: EdgeInsets.all(10),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text(
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8),
+      child: GridTile(
+        child: Container(
+          color: Get.isDarkMode ? Colors.white12 : Colors.black12,
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: Text(
               statValue,
-              style: TextStyle(color: Colors.yellow, fontSize: 16),
+              style: TextStyle(fontSize: 20),
             ),
-            Padding(
-                padding: EdgeInsets.only(top: 6, bottom: 8),
-                child: Text(statName,
-                    style: TextStyle(
-                        fontFamily: 'Oswald',
-                        color: Colors.white24,
-                        fontSize: 12))),
-          ],
-        ));
+          ),
+        ),
+        footer: GridTileBar(
+          backgroundColor: Get.isDarkMode ? Colors.white54 : Colors.black54,
+          title: AutoSizeText(
+            statName,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
+            wrapWords: false,
+            minFontSize: 8,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+      ),
+    );
   }
 }

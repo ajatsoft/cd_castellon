@@ -74,7 +74,6 @@ class ItemPlayer extends StatelessWidget {
               right: 0,
               child: Text(player.jersey.toString(),
                   style: TextStyle(
-                      fontFamily: 'Juventus',
                       color: AColors.secondary,
                       fontSize: 30,
                       fontWeight: FontWeight.bold)),

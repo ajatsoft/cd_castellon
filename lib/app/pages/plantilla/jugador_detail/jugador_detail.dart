@@ -98,8 +98,9 @@ class DetailPlayer extends StatelessWidget {
                                 opacity: 0.6,
                                 child: Container(
                                   height: 70,
-                                  child: Image.asset(_.getDemarcacion(
-                                      player.position.displayName),
+                                  child: Image.asset(
+                                    _.getDemarcacion(
+                                        player.position.displayName),
                                   ),
                                 ),
                               ),
@@ -119,11 +120,31 @@ class DetailPlayer extends StatelessWidget {
                           Positioned(
                             top: 0,
                             left: 10,
-                            child: Info(player: player,),
+                            child: Info(
+                              player: player,
+                            ),
                           )
                         ],
                       ),
-                      EstadisticasPlayer(player: player,),
+                      DefaultTabController(
+                          initialIndex: 1,
+                          length: 2,
+                          child: Column(
+                            children: [
+                              _getTabBar(),
+                              Container(
+                                height: 300,
+                                child: _getTabBarView(
+                                  <Widget>[
+                                    EstadisticasPlayer(
+                                      player: player,
+                                    ),
+                                    Icon(Icons.settings),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          )),
                     ],
                   ),
                 ),
@@ -132,6 +153,21 @@ class DetailPlayer extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+  TabBar _getTabBar() {
+    return TabBar(
+      tabs: <Widget>[
+        Tab(icon: Icon(Icons.home, color: Colors.redAccent)),
+        Tab(icon: Icon(Icons.settings, color: Colors.redAccent)),
+      ],
+    );
+  }
+
+  TabBarView _getTabBarView(tabs) {
+    return TabBarView(
+      children: tabs,
     );
   }
 }
@@ -206,12 +242,9 @@ class Info extends StatelessWidget {
                             child: CircularProgressIndicator())
                             : Text(
                             dateFormat
-                                .format(DateTime.parse(
-                                player.dateOfBirth)),
+                                .format(DateTime.parse(player.dateOfBirth)),
                             style: TextStyle(
                                 fontFamily: 'Oswald', fontSize: 15)),
-
-
                       ]),
                 ),
               ),
@@ -262,30 +295,37 @@ class Info extends StatelessWidget {
 }
 
 class EstadisticasPlayer extends StatelessWidget {
-
   final AthleteCS player;
 
   EstadisticasPlayer({this.player});
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate:
-      SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
-      itemBuilder: (context, index) {
-        final Stat generalStats = player.statistics.splits.categories[0]
-            .stats[index];
-        return ItemStat(statName: generalStats.displayName,
-          statValue: generalStats.displayValue,);
-      },
-      itemCount: player.statistics.splits.categories[0].stats.length,
-      scrollDirection: Axis.vertical,
-      shrinkWrap: true,
-      physics: ClampingScrollPhysics(),
+    return Padding(
+      padding: EdgeInsets.only(top: 10.0),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          childAspectRatio: 3 / 2,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+        ),
+        itemBuilder: (context, index) {
+          final Stat generalStats =
+          player.statistics.splits.categories[0].stats[index];
+          return ItemStat(
+            statName: generalStats.displayName,
+            statValue: generalStats.displayValue,
+          );
+        },
+        itemCount: player.statistics.splits.categories[0].stats.length,
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        physics: ClampingScrollPhysics(),
+      ),
     );
   }
 }
-
 
 //
 // class InfoPlayer extends StatelessWidget {
