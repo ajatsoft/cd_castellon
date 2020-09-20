@@ -1,10 +1,10 @@
 import 'dart:ui';
 
+import 'package:cd_castellon/app/data/model/partido.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
-import 'package:cd_castellon/app/data/model/partido.dart';
 
 class ResultadosTemporadaPage extends GetWidget<ResultadosController> {
   @override
@@ -59,8 +59,12 @@ class ResultadosTemporadaPage extends GetWidget<ResultadosController> {
 
                       return GestureDetector(
                         onTap: () async {
+                          print(temporada.urlJornada);
+
                           await controller
                               .getDataPartidos(temporada.urlJornada);
+
+                          print(temporada.urlJornada);
                           Get.toNamed('/jornada_detail', arguments: temporada);
                         },
                         child: Container(

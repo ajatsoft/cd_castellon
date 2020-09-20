@@ -1,8 +1,8 @@
+import 'package:cd_castellon/app/config.dart';
+import 'package:cd_castellon/app/controller/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/config.dart';
-import 'package:cd_castellon/app/controller/theme_controller.dart';
 
 class AppDrawer extends GetView {
   @override
@@ -50,88 +50,97 @@ class AppDrawer extends GetView {
                   ],
                 ),
                 Divider(height: 1, indent: 1.0, endIndent: 1.0),
-                Stack(
-                  children: [
-                    ListTile(
-                      onTap: () {
-                        Get.offAndToNamed("/nextpartido");
-                      },
-                      title: Text(
-                        "Próximo partido",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                GestureDetector(
+                  onTap: () {
+                    Get.offAndToNamed("/nextpartido");
+                  },
+                  child: Stack(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          "Próximo partido",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(FontAwesomeIcons.futbol),
                       ),
-                      trailing: Icon(FontAwesomeIcons.futbol),
-                    ),
-                    Opacity(
-                      opacity: 0.1,
-                      child: Container(
-                        width: Get.width,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/campo_futbol.jpg"),
+                      Opacity(
+                        opacity: 0.1,
+                        child: Container(
+                          width: Get.width,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image:
+                                  AssetImage("assets/images/campo_futbol.jpg"),
+                            ),
                           ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
                 Divider(height: 1, indent: 100.0, endIndent: 100.0),
-                Stack(
-                  children: [
-                    ListTile(
-                      onTap: () {
-                        Get.offAndToNamed("/clasificacion");
-                      },
-                      title: Text(
-                        "Clasificación",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                GestureDetector(
+                  onTap: () {
+                    Get.offAndToNamed("/clasificacion");
+                  },
+                  child: Stack(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          "Clasificación",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(FontAwesomeIcons.list),
                       ),
-                      trailing: Icon(FontAwesomeIcons.list),
-                    ),
-                    Opacity(
-                      opacity: 0.1,
-                      child: Container(
-                        width: Get.width,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/campo_futbol.jpg"),
+                      Opacity(
+                        opacity: 0.1,
+                        child: Container(
+                          width: Get.width,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image:
+                                  AssetImage("assets/images/campo_futbol.jpg"),
+                            ),
                           ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
                 Divider(height: 1, indent: 100.0, endIndent: 100.0),
-                Stack(
-                  children: [
-                    ListTile(
-                      onTap: () {
-                        Get.offAndToNamed("/resultadosTemporada");
-                      },
-                      title: Text(
-                        "Resultados Temporada",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                GestureDetector(
+                  onTap: () {
+                    Get.offAndToNamed("/resultadosTemporada");
+                  },
+                  child: Stack(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          "Resultados Temporada",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(FontAwesomeIcons.calendar),
                       ),
-                      trailing: Icon(FontAwesomeIcons.calendar),
-                    ),
-                    Opacity(
-                      opacity: 0.1,
-                      child: Container(
-                        width: Get.width,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/campo_futbol.jpg"),
+                      Opacity(
+                        opacity: 0.1,
+                        child: Container(
+                          width: Get.width,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image:
+                                  AssetImage("assets/images/campo_futbol.jpg"),
+                            ),
                           ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
                 Divider(height: 1, indent: 1.0, endIndent: 1.0),
                 GestureDetector(
@@ -268,8 +277,8 @@ class AppDrawer extends GetView {
                 )
               ],
             ),
-            ],
-          ),
+          ],
+        ),
       )),
     );
   }

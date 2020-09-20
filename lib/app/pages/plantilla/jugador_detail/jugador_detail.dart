@@ -1,25 +1,25 @@
-import 'package:cd_castellon/app/controller/jugadorDetail_controller.dart';
+import 'package:cd_castellon/app/data/model/players.dart';
+import 'package:cd_castellon/app/pages/plantilla/jugador_detail/jugadorDetail_controller.dart';
+import 'package:cd_castellon/app/pages/plantilla/jugador_detail/widgets/itemStats.dart';
 import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
-import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
-
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:cd_castellon/app/data/model/jugadores.dart';
 import 'package:cd_castellon/app/pages/widgets_general/appBar.dart';
 import 'package:cd_castellon/app/pages/widgets_general/customAppBarAction.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class DetailPlayer extends StatelessWidget {
-  final Jugador player;
+  final AthleteCS player;
 
   DetailPlayer({this.player});
 
-  JugadorDetailController controller = Get.put(JugadorDetailController());
+  // JugadorDetailController controller = Get.put(JugadorDetailController());
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<PlantillaController>(
-      init: PlantillaController(),
+    return GetBuilder<JugadorDetailController>(
+      init: JugadorDetailController(),
 //        initState: (_)=>  PlantillaController.to.loadJugadorDetail(player.url),
       builder: (_) {
 //          print("*****************************+${_.jugadoreDetail2.trayectoria}");
@@ -87,21 +87,21 @@ class DetailPlayer extends StatelessWidget {
                             child: Hero(
                               tag: player.id,
                               child: Image.asset(
-                                controller.getPlayerIMG(player.id),
+                                _.getPlayerIMG(player.id),
                               ),
                             ),
                           ),
                           Positioned.fill(
                             child: Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Text(
-                                player.position.displayName.toString(),
-                                style: TextStyle(
-                                    background: Paint()
-                                      ..color = Colors.black54,
-                                    color: Colors.yellow,
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.bold),
+                              alignment: Alignment.bottomRight,
+                              child: Opacity(
+                                opacity: 0.6,
+                                child: Container(
+                                  height: 70,
+                                  child: Image.asset(_.getDemarcacion(
+                                      player.position.displayName),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
@@ -109,21 +109,21 @@ class DetailPlayer extends StatelessWidget {
                             top: 0,
                             right: 10,
                             child: Text(
-                              player.jersey ?? '',
+                              (player.jersey != null) ? '' : player.jersey,
                               style: TextStyle(
                                   color: AColors.secondary.withAlpha(200),
                                   fontFamily: 'Juventus',
                                   fontSize: 80),
                             ),
                           ),
-                          // Positioned(
-                          //   top: 0,
-                          //   left: 10,
-                          //   child: Info(),
-                          // )
+                          Positioned(
+                            top: 0,
+                            left: 10,
+                            child: Info(player: player,),
+                          )
                         ],
                       ),
-                      // InfoPlayer(),
+                      EstadisticasPlayer(player: player,),
                     ],
                   ),
                 ),
@@ -136,119 +136,157 @@ class DetailPlayer extends StatelessWidget {
   }
 }
 
-// class Info extends StatelessWidget {
-//   PlantillaController controller = Get.put(PlantillaController());
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     print('===== ===== init infoPlayer ===== ===== ');
-//     return GetBuilder<JugadorDetailController>(
-//         init: JugadorDetailController(),
-//         builder: (_) {
-//           print('===== ===== init JugadorDetailController ===== ===== ');
-//
-//           return Column(
-//             mainAxisAlignment: MainAxisAlignment.start,
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               Padding(
-//                 padding: EdgeInsets.only(top: 4.0),
-//                 child: Container(
-//                   padding: EdgeInsets.only(
-//                     left: 2,
-//                     right: 2,
-//                   ),
-//                   color: Colors.black26,
-//                   child: Column(
-//                       mainAxisAlignment: MainAxisAlignment.start,
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: <Widget>[
-//                         Text("Lugar nacimiento:",
-//                             style: TextStyle(fontSize: 12)),
-//                         (_.loading)
-//                             ? Padding(
-//                             padding: EdgeInsets.only(left: 0),
-//                             child: CircularProgressIndicator())
-//                             : Text(
-//                             _.jugadoreDetail.lugarN.length > 21
-//                                 ? _.jugadoreDetail.lugarN.length > 3
-//                                 ? '${_.jugadoreDetail.lugarN.substring(0, 21)}...'
-//                                 : _.jugadoreDetail.lugarN
-//                                 : _.jugadoreDetail.lugarN,
-//                             style: TextStyle(
-//                                 fontFamily: 'Oswald', fontSize: 15))
-//                       ]),
-//                 ),
-//               ),
-//               Padding(
-//                 padding: EdgeInsets.only(top: 4.0),
-//                 child: Container(
-//                   padding: EdgeInsets.only(
-//                     left: 2,
-//                     right: 2,
-//                   ),
-//                   color: Colors.black26,
-//                   child: Column(
-//                       mainAxisAlignment: MainAxisAlignment.start,
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: <Widget>[
-//                         Text("Fecha nacimiento:",
-//                             style: TextStyle(fontSize: 12)),
-//                         (_.loading)
-//                             ? Padding(
-//                             padding: EdgeInsets.only(left: 0),
-//                             child: CircularProgressIndicator())
-//                             : Text(_.jugadoreDetail.fechaN,
-//                             style: TextStyle(
-//                                 fontFamily: 'Oswald', fontSize: 15))
-//                       ]),
-//                 ),
-//               ),
-//               Padding(
-//                 padding: EdgeInsets.only(top: 4.0),
-//                 child: Container(
-//                   padding: EdgeInsets.only(
-//                     left: 2,
-//                     right: 2,
-//                   ),
-//                   color: Colors.black26,
-//                   child: Column(
-//                       mainAxisAlignment: MainAxisAlignment.start,
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: <Widget>[
-//                         Text("Altura/Peso:", style: TextStyle(fontSize: 12)),
-//                         FittedBox(
-//                           fit: BoxFit.cover,
-//                           child: Row(
-//                             children: [
-//                               (_.loading)
-//                                   ? Padding(
-//                                   padding: EdgeInsets.only(left: 0),
-//                                   child: CircularProgressIndicator())
-//                                   : Text(_.jugadoreDetail.altura,
-//                                   style: TextStyle(
-//                                       fontFamily: 'Oswald', fontSize: 15)),
-//                               Text(' / ',
-//                                   style: TextStyle(
-//                                       fontFamily: 'Oswald', fontSize: 15)),
-//                               (_.loading)
-//                                   ? Padding(
-//                                   padding: EdgeInsets.only(left: 0),
-//                                   child: CircularProgressIndicator())
-//                                   : Text(_.jugadoreDetail.peso,
-//                                   style: TextStyle(
-//                                       fontFamily: 'Oswald', fontSize: 15)),
-//                             ],
-//                           ),
-//                         )
-//                       ]),
-//                 ),
-//               ),
-//             ],
-//           );
-//         });
-//   }
-// }
+class Info extends StatelessWidget {
+  PlantillaController controller = Get.put(PlantillaController());
+
+  final AthleteCS player;
+
+  Info({this.player});
+
+  @override
+  Widget build(BuildContext context) {
+    var dateFormat = new DateFormat('dd-MM-yyyy');
+    print('===== ===== init infoPlayer ===== ===== ');
+    return GetBuilder<JugadorDetailController>(
+        init: JugadorDetailController(),
+        builder: (_) {
+          print('===== ===== init JugadorDetailController ===== ===== ');
+
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: 4.0),
+                child: Container(
+                  padding: EdgeInsets.only(
+                    left: 2,
+                    right: 2,
+                  ),
+                  color: Colors.black26,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text("Lugar nacimiento:",
+                            style: TextStyle(fontSize: 12)),
+                        (controller.loading)
+                            ? Padding(
+                            padding: EdgeInsets.only(left: 0),
+                            child: CircularProgressIndicator())
+                            : Text(
+                            player.birthPlace.country.length > 21
+                                ? player.birthPlace.country.length > 3
+                                ? '${player.birthPlace.country.substring(
+                                0, 21)}...'
+                                : player.birthPlace.country
+                                : player.birthPlace.country,
+                            style: TextStyle(
+                                fontFamily: 'Oswald', fontSize: 15))
+                      ]),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 4.0),
+                child: Container(
+                  padding: EdgeInsets.only(
+                    left: 2,
+                    right: 2,
+                  ),
+                  color: Colors.black26,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text("Fecha nacimiento:",
+                            style: TextStyle(fontSize: 12)),
+                        (controller.isLoading)
+                            ? Padding(
+                            padding: EdgeInsets.only(left: 0),
+                            child: CircularProgressIndicator())
+                            : Text(
+                            dateFormat
+                                .format(DateTime.parse(
+                                player.dateOfBirth)),
+                            style: TextStyle(
+                                fontFamily: 'Oswald', fontSize: 15)),
+
+
+                      ]),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 4.0),
+                child: Container(
+                  padding: EdgeInsets.only(
+                    left: 2,
+                    right: 2,
+                  ),
+                  color: Colors.black26,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text("Altura/Peso:", style: TextStyle(fontSize: 12)),
+                        FittedBox(
+                          fit: BoxFit.cover,
+                          child: Row(
+                            children: [
+                              (controller.isLoading)
+                                  ? Padding(
+                                  padding: EdgeInsets.only(left: 0),
+                                  child: CircularProgressIndicator())
+                                  : Text(player.displayHeight ?? '',
+                                  style: TextStyle(
+                                      fontFamily: 'Oswald', fontSize: 15)),
+                              Text(' / ',
+                                  style: TextStyle(
+                                      fontFamily: 'Oswald', fontSize: 15)),
+                              (controller.isLoading)
+                                  ? Padding(
+                                  padding: EdgeInsets.only(left: 0),
+                                  child: CircularProgressIndicator())
+                                  : Text(player.displayWeight ?? '',
+                                  style: TextStyle(
+                                      fontFamily: 'Oswald', fontSize: 15)),
+                            ],
+                          ),
+                        )
+                      ]),
+                ),
+              ),
+            ],
+          );
+        });
+  }
+}
+
+class EstadisticasPlayer extends StatelessWidget {
+
+  final AthleteCS player;
+
+  EstadisticasPlayer({this.player});
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      gridDelegate:
+      SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+      itemBuilder: (context, index) {
+        final Stat generalStats = player.statistics.splits.categories[0]
+            .stats[index];
+        return ItemStat(statName: generalStats.displayName,
+          statValue: generalStats.displayValue,);
+      },
+      itemCount: player.statistics.splits.categories[0].stats.length,
+      scrollDirection: Axis.vertical,
+      shrinkWrap: true,
+      physics: ClampingScrollPhysics(),
+    );
+  }
+}
+
+
 //
 // class InfoPlayer extends StatelessWidget {
 //   PlantillaController controller = Get.put(PlantillaController());

@@ -1,10 +1,10 @@
+import 'dart:async';
+
+import 'package:cd_castellon/app/data/model/cuerpo_tecnico.dart';
 import 'package:cd_castellon/app/data/model/players.dart';
+import 'package:cd_castellon/app/data/provider/plantilla_provider.dart';
 import 'package:cd_castellon/app/data/repository/plantilla_repository.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/data/model/cuerpo_tecnico.dart';
-import 'package:cd_castellon/app/data/model/jugadores.dart';
-import 'package:cd_castellon/app/data/provider/plantilla_provider.dart';
-import 'dart:async';
 
 class PlantillaController extends GetxController {
   static PlantillaController get to => Get.find();
@@ -30,9 +30,9 @@ class PlantillaController extends GetxController {
     _isLoadingj.value = false;
   }
 
-  List<Jugador> _jugadores = [];
-
-  List<Jugador> get jugadores => _jugadores;
+  // List<Jugador> _jugadores = [];
+  //
+  // List<Jugador> get jugadores => _jugadores;
 
   List<CuerpoTecnico> _personal = [];
 

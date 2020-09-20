@@ -1,12 +1,8 @@
 import 'dart:convert';
-import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 
-// import 'package:cd_castellon/app/data/model/nextPartidoHomeModel.bak';
+import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 import 'package:cd_castellon/app/data/model/nextPartidoModel.dart';
-import 'package:cd_castellon/app/data/model/partidoHome_model.dart';
-import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
-import 'dart:developer';
 
 const baseUrl = 'https://www.espn.com/soccer/team/_/id/4438&xhr=1';
 

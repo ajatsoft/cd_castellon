@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-09-11T12:25:55Z",
+  "timestamp": "2020-09-19T21:38:46Z",
   "status": "success",
   "season": {
     "year": 2020,
@@ -166,6 +166,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -180,6 +352,343 @@
       },
       "events": {
         "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/athletes/145209/events?lang=es"
+      },
+      "defaultLeague": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2?lang=es"
+      },
+      "profiled": false,
+      "defaultTeam": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/teams/4438?lang=es"
+      }
+    },
+    {
+      "id": "307382",
+      "uid": "s:600~a:307382",
+      "guid": "4437a8e6-d502-32ba-ab7b-1058f22b16bb",
+      "firstName": "Felipe",
+      "lastName": "Galvis",
+      "fullName": "Felipe Galvis",
+      "displayName": "Felipe Galvis",
+      "shortName": "F Galvis",
+      "age": 23,
+      "dateOfBirth": "1997-08-18T07:00Z",
+      "gender": "MALE",
+      "links": [
+        {
+          "language": "es",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/_/id/307382/felipe-galvis",
+          "text": "Perfil jugador",
+          "shortText": "Perfil jugador",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/estadisticas/_/id/307382/felipe-galvis",
+          "text": "Estadísticas",
+          "shortText": "Estadísticas",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "http://espndeportes.espn.com/soccer/player/splits/_/id/307382/felipe-galvis",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/partidos/_/id/307382/felipe-galvis",
+          "text": "Partidos",
+          "shortText": "Partidos",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/noticias/_/id/307382/felipe-galvis",
+          "text": "Noticias",
+          "shortText": "Noticias",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/bio/_/id/307382/felipe-galvis",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/_/id/307382/felipe-galvis",
+          "text": "Perfil de Jugador",
+          "shortText": "Perfil de Jugador",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "transfers",
+            "desktop",
+            "athlete"
+          ],
+          "href": "http://espndeportes.espn.com/soccer/player/transfers/_/id/307382/felipe-galvis",
+          "text": "Transfers",
+          "shortText": "Transfers",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "transfers",
+            "mobile",
+            "athlete"
+          ],
+          "href": "http://espndeportes.espn.com/soccer/player/transfers/_/id/307382/felipe-galvis",
+          "text": "Transfers",
+          "shortText": "Transfers",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {},
+      "slug": "felipe-galvis",
+      "jersey": "28",
+      "position": {
+        "id": "1",
+        "name": "Goalkeeper",
+        "displayName": "Arquero",
+        "abbreviation": "G",
+        "leaf": true
+      },
+      "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "status": {
+        "id": "1",
+        "name": "Activo",
+        "type": "active",
+        "abbreviation": "Activo"
+      },
+      "seasons": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2/athletes/307382/seasons?lang=es"
+      },
+      "leagues": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/athletes/307382/leagues?lang=es"
+      },
+      "events": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/athletes/307382/events?lang=es"
       },
       "defaultLeague": {
         "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2?lang=es"
@@ -332,6 +841,7 @@
         "abbreviation": "ESP"
       },
       "slug": "whalley",
+      "jersey": "13",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
         "alt": "España",
@@ -347,6 +857,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -519,6 +1201,7 @@
         "abbreviation": "ESP"
       },
       "slug": "carlos-delgado",
+      "jersey": "15",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
         "alt": "España",
@@ -534,6 +1217,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -700,6 +1555,7 @@
         "abbreviation": "ESP"
       },
       "slug": "iago-indias",
+      "jersey": "18",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
         "alt": "España",
@@ -715,6 +1571,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -881,6 +1909,7 @@
         "abbreviation": "ESP"
       },
       "slug": "guillem-jaime",
+      "jersey": "2",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
         "alt": "España",
@@ -896,6 +1925,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -1061,6 +2262,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -1425,6 +2798,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -1592,6 +3137,7 @@
         "abbreviation": "ESP"
       },
       "slug": "jesus-carrillo",
+      "jersey": "26",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
         "alt": "España",
@@ -1607,6 +3153,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -2148,6 +3866,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -2314,6 +4204,7 @@
         "abbreviation": "ESP"
       },
       "slug": "alvaro-fidalgo",
+      "jersey": "14",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
         "alt": "España",
@@ -2329,6 +4220,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -2511,6 +4574,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -2677,6 +4912,7 @@
         "abbreviation": "POR"
       },
       "slug": "luis-gustavo",
+      "jersey": "20",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
         "alt": "Portugal",
@@ -2692,6 +4928,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -2870,6 +5278,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -2907,7 +5487,7 @@
       "displayWeight": "68 kg",
       "height": 69,
       "displayHeight": "1.75 m",
-      "age": 29,
+      "age": 30,
       "dateOfBirth": "1990-09-17T07:00Z",
       "gender": "MALE",
       "links": [
@@ -3052,6 +5632,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -3218,6 +5970,7 @@
         "abbreviation": "ESP"
       },
       "slug": "josep-sene",
+      "jersey": "19",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
         "alt": "España",
@@ -3233,6 +5986,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -3247,187 +6172,6 @@
       },
       "events": {
         "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/athletes/214345/events?lang=es"
-      },
-      "defaultLeague": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2?lang=es"
-      },
-      "profiled": false,
-      "defaultTeam": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/teams/4438?lang=es"
-      }
-    },
-    {
-      "id": "210869",
-      "uid": "s:600~a:210869",
-      "guid": "fec95c88e406451ee5228a25a58ced45",
-      "firstName": "Jairo",
-      "middleName": "",
-      "lastName": "Cárcaba González",
-      "fullName": "Jairo Cárcaba González",
-      "displayName": "Jairo Cárcaba González",
-      "shortName": "J Cárcaba González",
-      "weight": 161,
-      "displayWeight": "73 kg",
-      "height": 72,
-      "displayHeight": "1.83 m",
-      "age": 28,
-      "dateOfBirth": "1992-05-27T07:00Z",
-      "gender": "MALE",
-      "links": [
-        {
-          "language": "es",
-          "rel": [
-            "playercard",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/_/id/210869/jairo-carcaba-gonzalez",
-          "text": "Perfil jugador",
-          "shortText": "Perfil jugador",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "stats",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/estadisticas/_/id/210869/jairo-carcaba-gonzalez",
-          "text": "Estadísticas",
-          "shortText": "Estadísticas",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "splits",
-            "desktop",
-            "athlete"
-          ],
-          "href": "http://espndeportes.espn.com/soccer/player/splits/_/id/210869/jairo-carcaba-gonzalez",
-          "text": "Splits",
-          "shortText": "Splits",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "gamelog",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/partidos/_/id/210869/jairo-carcaba-gonzalez",
-          "text": "Partidos",
-          "shortText": "Partidos",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "news",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/noticias/_/id/210869/jairo-carcaba-gonzalez",
-          "text": "Noticias",
-          "shortText": "Noticias",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "bio",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/bio/_/id/210869/jairo-carcaba-gonzalez",
-          "text": "Bio",
-          "shortText": "Bio",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "overview",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/_/id/210869/jairo-carcaba-gonzalez",
-          "text": "Perfil de Jugador",
-          "shortText": "Perfil de Jugador",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "transfers",
-            "desktop",
-            "athlete"
-          ],
-          "href": "http://espndeportes.espn.com/soccer/player/transfers/_/id/210869/jairo-carcaba-gonzalez",
-          "text": "Transfers",
-          "shortText": "Transfers",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "transfers",
-            "mobile",
-            "athlete"
-          ],
-          "href": "http://espndeportes.espn.com/soccer/player/transfers/_/id/210869/jairo-carcaba-gonzalez",
-          "text": "Transfers",
-          "shortText": "Transfers",
-          "isExternal": false,
-          "isPremium": false
-        }
-      ],
-      "birthPlace": {},
-      "citizenship": "España",
-      "citizenshipCountry": {
-        "alternateId": "13",
-        "abbreviation": "ESP"
-      },
-      "slug": "jairo-carcaba-gonzalez",
-      "flag": {
-        "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-        "alt": "España",
-        "rel": [
-          "country-flag"
-        ]
-      },
-      "position": {
-        "id": "19",
-        "name": "Forward",
-        "displayName": "Atacante",
-        "abbreviation": "A",
-        "leaf": true
-      },
-      "injuries": [],
-      "status": {
-        "id": "1",
-        "name": "Activo",
-        "type": "active",
-        "abbreviation": "Activo"
-      },
-      "seasons": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2/athletes/210869/seasons?lang=es"
-      },
-      "leagues": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/athletes/210869/leagues?lang=es"
-      },
-      "events": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/athletes/210869/events?lang=es"
       },
       "defaultLeague": {
         "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2?lang=es"
@@ -3596,6 +6340,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -3762,7 +6678,7 @@
         "abbreviation": "ESP"
       },
       "slug": "cesar-diaz-martinez",
-      "jersey": "12",
+      "jersey": "11",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
         "alt": "España",
@@ -3778,6 +6694,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -3956,6 +7044,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -3970,184 +7230,6 @@
       },
       "events": {
         "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/athletes/279725/events?lang=es"
-      },
-      "defaultLeague": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2?lang=es"
-      },
-      "profiled": false,
-      "defaultTeam": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/teams/4438?lang=es"
-      }
-    },
-    {
-      "id": "264071",
-      "uid": "s:600~a:264071",
-      "guid": "68c4b8fcd9ca6f31331e52057b92d8a8",
-      "firstName": "Alfredo",
-      "middleName": "",
-      "lastName": "Gutiérrez",
-      "fullName": "Alfredo Gutiérrez",
-      "displayName": "Alfredo Gutiérrez",
-      "shortName": "A Gutiérrez",
-      "age": 22,
-      "dateOfBirth": "1997-11-30T08:00Z",
-      "gender": "MALE",
-      "links": [
-        {
-          "language": "es",
-          "rel": [
-            "playercard",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/_/id/264071/alfredo-gutierrez",
-          "text": "Perfil jugador",
-          "shortText": "Perfil jugador",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "stats",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/estadisticas/_/id/264071/alfredo-gutierrez",
-          "text": "Estadísticas",
-          "shortText": "Estadísticas",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "splits",
-            "desktop",
-            "athlete"
-          ],
-          "href": "http://espndeportes.espn.com/soccer/player/splits/_/id/264071/alfredo-gutierrez",
-          "text": "Splits",
-          "shortText": "Splits",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "gamelog",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/partidos/_/id/264071/alfredo-gutierrez",
-          "text": "Partidos",
-          "shortText": "Partidos",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "news",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/noticias/_/id/264071/alfredo-gutierrez",
-          "text": "Noticias",
-          "shortText": "Noticias",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "bio",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/bio/_/id/264071/alfredo-gutierrez",
-          "text": "Bio",
-          "shortText": "Bio",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "overview",
-            "desktop",
-            "athlete"
-          ],
-          "href": "https://espndeportes.espn.com/futbol/jugador/_/id/264071/alfredo-gutierrez",
-          "text": "Perfil de Jugador",
-          "shortText": "Perfil de Jugador",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "transfers",
-            "desktop",
-            "athlete"
-          ],
-          "href": "http://espndeportes.espn.com/soccer/player/transfers/_/id/264071/alfredo-gutierrez",
-          "text": "Transfers",
-          "shortText": "Transfers",
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "es",
-          "rel": [
-            "transfers",
-            "mobile",
-            "athlete"
-          ],
-          "href": "http://espndeportes.espn.com/soccer/player/transfers/_/id/264071/alfredo-gutierrez",
-          "text": "Transfers",
-          "shortText": "Transfers",
-          "isExternal": false,
-          "isPremium": false
-        }
-      ],
-      "birthPlace": {},
-      "citizenship": "España",
-      "citizenshipCountry": {
-        "alternateId": "13",
-        "abbreviation": "ESP"
-      },
-      "slug": "alfredo-gutierrez",
-      "jersey": "14",
-      "flag": {
-        "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-        "alt": "España",
-        "rel": [
-          "country-flag"
-        ]
-      },
-      "position": {
-        "id": "19",
-        "name": "Forward",
-        "displayName": "Atacante",
-        "abbreviation": "A",
-        "leaf": true
-      },
-      "injuries": [],
-      "status": {
-        "id": "1",
-        "name": "Activo",
-        "type": "active",
-        "abbreviation": "Activo"
-      },
-      "seasons": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2/athletes/264071/seasons?lang=es"
-      },
-      "leagues": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/athletes/264071/leagues?lang=es"
-      },
-      "events": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/athletes/264071/events?lang=es"
       },
       "defaultLeague": {
         "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2?lang=es"
@@ -4300,6 +7382,7 @@
         "abbreviation": "ESP"
       },
       "slug": "marc-mateu",
+      "jersey": "23",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
         "alt": "España",
@@ -4315,6 +7398,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -4479,7 +7734,6 @@
         "abbreviation": "ESP"
       },
       "slug": "inigo-munoz",
-      "jersey": "15",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
         "alt": "España",
@@ -4661,7 +7915,7 @@
         "abbreviation": "ESP"
       },
       "slug": "juanto-ortuno",
-      "jersey": "18",
+      "jersey": "7",
       "flag": {
         "href": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
         "alt": "España",
@@ -4677,6 +7931,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -4845,6 +8271,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 1,
+                  "displayValue": "1"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 1,
+                  "displayValue": "1"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -4877,9 +8475,9 @@
     "displayName": "Castellon",
     "clubhouse": "http://espndeportes.espn.com/futbol/equipo/_/id/4438/castellon",
     "color": "000000",
-    "recordSummary": "0-0-0",
+    "recordSummary": "1-0-1",
     "seasonSummary": "2020-21",
-    "standingSummary": "4° en Segunda División de España",
+    "standingSummary": "7° en Segunda División de España",
     "isNational": false,
     "groups": {
       "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2/seasons/2020/types/1/groups/1?lang=es"

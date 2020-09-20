@@ -1,11 +1,8 @@
 import 'dart:ui';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:cd_castellon/app/config.dart';
 import 'package:cd_castellon/app/data/model/partido.dart';
-
-
-
+import 'package:flutter/material.dart';
 
 class MatchHead extends StatelessWidget {
   final Event partido;
@@ -128,7 +125,34 @@ class MatchDetailStatus extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 25),
-          child: Text(partido.competitors[0].score.toString() + " : " + partido.competitors[1].score.toString(), style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold,)),
+          child: Text(
+              partido.competitors[0].score.toString() +
+                  " : " +
+                  partido.competitors[1].score.toString(),
+              style: TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold,
+              )),
+        ),
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 14),
+              child: Text('Minuto: ',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    // fontWeight: FontWeight.bold,
+                  )),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 14),
+              child: Text((partido.clock != 'in') ? partido.clock : '-',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  )),
+            ),
+          ],
         ),
       ],
     );

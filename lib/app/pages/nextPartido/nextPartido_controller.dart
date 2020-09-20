@@ -1,6 +1,5 @@
 import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 import 'package:cd_castellon/app/data/model/nextPartidoModel.dart';
-import 'package:cd_castellon/app/data/model/partidoHome_model.dart';
 import 'package:cd_castellon/app/data/repository/nextPartido_repository.dart';
 import 'package:get/state_manager.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';

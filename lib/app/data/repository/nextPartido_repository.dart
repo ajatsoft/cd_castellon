@@ -1,8 +1,6 @@
 import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 import 'package:cd_castellon/app/data/model/nextPartidoModel.dart';
-import 'package:cd_castellon/app/data/model/partidoHome_model.dart';
 import 'package:cd_castellon/app/data/provider/nextPartido_provider.dart';
-import 'package:cd_castellon/app/data/provider/partidoHome_provider.dart';
 
 class NextPartidoRepository {
   NextPartidoRepository({this.nextPartidoProvider});

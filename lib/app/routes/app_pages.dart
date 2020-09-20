@@ -1,27 +1,20 @@
+import 'package:cd_castellon/app/pages/clasificacion/clasificacion_binding.dart';
 import 'package:cd_castellon/app/pages/clasificacion/clasificacion_page.dart';
 import 'package:cd_castellon/app/pages/contacto/contacto_binding.dart';
 import 'package:cd_castellon/app/pages/contacto/contacto_page.dart';
+import 'package:cd_castellon/app/pages/news/home.dart';
 import 'package:cd_castellon/app/pages/nextPartido/nextPartido_binding.dart';
-import 'package:cd_castellon/app/pages/nextPartido/nextPartido_controller.dart';
 import 'package:cd_castellon/app/pages/nextPartido/nextPartido_page.dart';
-import 'package:cd_castellon/app/pages/partido/home/controller.dart';
 import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_binding.dart';
 import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_page.dart';
 import 'package:cd_castellon/app/pages/plantilla/binding.dart';
-import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/clasificacion/clasificacion_binding.dart';
-import 'package:cd_castellon/app/pages/partido/home/binding.dart';
-import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_binding.dart';
-
-import 'package:cd_castellon/app/pages/news/home.dart';
-import 'package:cd_castellon/app/pages/partido/main/main_partido_bindings.dart';
-import 'package:cd_castellon/app/pages/partido/main/main_partido_page.dart';
-import 'package:cd_castellon/app/pages/temporada/jornada_detail.dart';
-import 'package:cd_castellon/app/pages/temporada/partido_detail/partido_details.dart';
-import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_home.dart';
-
 import 'package:cd_castellon/app/pages/plantilla/plantilla.dart';
 import 'package:cd_castellon/app/pages/splash/splash.dart';
+import 'package:cd_castellon/app/pages/temporada/jornada_detail.dart';
+import 'package:cd_castellon/app/pages/temporada/partido_detail/partido_details.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_binding.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_home.dart';
+import 'package:get/get.dart';
 
 part './app_routes.dart';
 

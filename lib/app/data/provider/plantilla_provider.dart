@@ -1,10 +1,10 @@
+import 'dart:convert';
+
 import 'package:cd_castellon/app/data/model/cuerpo_tecnico.dart';
-import 'package:cd_castellon/app/data/model/jugadores.dart';
 import 'package:cd_castellon/app/data/model/players.dart';
-import 'package:http/http.dart' as http;
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
-import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 const baseUrl =
     'http://site.api.espn.com/apis/site/v2/sports/soccer/ESP.2/teams/4438/roster?lang=es';
@@ -31,142 +31,144 @@ class JugadoresAPI {
 
   static JugadoresAPI get instance => _instance;
 
-  Future getJugadorDetail(url) async {
-    print(
-        '=========================getJugadorDetail___API__=======================================');
-    dynamic response2 = await http.get(url);
-    final document2 = parse(response2.body);
-    print(
-        '=========================getJugadorDetail___API__=======================================$response2');
-    final descripcion =
-        document2.getElementsByClassName('gdlr-soccer-tab-content active');
-    var descrp1 = descripcion[0].getElementsByTagName('p')[0].text;
-    print(
-        '=========================getJugadorDetail___API__=======================================$descrp1');
-    final descrp2 = descripcion[0].getElementsByTagName('p')[1].text;
-    print(
-        '=========================getJugadorDetail___API__=======================================$descrp2');
-    final descripcion2 = document2
-        .getElementsByClassName('gdlr-soccer-player-general-info-right-inner');
-    final lugarN =
-        descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[0].text;
-    final fechaN =
-        descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[1].text;
-    final altura =
-        descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[2].text;
-    final peso =
-        descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[3].text;
-
-    Jugador feed = Jugador(
-      lugarN: lugarN,
-      fechaN: fechaN,
-      altura: altura,
-      peso: peso,
-      descripcion1: descrp1,
-      descripcion2: descrp2,
-    );
-    return feed;
-  }
-
-  Future getJugadorDetail2(url) async {
-//    print('=========================getJugadorDetail___API__=======================================${trayectorias.length}');
-    List<String> trayectori = [];
-    dynamic response2 = await http.get(url);
-    final document2 = parse(response2.body);
-//    print('=========================getJugadorDetail___API__=======================================$response2');
-    final descripcion =
-        document2.getElementsByClassName('gdlr-soccer-tab-content active');
-    final trayectoria = descripcion[0].getElementsByTagName('ul');
-    if (trayectoria.length > 0) {
-      var liList = trayectoria.first.getElementsByTagName('li');
-      liList.forEach((e) {
-        String trayect = e.text;
-        trayectori.add(trayect);
-      });
-    }
-
-
-    return trayectori;
-  }
-
-  Future<List<Jugador>> getJugadores() async {
-    List<Jugador> allJugadores = [];
-    String _url = 'http://www.cdcastellon.com/jugadores/';
-
-    dynamic response = await http.get(_url);
-    final document = parse(response.body);
-
-    final jugadoresAll = document.getElementsByClassName('player-item-holder');
-
-    for (Element jugador in jugadoresAll) {
-      final player =
-          jugador.getElementsByClassName('gdlr-item gdlr-classic-player');
-
-      for (Element m in player) {
-        final aTag = m.getElementsByTagName('a')[1];
-        final nombre = aTag.text;
-
-        final aTag4 = m.getElementsByTagName('a')[0];
-        final url = aTag4.attributes['href'];
-
-        final aTag5 = m.getElementsByTagName('img')[0];
-        final urlImage = aTag5.attributes['src'];
-        final urlImage2 = urlImage.replaceAll('-400x300', '');
-
-        final numero = m
-            .getElementsByClassName(
-                'gdlr-soccer-player-squad gdlr-title-font gdlr-skin-info')
-            .last
-            .text;
-
-        final posicion = m
-            .getElementsByClassName(
-                'gdlr-soccer-player-position gdlr-skin-info')
-            .last
-            .text;
-
-        final noticiaActualidad = Jugador(
-            nombre: nombre,
-            posicion: posicion,
-            url: url,
-            imageurl: urlImage2,
-            numero: numero);
-
-        allJugadores.add(noticiaActualidad);
-      }
-    }
-    return allJugadores;
-  }
+//
+//   Future getJugadorDetail(url) async {
+//     print(
+//         '=========================getJugadorDetail___API__=======================================');
+//     dynamic response2 = await http.get(url);
+//     final document2 = parse(response2.body);
+//     print(
+//         '=========================getJugadorDetail___API__=======================================$response2');
+//     final descripcion =
+//         document2.getElementsByClassName('gdlr-soccer-tab-content active');
+//     var descrp1 = descripcion[0].getElementsByTagName('p')[0].text;
+//     print(
+//         '=========================getJugadorDetail___API__=======================================$descrp1');
+//     final descrp2 = descripcion[0].getElementsByTagName('p')[1].text;
+//     print(
+//         '=========================getJugadorDetail___API__=======================================$descrp2');
+//     final descripcion2 = document2
+//         .getElementsByClassName('gdlr-soccer-player-general-info-right-inner');
+//     final lugarN =
+//         descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[0].text;
+//     final fechaN =
+//         descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[1].text;
+//     final altura =
+//         descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[2].text;
+//     final peso =
+//         descripcion2[0].getElementsByClassName('gdlr-soccer-tail')[3].text;
+//
+//     Jugador feed = Jugador(
+//       lugarN: lugarN,
+//       fechaN: fechaN,
+//       altura: altura,
+//       peso: peso,
+//       descripcion1: descrp1,
+//       descripcion2: descrp2,
+//     );
+//     return feed;
+//   }
+//
+//   Future getJugadorDetail2(url) async {
+// //    print('=========================getJugadorDetail___API__=======================================${trayectorias.length}');
+//     List<String> trayectori = [];
+//     dynamic response2 = await http.get(url);
+//     final document2 = parse(response2.body);
+// //    print('=========================getJugadorDetail___API__=======================================$response2');
+//     final descripcion =
+//         document2.getElementsByClassName('gdlr-soccer-tab-content active');
+//     final trayectoria = descripcion[0].getElementsByTagName('ul');
+//     if (trayectoria.length > 0) {
+//       var liList = trayectoria.first.getElementsByTagName('li');
+//       liList.forEach((e) {
+//         String trayect = e.text;
+//         trayectori.add(trayect);
+//       });
+//     }
+//
+//
+//     return trayectori;
+//   }
+//
+//   Future<List<Jugador>> getJugadores() async {
+//     List<Jugador> allJugadores = [];
+//     String _url = 'http://www.cdcastellon.com/jugadores/';
+//
+//     dynamic response = await http.get(_url);
+//     final document = parse(response.body);
+//
+//     final jugadoresAll = document.getElementsByClassName('player-item-holder');
+//
+//     for (Element jugador in jugadoresAll) {
+//       final player =
+//           jugador.getElementsByClassName('gdlr-item gdlr-classic-player');
+//
+//       for (Element m in player) {
+//         final aTag = m.getElementsByTagName('a')[1];
+//         final nombre = aTag.text;
+//
+//         final aTag4 = m.getElementsByTagName('a')[0];
+//         final url = aTag4.attributes['href'];
+//
+//         final aTag5 = m.getElementsByTagName('img')[0];
+//         final urlImage = aTag5.attributes['src'];
+//         final urlImage2 = urlImage.replaceAll('-400x300', '');
+//
+//         final numero = m
+//             .getElementsByClassName(
+//                 'gdlr-soccer-player-squad gdlr-title-font gdlr-skin-info')
+//             .last
+//             .text;
+//
+//         final posicion = m
+//             .getElementsByClassName(
+//                 'gdlr-soccer-player-position gdlr-skin-info')
+//             .last
+//             .text;
+//
+//         final noticiaActualidad = Jugador(
+//             nombre: nombre,
+//             posicion: posicion,
+//             url: url,
+//             imageurl: urlImage2,
+//             numero: numero);
+//
+//         allJugadores.add(noticiaActualidad);
+//       }
+//     }
+//     return allJugadores;
+//   }
 
   Future<List<CuerpoTecnico>> getCT() async {
     List<CuerpoTecnico> allCuerpoTecnico = [];
 
     String _urlCT = 'http://www.cdcastellon.com/cuerpo-tecnico/';
 
-
     dynamic response = await http.get(_urlCT);
     final document = parse(response.body);
 
-    final cuerpo_tecnico_All = document.getElementsByClassName('gdlr-personnel-item-wrapper');
+    final cuerpo_tecnico_All =
+        document.getElementsByClassName('gdlr-personnel-item-wrapper');
 
     for (Element tecnico in cuerpo_tecnico_All) {
       final player =
       tecnico.getElementsByClassName('personnel-item');
 
       for (Element m in player) {
-        final nombre = m.getElementsByClassName('personnel-author gdlr-skin-title')[0].text;
-        final profesion = m.getElementsByClassName('personnel-position gdlr-skin-info')[0].text;
+        final nombre = m.getElementsByClassName(
+            'personnel-author gdlr-skin-title')[0].text;
+        final profesion = m.getElementsByClassName(
+            'personnel-position gdlr-skin-info')[0].text;
 
         final aTag5 = m.getElementsByTagName('img')[0];
         final urlImage = aTag5.attributes['src'];
 
 
-
         final trabajador = CuerpoTecnico(
-            nombre: nombre,
-            profesion: profesion,
-            imageurl: urlImage,
-            );
+          nombre: nombre,
+          profesion: profesion,
+          imageurl: urlImage,
+        );
 
         allCuerpoTecnico.add(trabajador);
       }
@@ -174,10 +176,6 @@ class JugadoresAPI {
     return allCuerpoTecnico;
   }
 }
-
-
-
-
 
 
 //        print(nombre);
