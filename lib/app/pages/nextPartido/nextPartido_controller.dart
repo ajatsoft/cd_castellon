@@ -17,13 +17,13 @@ class NextPartidoController extends GetxController {
 
   get isLoading => _isLoading.value;
 
-  ///      LIVE_PARTIDO
+  ///      next_PARTIDO
 
   final _modelNexPartido = NextPartido().obs;
 
   get modelNexPartido => _modelNexPartido;
 
-  Feed get nexPartido => _modelNexPartido.value.columns[0].items[0].feed[1];
+  Feed get nexPartido => _modelNexPartido.value.columns[0].items[0].feed[0];
 
   String get idPartido => nexPartido.id;
 
@@ -32,6 +32,14 @@ class NextPartidoController extends GetxController {
   final _livePartidoDataDetail = LivePartidoDataDetail().obs;
 
   get livePartidoDataDetail => _livePartidoDataDetail;
+
+  LivePartidoDataDetail get partidolive => _livePartidoDataDetail.value;
+
+  get scoreHome =>
+      _livePartidoDataDetail.value.header?.competitions[0].competitors[0].score;
+
+  get scoreAway =>
+      _livePartidoDataDetail.value.header?.competitions[0].competitors[1].score;
 
   List<KeyEvent> get eventos => _livePartidoDataDetail.value.keyEvents;
 
@@ -47,13 +55,7 @@ class NextPartidoController extends GetxController {
 
   Form get formAway => _livePartidoDataDetail.value.boxscore.form[1];
 
-  LivePartidoDataDetail get partidolive => _livePartidoDataDetail.value;
 
-  get scoreHome =>
-      _livePartidoDataDetail.value.header?.competitions[0].competitors[0].score;
-
-  get scoreAway =>
-      _livePartidoDataDetail.value.header?.competitions[0].competitors[1].score;
 
   @override
   void onInit() async {
@@ -65,6 +67,7 @@ class NextPartidoController extends GetxController {
   @override
   void onReady() {
     print('%%%%%%%%%%%% ready NextPartidoController  %%%%%%%%%%%%%%%');
+
     super.onReady();
   }
 

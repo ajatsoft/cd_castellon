@@ -72,7 +72,7 @@ class ItemPlayer extends StatelessWidget {
             ),
             Positioned(
               right: 0,
-              child: Text(player.jersey.toString(),
+              child: Text((player.jersey == null) ? '' : player.jersey,
                   style: TextStyle(
                       color: AColors.secondary,
                       fontSize: 30,

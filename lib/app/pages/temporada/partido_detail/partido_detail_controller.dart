@@ -16,9 +16,9 @@ class PartidoDetailController extends GetxController {
 
   List<KeyEvent> get secondHalf => _secondHalf;
 
-  void refresh(id) async {
-    // _firstHalf.clear();
-    // await controller.gePartidoDetail(id);
-    refreshController.refreshCompleted();
-  }
+// void refresh(id) async {
+//   // _firstHalf.clear();
+//   // await controller.gePartidoDetail(id);
+//   refreshController.refreshCompleted();
+// }
 }

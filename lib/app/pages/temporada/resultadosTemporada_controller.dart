@@ -18,9 +18,11 @@ class ResultadosController extends GetxController {
   get isLoading => _isLoading.value;
 
   Temporada modelTemporada;
-  Jornada modelJornada;
+  final modelJornada = Jornada().obs;
 
-  LivePartidoDataDetail modelPratidoDataDetail;
+  final _modelPratidoDataDetail = LivePartidoDataDetail().obs;
+
+  get livePartidoDataDetail => _modelPratidoDataDetail;
 
   Boxscore form;
   Header header;
@@ -41,20 +43,28 @@ class ResultadosController extends GetxController {
 
   void getDataPartidos(jornada) async {
     _isLoading.value = true;
-    modelJornada = await repository.getDataPartidos(jornada);
+    modelJornada.value = await repository.getDataPartidos(jornada);
     _isLoading.value = false;
+    update();
+  }
+
+  Future refreshJornada(jornada) async {
+    modelJornada.value = await repository.getDataPartidos(jornada);
+    refreshController.refreshCompleted();
+    print('refresh');
+    update();
   }
 
   void gePartidoDetail(id) async {
     _isLoading.value = true;
-    modelPratidoDataDetail = await repository.getPartidoDetail(id);
+    _modelPratidoDataDetail.value = await repository.getPartidoDetail(id);
     _isLoading.value = false;
   }
 
   RefreshController refreshController = RefreshController();
 
   Future refresh(id) async {
-    modelPratidoDataDetail =
+    _modelPratidoDataDetail.value =
     await repository.getPartidoDetail(id);
     refreshController.refreshCompleted();
     print('refresh');
@@ -70,32 +80,32 @@ class ResultadosController extends GetxController {
 
   List<Week> get temporada => modelTemporada?.temporada;
 
-  List<Event> get partidos => modelJornada?.sports[0].leagues[0].events;
+  List<Event> get partidos => modelJornada.value.sports[0].leagues[0].events;
 
   ///DETAILDATA
   ///
   ///
-  get attendance => modelPratidoDataDetail.gameInfo.attendance;
+  get attendance => _modelPratidoDataDetail.value.gameInfo.attendance;
 
   List<FormEvent> get formGameEvents =>
-      modelPratidoDataDetail.boxscore?.form[1].events;
+      _modelPratidoDataDetail.value.boxscore?.form[1].events;
 
   Participante get datospartidoHome =>
-      modelPratidoDataDetail.header?.competitions[0].competitors[0];
+      _modelPratidoDataDetail.value.header?.competitions[0].competitors[0];
 
   Participante get datospartidoAway =>
-      modelPratidoDataDetail.header?.competitions[0].competitors[1];
+      _modelPratidoDataDetail.value.header?.competitions[0].competitors[1];
 
   TeamTeam get equipospartidoHome =>
-      modelPratidoDataDetail.header?.competitions[0].competitors[0].team;
+      _modelPratidoDataDetail.value.header?.competitions[0].competitors[0].team;
 
   TeamTeam get equipospartidoAway =>
-      modelPratidoDataDetail.header?.competitions[0].competitors[1].team;
+      _modelPratidoDataDetail.value.header?.competitions[0].competitors[1].team;
 
   List<LivePartidoDataDetailRoster> get alineacion =>
-      modelPratidoDataDetail.rosters;
+      _modelPratidoDataDetail.value.rosters;
 
-  RxList<KeyEvent> get evento => modelPratidoDataDetail.keyEvents.obs;
+  RxList<KeyEvent> get evento => _modelPratidoDataDetail.value.keyEvents.obs;
 
 
   final _screen = 0.obs;

@@ -6,6 +6,7 @@ import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 import 'package:cd_castellon/app/pages/widgets_general/appBar.dart';
 import 'package:cd_castellon/app/pages/widgets_general/customAppBarAction.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
@@ -68,32 +69,35 @@ class DetailPlayer extends StatelessWidget {
                     children: <Widget>[
                       Stack(
                         children: [
-                          ShaderMask(
-                            shaderCallback: (rect) {
-                              return LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [
-                                  Colors.transparent,
-                                  Colors.black,
-                                  Colors.black,
-                                  Colors.transparent
-                                ],
-                              ).createShader(
-                                Rect.fromLTRB(0, 0, rect.width, rect.height),
-                              );
-                            },
-                            blendMode: BlendMode.dstIn,
-                            child: Hero(
-                              tag: player.id,
-                              child: Image.asset(
-                                _.getPlayerIMG(player.id),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: ShaderMask(
+                              shaderCallback: (rect) {
+                                return LinearGradient(
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                  colors: [
+                                    Colors.transparent,
+                                    Colors.black,
+                                    Colors.black,
+                                    Colors.transparent
+                                  ],
+                                ).createShader(
+                                  Rect.fromLTRB(0, 0, rect.width, rect.height),
+                                );
+                              },
+                              blendMode: BlendMode.dstIn,
+                              child: Hero(
+                                tag: player.id,
+                                child: Image.asset(
+                                  _.getPlayerIMG(player.id),
+                                ),
                               ),
                             ),
                           ),
                           Positioned.fill(
                             child: Align(
-                              alignment: Alignment.bottomRight,
+                              alignment: Alignment.bottomLeft,
                               child: Opacity(
                                 opacity: 0.6,
                                 child: Container(
@@ -110,11 +114,11 @@ class DetailPlayer extends StatelessWidget {
                             top: 0,
                             right: 10,
                             child: Text(
-                              (player.jersey != null) ? '' : player.jersey,
+                              (player.jersey == null) ? '' : player.jersey,
                               style: TextStyle(
                                   color: AColors.secondary.withAlpha(200),
                                   fontFamily: 'Juventus',
-                                  fontSize: 80),
+                                  fontSize: 60),
                             ),
                           ),
                           Positioned(
@@ -126,20 +130,32 @@ class DetailPlayer extends StatelessWidget {
                           )
                         ],
                       ),
+                      SizedBox(
+                        height: 6.0,
+                      ),
                       DefaultTabController(
-                          initialIndex: 1,
-                          length: 2,
+                          initialIndex: 0,
+                          length: 3,
                           child: Column(
                             children: [
                               _getTabBar(),
                               Container(
+                                height: 3,
+                                color: AColors.primary,
+                              ),
+                              Container(
                                 height: 300,
                                 child: _getTabBarView(
                                   <Widget>[
-                                    EstadisticasPlayer(
+                                    EstadisticasGeneralesPlayer(
                                       player: player,
                                     ),
-                                    Icon(Icons.settings),
+                                    EstadisticasOfensivasPlayer(
+                                      player: player,
+                                    ),
+                                    EstadisticasDefensivasPlayer(
+                                      player: player,
+                                    ),
                                   ],
                                 ),
                               ),
@@ -158,9 +174,17 @@ class DetailPlayer extends StatelessWidget {
 
   TabBar _getTabBar() {
     return TabBar(
+      unselectedLabelColor: Colors.grey,
+      indicatorSize: TabBarIndicatorSize.tab,
+      indicator: BoxDecoration(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+          color: AColors.primary),
+      labelColor: AColors.secondary,
       tabs: <Widget>[
-        Tab(icon: Icon(Icons.home, color: Colors.redAccent)),
-        Tab(icon: Icon(Icons.settings, color: Colors.redAccent)),
+        Tab(text: 'General'),
+        Tab(text: 'Ofensivas'),
+        Tab(text: 'Defensivas'),
       ],
     );
   }
@@ -204,21 +228,19 @@ class Info extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Lugar nacimiento:",
-                            style: TextStyle(fontSize: 12)),
-                        (controller.loading)
+                        Text("Nacionalidad:", style: TextStyle(fontSize: 12)),
+                        (player.flag == null)
                             ? Padding(
-                            padding: EdgeInsets.only(left: 0),
-                            child: CircularProgressIndicator())
-                            : Text(
-                            player.birthPlace.country.length > 21
-                                ? player.birthPlace.country.length > 3
-                                ? '${player.birthPlace.country.substring(
-                                0, 21)}...'
-                                : player.birthPlace.country
-                                : player.birthPlace.country,
-                            style: TextStyle(
-                                fontFamily: 'Oswald', fontSize: 15))
+                                padding: EdgeInsets.only(left: 0),
+                                child: CircularProgressIndicator())
+                            : Row(
+                                children: [
+                                  Image.network(
+                                    player.flag.href,
+                                    height: 30,
+                                  ),
+                                ],
+                              )
                       ]),
                 ),
               ),
@@ -294,10 +316,10 @@ class Info extends StatelessWidget {
   }
 }
 
-class EstadisticasPlayer extends StatelessWidget {
+class EstadisticasGeneralesPlayer extends StatelessWidget {
   final AthleteCS player;
 
-  EstadisticasPlayer({this.player});
+  EstadisticasGeneralesPlayer({this.player});
 
   @override
   Widget build(BuildContext context) {
@@ -319,6 +341,72 @@ class EstadisticasPlayer extends StatelessWidget {
           );
         },
         itemCount: player.statistics.splits.categories[0].stats.length,
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        physics: ClampingScrollPhysics(),
+      ),
+    );
+  }
+}
+
+class EstadisticasDefensivasPlayer extends StatelessWidget {
+  final AthleteCS player;
+
+  EstadisticasDefensivasPlayer({this.player});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(top: 10.0),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          childAspectRatio: 3 / 2,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+        ),
+        itemBuilder: (context, index) {
+          final Stat generalStats =
+          player.statistics.splits.categories[2].stats[index];
+          return ItemStat(
+            statName: generalStats.displayName,
+            statValue: generalStats.displayValue,
+          );
+        },
+        itemCount: player.statistics.splits.categories[2].stats.length,
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        physics: ClampingScrollPhysics(),
+      ),
+    );
+  }
+}
+
+class EstadisticasOfensivasPlayer extends StatelessWidget {
+  final AthleteCS player;
+
+  EstadisticasOfensivasPlayer({this.player});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(top: 10.0),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          childAspectRatio: 3 / 2,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+        ),
+        itemBuilder: (context, index) {
+          final Stat generalStats =
+          player.statistics.splits.categories[1].stats[index];
+          return ItemStat(
+            statName: generalStats.displayName,
+            statValue: generalStats.displayValue,
+          );
+        },
+        itemCount: player.statistics.splits.categories[1].stats.length,
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
         physics: ClampingScrollPhysics(),

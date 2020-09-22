@@ -2,9 +2,13 @@ import 'dart:ui';
 
 import 'package:cd_castellon/app/config.dart';
 import 'package:cd_castellon/app/data/model/partido.dart';
+import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class MatchHead extends StatelessWidget {
+import '../../resultadosTemporada_controller.dart';
+
+class MatchHead extends GetView<ResultadosController> {
   final Event partido;
 
   const MatchHead(this.partido);
@@ -96,18 +100,25 @@ class MatchHead extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.transparent,
-      padding: const EdgeInsets.only(
-          top: 0, left: defaultPadding, right: defaultPadding),
-      child: Row(
-        children: [
-          buildTeamHome(),
-          MatchDetailStatus(partido),
-          buildTeamAway(),
-        ],
-      ),
-    );
+    return Obx(() {
+      if (controller.isLoading) {
+        return Center(
+          child: ColorLoader(),
+        );
+      }
+      return Container(
+        color: Colors.transparent,
+        padding: const EdgeInsets.only(
+            top: 0, left: defaultPadding, right: defaultPadding),
+        child: Row(
+          children: [
+            buildTeamHome(),
+            MatchDetailStatus(partido),
+            buildTeamAway(),
+          ],
+        ),
+      );
+    });
   }
 }
 

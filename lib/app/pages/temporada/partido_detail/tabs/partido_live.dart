@@ -23,37 +23,29 @@ class PartidoLive extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         extendBodyBehindAppBar: false,
-        body: Obx(
-              () => SmartRefresher(
-            header: WaterDropMaterialHeader(),
-            controller: c.refreshController,
-            enablePullDown: false,
-            enablePullUp: true,
-            onRefresh: () => c.refresh(partido.id),
-            // onLoading: () => c.refresh(partido.id),
-            child: Center(
-              child: Column(
-                children: <Widget>[
-                  // const SizedBox(height: 16),
-                  // Text(
-                  //   '01 June 2020 16:00',
-                  //   // style: GoogleFonts.dosis(
-                  //   //   fontSize: 20,
-                  //   //   color: Colors.white.withOpacity(0.7),
-                  //   // ),
-                  // ),
-                  // _Scoreboard(),
-                  (c.firstHalf.length != 0)
-                      ? Expanded(
-                    child: CustomScrollView(
-                      slivers: <Widget>[
-                        SliverList(
-                          delegate: SliverChildListDelegate(<Widget>[
-                            const _MessageTimeline(
-                              message: 'Inicio del partido!',
-                            ),
-                          ]),
-                        ),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              // const SizedBox(height: 16),
+              // Text(
+              //   '01 June 2020 16:00',
+              //   // style: GoogleFonts.dosis(
+              //   //   fontSize: 20,
+              //   //   color: Colors.white.withOpacity(0.7),
+              //   // ),
+              // ),
+              // _Scoreboard(),
+              (c.firstHalf.length != 0)
+                  ? Expanded(
+                      child: CustomScrollView(
+                        slivers: <Widget>[
+                          SliverList(
+                            delegate: SliverChildListDelegate(<Widget>[
+                              const _MessageTimeline(
+                                message: 'Inicio del partido!',
+                              ),
+                            ]),
+                          ),
                         _TimelineFootball(
                           data: c.firstHalf,
                           partido: partido,
@@ -76,8 +68,7 @@ class PartidoLive extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ),
+
     );
   }
 }

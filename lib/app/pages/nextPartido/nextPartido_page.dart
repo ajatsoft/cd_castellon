@@ -196,7 +196,6 @@ class MatchHead extends GetView<NextPartidoController> {
           child: ColorLoader(),
         );
       }
-
       if (controller.partidolive == null) {
         return Text('esperando API request.');
       }

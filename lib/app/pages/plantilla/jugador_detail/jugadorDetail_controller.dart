@@ -47,7 +47,7 @@ class JugadorDetailController extends GetxController {
   getPlayerIMG(id) {
     switch (id) {
       case '145209':
-        return 'assets/jugadores/145209.jpg';
+        return 'assets/jugadores/145209.png';
         break;
       case '307382':
         return 'assets/jugadores/307382.jpg';
@@ -107,13 +107,13 @@ class JugadorDetailController extends GetxController {
         return 'assets/jugadores/186571.jpg';
         break;
       case '125702':
-        return 'assets/jugadores/125702.jpg';
+        return 'assets/jugadores/125702.png';
         break;
       case '279725':
         return 'assets/jugadores/279725.jpg';
         break;
       case '130137':
-        return 'assets/jugadores/130137.jpg';
+        return 'assets/jugadores/130137.png';
         break;
       case '267514':
         return 'assets/jugadores/267514.jpg';
@@ -130,16 +130,16 @@ class JugadorDetailController extends GetxController {
   getDemarcacion(demarcacion) {
     switch (demarcacion) {
       case 'Arquero':
-        return 'assets/football/demarcacion.png';
+        return 'assets/football/Portero.png';
         break;
       case 'Defensor':
-        return 'Defensa';
+        return 'assets/football/Defensas.png';
         break;
       case 'Mediocampista':
-        return 'Centrocampista';
+        return 'assets/football/Medios.png';
         break;
       case 'Atacante':
-        return 'Delantero';
+        return 'assets/football/delanteros.png';
         break;
     }
   }
