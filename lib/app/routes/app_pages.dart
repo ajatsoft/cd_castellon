@@ -11,7 +11,7 @@ import 'package:cd_castellon/app/pages/plantilla/binding.dart';
 import 'package:cd_castellon/app/pages/plantilla/plantilla.dart';
 import 'package:cd_castellon/app/pages/splash/splash.dart';
 import 'package:cd_castellon/app/pages/temporada/jornada_detail.dart';
-import 'package:cd_castellon/app/pages/temporada/partido_detail/partido_details.dart';
+import 'package:cd_castellon/app/pages/temporada/partido_detail/partidoDetail_page.dart';
 import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_binding.dart';
 import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_home.dart';
 import 'package:get/get.dart';

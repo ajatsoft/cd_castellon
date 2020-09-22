@@ -1,5 +1,6 @@
 import 'package:cd_castellon/app/config.dart';
 import 'package:cd_castellon/app/controller/theme_controller.dart';
+import 'package:cd_castellon/app/pages/widgets_general/segmented_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -242,33 +243,34 @@ class AppDrawer extends GetView {
             Column(
               children: [
                 Divider(height: 1, indent: 100.0, endIndent: 100.0),
+                themeListTile(context),
                 GestureDetector(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Cambiar a: '),
-                      Container(
-                          child: isModoDark
-                              ? Text('Tema Claro')
-                              : Text('Tema Oscuro')),
-                      SizedBox(
-                        width: 8.0,
-                      ),
-                      Icon(
-                        Icons.brightness_4,
-                        color: isModoDark ? Colors.white : Colors.black,
-                      ),
+                      // Container(
+                      //     child: isModoDark
+                      //         ? Text('Tema Claro')
+                      //         : Text('Tema Oscuro')),
+                      // SizedBox(
+                      //   width: 8.0,
+                      // ),
+                      // Icon(
+                      //   Icons.brightness_4,
+                      //   color: isModoDark ? Colors.white : Colors.black,
+                      // ),
                     ],
                   ),
                   onTap: () {
                     Get.offAndToNamed("/news");
-                    ThemeController.to.modoDark.value =
-                        !ThemeController.to.modoDark.value;
-                    if (ThemeController.to.modoDark.value) {
-                      ThemeController.to.changeTheme(ThemeMode.dark);
-                    } else {
-                      ThemeController.to.changeTheme(ThemeMode.light);
-                    }
+                    // ThemeController.to.modoDark.value =
+                    //     !ThemeController.to.modoDark.value;
+                    // if (ThemeController.to.modoDark.value) {
+                    //   ThemeController.to.changeTheme(ThemeMode.dark);
+                    // } else {
+                    //   ThemeController.to.changeTheme(ThemeMode.light);
+                    // }
                   },
                 ),
                 Divider(height: 1, indent: 100.0, endIndent: 100.0),
@@ -282,6 +284,38 @@ class AppDrawer extends GetView {
       )),
     );
   }
+}
+
+themeListTile(BuildContext context) {
+  // final labels = AppLocalizations.of(context);
+  final List<MenuOptionsModel> themeOptions = [
+    MenuOptionsModel(key: "system", value: 'Auto', icon: Icons.brightness_4),
+    MenuOptionsModel(key: "light", value: 'Claro', icon: Icons.brightness_low),
+    MenuOptionsModel(key: "dark", value: 'Oscuro', icon: Icons.brightness_3)
+  ];
+  return GetBuilder<ThemeController>(
+    builder: (controller) => Column(
+      children: [
+        Text('Tema'),
+        SegmentedSelector(
+          selectedOption: controller.currentTheme,
+          menuOptions: themeOptions,
+          onValueChanged: (value) {
+            if (value == 'system') {
+              Get.dialog(AlertDialog(
+                title: Text('Tema Automático'),
+                content: Text(
+                    'Se obtendrá automaticamente el tema de tu dispositivo.'),
+              ));
+              controller.setThemeMode(value);
+            } else {
+              controller.setThemeMode(value);
+            }
+          },
+        ),
+      ],
+    ),
+  );
 }
 
 class CustomDrawerHeaderWidget extends StatelessWidget {
@@ -328,4 +362,13 @@ class CustomDrawerHeaderWidget extends StatelessWidget {
       ),
     );
   }
+}
+
+// Model class to hold menu option data (language and theme)
+class MenuOptionsModel {
+  String key;
+  String value;
+  IconData icon;
+
+  MenuOptionsModel({this.key, this.value, this.icon});
 }

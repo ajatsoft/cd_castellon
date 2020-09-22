@@ -25,8 +25,7 @@ const List<dynamic> CUSTOM_CATEGORIES = [
 ];
 
 
-bool get isModoDark => ThemeController.to.modoDark.value;
-
+// bool get isModoDark => ThemeController.to.modoDark.value;
 
 class k {
   k._();

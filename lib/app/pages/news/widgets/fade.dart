@@ -1,7 +1,7 @@
+import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/pages/news/news_controller.dart';
-import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 
 class Fade extends StatelessWidget {
   final NewsController controller = Get.find();
@@ -9,7 +9,7 @@ class Fade extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => Visibility(
+          () => Visibility(
         visible: controller.finished.value == false,
         child: Positioned(
           left: 0,
@@ -24,7 +24,7 @@ class Fade extends StatelessWidget {
               tag: "logo",
               child: Container(
                 decoration: BoxDecoration(
-                  color: Get.isDarkMode ? AColors.dark : AColors.light,
+                  color: Get.isDarkMode ? AppThemes.blackCS : AppThemes.whiteCS,
                   image: DecorationImage(
                     image: AssetImage(
                       "assets/images/logo.png",

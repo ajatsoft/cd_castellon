@@ -3,6 +3,7 @@ import 'package:cd_castellon/app/pages/plantilla/jugador_detail/jugadorDetail_co
 import 'package:cd_castellon/app/pages/plantilla/jugador_detail/jugador_detail.dart';
 import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
+import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -74,7 +75,7 @@ class ItemPlayer extends StatelessWidget {
               right: 0,
               child: Text((player.jersey == null) ? '' : player.jersey,
                   style: TextStyle(
-                      color: AColors.secondary,
+                      color: AppThemes.redCS,
                       fontSize: 30,
                       fontWeight: FontWeight.bold)),
             ),
@@ -87,11 +88,10 @@ class ItemPlayer extends StatelessWidget {
                   child: Text(player.displayName,
                       textAlign: TextAlign.start,
                       style: TextStyle(
-                          background: Paint()
-                            ..color = Colors.black54,
+                          background: Paint()..color = Colors.black54,
                           fontFamily: 'Oswald',
                           fontWeight: FontWeight.bold,
-                          color: AColors.primary,
+                          color: AppThemes.yellowCS,
                           fontSize: 22)),
                 ),
               ),

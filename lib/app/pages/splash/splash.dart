@@ -1,3 +1,4 @@
+import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cd_castellon/app/pages/splash/splash_controller.dart';
@@ -13,7 +14,7 @@ class SplashScreen extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.center,
-              color: Get.isDarkMode ? AColors.dark : AColors.light,
+              color: Get.isDarkMode ? AppThemes.blackCS : AppThemes.whiteCS,
               child: GestureDetector(
                 onTap: () => Get.offNamed("/news"),
                 child: Hero(

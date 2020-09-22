@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'dart:ui';
-
-import 'package:cd_castellon/app/pages/theme/app_colors.dart';
+import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -198,7 +197,7 @@ class ExpandedEventItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius),
-            color: AColors.light,
+            color: AppThemes.whiteCS,
           ),
           padding: EdgeInsets.only(left: height).add(EdgeInsets.all(8)),
           child: _buildContent(),

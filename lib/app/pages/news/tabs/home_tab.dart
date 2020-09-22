@@ -1,3 +1,4 @@
+import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
@@ -68,7 +69,7 @@ class ListHeading extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.0),
-                color: AColors.accent.withAlpha(99),
+                color: AppThemes.redCS..withAlpha(99),
               ),
               padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
               child: Text('Mostrar todas'),

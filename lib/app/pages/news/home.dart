@@ -1,3 +1,4 @@
+import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,28 +23,28 @@ class HomePage extends StatelessWidget {
         init: NewsController(),
         builder: (_) {
           return Scaffold(
-            backgroundColor: Theme.of(context).backgroundColor,
-            key: _scaffoldKey,
-            resizeToAvoidBottomPadding: false,
-            drawer: AppDrawer(),
-            appBar: CustomAppBar(
-              "Noticias",
-              leadings: [
-                CustomAppBarAction(
-                  () => _scaffoldKey.currentState.openDrawer(),
-                  Icons.menu,
-                )
-              ],
-            ),
-            body: Stack(
-              children: [
+            // backgroundColor: Theme.of(context).backgroundColor,
+              key: _scaffoldKey,
+              resizeToAvoidBottomPadding: false,
+              drawer: AppDrawer(),
+              appBar: CustomAppBar(
+                "Noticias",
+                leadings: [
+                  CustomAppBarAction(
+                        () => _scaffoldKey.currentState.openDrawer(),
+                    Icons.menu,
+                  )
+                ],
+              ),
+              body: Stack(
+                children: [
 //                Watermark(),
-                Fade(),
-                Container(
-                  alignment: Alignment.center,
+//                 Fade(),
+                  Container(
+                    alignment: Alignment.center,
                     child: SafeArea(
                       child: Obx(
-                        () => IndexedStack(
+                            () => IndexedStack(
                           index: _.currentIndex,
                           children: <Widget>[
                             HomeTab(),
@@ -56,11 +57,11 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               bottomNavigationBar: Obx(
-                () => BottomNavigationBar(
+                    () => BottomNavigationBar(
                   currentIndex: _.currentIndex,
                   onTap: _.onTabTapped,
                   unselectedItemColor: Colors.grey,
-                  selectedItemColor: AColors.primary,
+                  selectedItemColor: AppThemes.yellowCS,
                   unselectedFontSize: 10,
                   selectedFontSize: 14,
                   items: [

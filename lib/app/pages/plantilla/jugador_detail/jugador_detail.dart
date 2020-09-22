@@ -3,6 +3,7 @@ import 'package:cd_castellon/app/pages/plantilla/jugador_detail/jugadorDetail_co
 import 'package:cd_castellon/app/pages/plantilla/jugador_detail/widgets/itemStats.dart';
 import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
 import 'package:cd_castellon/app/pages/theme/app_colors.dart';
+import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:cd_castellon/app/pages/widgets_general/appBar.dart';
 import 'package:cd_castellon/app/pages/widgets_general/customAppBarAction.dart';
 import 'package:flutter/material.dart';
@@ -116,7 +117,7 @@ class DetailPlayer extends StatelessWidget {
                             child: Text(
                               (player.jersey == null) ? '' : player.jersey,
                               style: TextStyle(
-                                  color: AColors.secondary.withAlpha(200),
+                                  color: AppThemes.redCS.withAlpha(200),
                                   fontFamily: 'Juventus',
                                   fontSize: 60),
                             ),
@@ -141,7 +142,7 @@ class DetailPlayer extends StatelessWidget {
                               _getTabBar(),
                               Container(
                                 height: 3,
-                                color: AColors.primary,
+                                color: AppThemes.yellowCS,
                               ),
                               Container(
                                 height: 300,
@@ -179,8 +180,8 @@ class DetailPlayer extends StatelessWidget {
       indicator: BoxDecoration(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-          color: AColors.primary),
-      labelColor: AColors.secondary,
+          color: AppThemes.yellowCS),
+      labelColor: AppThemes.redCS,
       tabs: <Widget>[
         Tab(text: 'General'),
         Tab(text: 'Ofensivas'),

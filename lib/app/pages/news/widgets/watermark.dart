@@ -1,6 +1,6 @@
+import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 
 class Watermark extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class Watermark extends StatelessWidget {
         width: Get.width,
         height: Get.height,
         decoration: BoxDecoration(
-          color: Get.isDarkMode ? AColors.dark : AColors.light,
+          color: Get.isDarkMode ? AppThemes.blackCS : AppThemes.whiteCS,
         ),
         child: Stack(
           children: <Widget>[

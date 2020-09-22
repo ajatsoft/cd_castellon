@@ -1,4 +1,5 @@
 import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
+import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,15 +19,15 @@ class CustomBottomNavigation extends StatelessWidget {
               type: BottomNavigationBarType.shifting,
               currentIndex: _.screen,
               onTap: (index) => _.screen = index,
-              fixedColor: AColors.primary,
+              fixedColor: AppThemes.yellowCS,
               unselectedItemColor: Colors.grey,
               showUnselectedLabels: true,
               items: [
                 BottomNavigationBarItem(
                     icon: Icon(Icons.home), title: Text("Home")),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.calendar_today), title: Text("Resultados")),
-
+                    icon: Icon(Icons.calendar_today),
+                    title: Text("Resultados")),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.filter_1), title: Text("Clasificacion")),
                 BottomNavigationBarItem(

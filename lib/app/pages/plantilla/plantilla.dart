@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -60,22 +61,20 @@ class PlantillaPage extends GetView<PlantillaController> {
               bottomNavigationBar: Obx(() =>
                   BottomNavigationBar(
                     currentIndex: controller.currentIndex,
-                    onTap: controller.onTabTapped,
-                    unselectedItemColor: Colors.grey,
-                    selectedItemColor: AColors.primary,
-                    unselectedFontSize: 10,
-                    selectedFontSize: 14,
-                    items: [
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.people),
-                          title: Text("Plantilla")),
+                  onTap: controller.onTabTapped,
+                  unselectedItemColor: Colors.grey,
+                  selectedItemColor: AppThemes.yellowCS,
+                  unselectedFontSize: 10,
+                  selectedFontSize: 14,
+                  items: [
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.people), title: Text("Plantilla")),
 
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.perm_contact_calendar),
-                          title: Text("Cuerpo Técnico")),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.perm_contact_calendar),
+                        title: Text("Cuerpo Técnico")),
 
-
-                      // FFNavigationBarItem(
+                    // FFNavigationBarItem(
                       //   iconData: Icons.gps_fixed,
                       //   label: 'Otros',
                       // )

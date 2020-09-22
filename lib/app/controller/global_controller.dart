@@ -4,6 +4,6 @@ import 'package:get/get.dart';
 class BaseController implements Bindings {
   @override
   void dependencies() {
-    Get.put<ThemeController>(ThemeController());
+    // Get.put<ThemeController>(ThemeController());
   }
 }
