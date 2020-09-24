@@ -2,11 +2,15 @@ import 'dart:ui';
 
 import 'package:cd_castellon/app/data/model/partido.dart';
 import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
+import 'package:cd_castellon/app/pages/widgets_general/customAppBarAction.dart';
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
+import 'package:cd_castellon/app/pages/widgets_general/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ResultadosTemporadaPage extends GetWidget<ResultadosController> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Obx(() {
@@ -37,8 +41,14 @@ class ResultadosTemporadaPage extends GetWidget<ResultadosController> {
               decoration: BoxDecoration(
                   color: Theme.of(context).canvasColor.withOpacity(0.5)),
               child: Scaffold(
+                key: _scaffoldKey,
                 backgroundColor: Colors.transparent,
+                drawer: AppDrawer(),
                 appBar: AppBar(
+                  leading: CustomAppBarAction(
+                    () => _scaffoldKey.currentState.openDrawer(),
+                    Icons.menu,
+                  ),
                   backgroundColor: Colors.transparent,
                   title: Text('Temporada 20/21'),
                   elevation: 0,
@@ -49,9 +59,9 @@ class ResultadosTemporadaPage extends GetWidget<ResultadosController> {
                       crossAxisCount: 4,
                       childAspectRatio: (context.isLandscape)
                           ? MediaQuery.of(context).size.width /
-                              (MediaQuery.of(context).size.height / 3)
+                          (MediaQuery.of(context).size.height / 3)
                           : MediaQuery.of(context).size.width /
-                              (MediaQuery.of(context).size.height / 4),
+                          (MediaQuery.of(context).size.height / 4),
                     ),
                     itemCount: controller.temporada.length,
                     itemBuilder: (context, index) {

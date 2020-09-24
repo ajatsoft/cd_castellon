@@ -7,8 +7,11 @@ import 'nextPartido_controller.dart';
 class NextPartidoBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<NextPartidoController>(() => NextPartidoController(
-        repository:
-            NextPartidoRepository(nextPartidoProvider: NextPartidoProvider())));
+    Get.lazyPut<NextPartidoController>(
+        () => NextPartidoController(
+            repository: NextPartidoRepository(
+                nextPartidoProvider: NextPartidoProvider())),
+        fenix: true);
   }
+
 }

@@ -6,6 +6,7 @@ import 'package:cd_castellon/app/pages/news/home.dart';
 import 'package:cd_castellon/app/pages/nextPartido/nextPartido_binding.dart';
 import 'package:cd_castellon/app/pages/nextPartido/nextPartido_page.dart';
 import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_binding.dart';
+import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_detail/patrocinadoresDetail_page.dart';
 import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_page.dart';
 import 'package:cd_castellon/app/pages/plantilla/binding.dart';
 import 'package:cd_castellon/app/pages/plantilla/plantilla.dart';
@@ -32,23 +33,19 @@ class AppPages {
         name: Routes.plantilla,
         page: () => PlantillaPage(),
         binding: PlantillaBinding()),
-
-    //
-    // GetPage(name: Routes.mainPartido, page: () => MainPartidoPage(), bindings: [
-    //   MainPartidoBindings(),
-    //   ResultadosBinding(),
-    //   ClasificacionBinding(),
-    //   PartidoHomeBinding()
-    // ]),
     GetPage(name: Routes.jornada_detail, page: () => JornadaDetail()),
     GetPage(name: Routes.partido_detail, page: () => PartidoDetail()),
-    // GetPage(name: Routes.resultados_temporada, page: () => ResultadosTemporada()),
-    //
-    //
     GetPage(
         name: Routes.patrocinadores,
         page: () => PatrocinadoresPage(),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 1000),
         binding: PatrocinadoresBinding()),
+    GetPage(
+        name: Routes.patrocinadoresdetail,
+        page: () => PatrocinadoresDetail(),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 1000)),
     GetPage(
         name: Routes.contacto,
         page: () => ContactoPage(),

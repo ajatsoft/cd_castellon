@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:cd_castellon/app/controller/theme_controller.dart';
 import 'package:cd_castellon/app/routes/app_pages.dart';
 import 'package:cd_castellon/app/translations/app_translations.dart';
-import 'app/pages/theme/app_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+
+import 'app/pages/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // initialBinding: ResultadosBinding(),
       initialRoute: Routes.initial,
+
       theme: AppThemes.lightTheme,
       darkTheme: AppThemes.darkTheme,
       themeMode: ThemeMode.system,

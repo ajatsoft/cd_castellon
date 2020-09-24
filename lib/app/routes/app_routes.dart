@@ -19,6 +19,7 @@ abstract class Routes{
 
   // static const resultados_temporada = '/resultados_temporada';
   static const patrocinadores = '/patrocinadores';
+  static const patrocinadoresdetail = '/patrocinadores/:index';
   static const contacto = '/contacto';
 
   static const nextpartido = '/nextpartido';

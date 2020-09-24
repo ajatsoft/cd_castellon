@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 class CustomAppBar2 extends PreferredSize {
   final Widget wd;
   final double height;
@@ -101,9 +99,10 @@ Widget build(BuildContext context) {
                   child: Text(
                     this.title,
                     style: TextStyle(
-                      fontSize: 21,
-                      fontWeight: FontWeight.bold,
-                    ),
+                      color: Theme.of(context).textTheme.headline1.color,
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold,
+                      ),
                   ),
                 ),
                 Positioned(

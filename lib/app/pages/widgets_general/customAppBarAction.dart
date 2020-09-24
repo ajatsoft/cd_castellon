@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 
 class CustomAppBarAction extends StatelessWidget {
   final Function action;
@@ -28,6 +27,7 @@ class CustomAppBarAction extends StatelessWidget {
               Icon(
                 icon,
                 size: 21,
+                color: Theme.of(context).iconTheme.color,
               ),
               Visibility(
                 visible: quantity != null,

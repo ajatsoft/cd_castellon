@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cd_castellon/app/controller/theme_controller.dart';
 
-const String TITLE = "Noticias";
 
 /// last slash ' / ' is mandatory
 const String URL = "http://www.cdcastellon.com/";

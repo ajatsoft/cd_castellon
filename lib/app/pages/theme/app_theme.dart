@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 
 
 
@@ -52,12 +51,12 @@ class AppThemes {
   //Background Colors
   static const Color _darkBackgroundColor = blackCS;
   static const Color _darkBackgroundAppBarColor = _darkPrimaryColor;
-  static const Color _darkBackgroundSecondaryColor =
-      Color.fromRGBO(0, 0, 0, .6);
+  static const Color _darkBackgroundSecondaryColor = Color.fromRGBO(
+      0, 0, 0, .6);
   static const Color _darkBackgroundAlertColor = Colors.black;
   static const Color _darkBackgroundErrorColor = Color.fromRGBO(255, 97, 0, 1);
-  static const Color _darkBackgroundSuccessColor =
-      Color.fromRGBO(186, 215, 0, 1);
+  static const Color _darkBackgroundSuccessColor = Color.fromRGBO(
+      186, 215, 0, 1);
 
   //Text Colors
   static const Color _darkTextColor = Colors.white;
@@ -79,7 +78,7 @@ class AppThemes {
   static final TextTheme _lightTextTheme = TextTheme(
     headline1: TextStyle(fontSize: 20.0, color: _lightTextColor),
     bodyText1: TextStyle(fontSize: 16.0, color: _lightTextColor),
-    bodyText2: TextStyle(fontSize: 14.0, color: Colors.grey),
+    bodyText2: TextStyle(fontSize: 14.0, color: _lightTextColor),
     button: TextStyle(
         fontSize: 15.0, color: _lightTextColor, fontWeight: FontWeight.w600),
     headline6: TextStyle(fontSize: 16.0, color: _lightTextColor),
@@ -89,6 +88,18 @@ class AppThemes {
 
   //the light theme
   static final ThemeData lightTheme = ThemeData(
+    backgroundColor: _lightPrimaryColor,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: _lightBackgroundColor,
+      elevation: 0,
+      selectedLabelStyle: TextStyle(
+          color: Color(0xFFA67926), fontFamily: 'Montserrat', fontSize: 14.0),
+      unselectedLabelStyle: TextStyle(
+          color: Colors.grey[600], fontFamily: 'Montserrat', fontSize: 12.0),
+      selectedItemColor: Color(0xFFA67926),
+      unselectedItemColor: Colors.grey[600],
+      showUnselectedLabels: true,
+    ),
     brightness: Brightness.light,
     fontFamily: font1,
     scaffoldBackgroundColor: _lightBackgroundColor,
@@ -96,6 +107,7 @@ class AppThemes {
       backgroundColor: _lightPrimaryColor,
     ),
     appBarTheme: AppBarTheme(
+      brightness: Brightness.light,
       color: _lightBackgroundAppBarColor,
       iconTheme: IconThemeData(color: _lightTextColor),
       textTheme: _lightTextTheme,
@@ -106,7 +118,7 @@ class AppThemes {
       // secondary: _lightSecondaryColor,
     ),
     snackBarTheme:
-        SnackBarThemeData(backgroundColor: _lightBackgroundAlertColor),
+    SnackBarThemeData(backgroundColor: _lightBackgroundAlertColor),
     iconTheme: IconThemeData(color: _lightIconColor),
     popupMenuTheme: PopupMenuThemeData(color: _lightBackgroundAppBarColor),
     textTheme: _lightTextTheme,
@@ -142,6 +154,7 @@ class AppThemes {
       ),
       fillColor: _lightBackgroundSecondaryColor,
       //focusColor: _lightBorderActiveColor,
+
     ),
   );
 
@@ -162,7 +175,7 @@ class AppThemes {
   static final TextTheme _darkTextTheme = TextTheme(
     headline1: TextStyle(fontSize: 20.0, color: _darkTextColor),
     bodyText1: TextStyle(fontSize: 16.0, color: _darkTextColor),
-    bodyText2: TextStyle(fontSize: 14.0, color: Colors.grey),
+    bodyText2: TextStyle(fontSize: 14.0, color: _darkTextColor),
     button: TextStyle(
         fontSize: 15.0, color: _darkTextColor, fontWeight: FontWeight.w600),
     headline6: TextStyle(fontSize: 16.0, color: _darkTextColor),
@@ -172,6 +185,18 @@ class AppThemes {
 
   //the dark theme
   static final ThemeData darkTheme = ThemeData(
+    backgroundColor: _darkPrimaryColor,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: _darkBackgroundColor,
+      elevation: 0,
+      selectedLabelStyle: TextStyle(
+          color: Color(0xFFA67926), fontFamily: 'Montserrat', fontSize: 14.0),
+      unselectedLabelStyle: TextStyle(
+          color: Colors.grey[600], fontFamily: 'Montserrat', fontSize: 12.0),
+      selectedItemColor: Color(0xFFA67926),
+      unselectedItemColor: Colors.grey[600],
+      showUnselectedLabels: true,
+    ),
     brightness: Brightness.dark,
     //primarySwatch: _darkPrimaryColor, //cant be Color on MaterialColor so it can compute different shades.
     accentColor: _darkPrimaryColor,
@@ -183,6 +208,7 @@ class AppThemes {
       backgroundColor: _darkPrimaryColor,
     ),
     appBarTheme: AppBarTheme(
+      brightness: Brightness.dark,
       color: _darkBackgroundAppBarColor,
       iconTheme: IconThemeData(color: _darkTextColor),
       textTheme: _darkTextTheme,

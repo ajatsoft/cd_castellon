@@ -1,4 +1,3 @@
-import 'package:cd_castellon/app/config.dart';
 import 'package:cd_castellon/app/controller/theme_controller.dart';
 import 'package:cd_castellon/app/pages/widgets_general/segmented_selector.dart';
 import 'package:flutter/material.dart';
@@ -23,37 +22,39 @@ class AppDrawer extends GetView {
               shrinkWrap: true,
               children: <Widget>[
                 FittedBox(child: CustomDrawerHeaderWidget()),
-                Stack(
-                  children: [
-                    ListTile(
-                      onTap: () {
-                        Get.offAndToNamed("/news");
-                      },
-                      title: Text(
-                        "Noticias",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed("/news");
+                  },
+                  child: Stack(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          "Noticias",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(FontAwesomeIcons.newspaper),
                       ),
-                      trailing: Icon(FontAwesomeIcons.newspaper),
-                    ),
-                    Opacity(
-                      opacity: 0.1,
-                      child: Container(
-                        width: Get.width,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/noticias.jpg"),
+                      Opacity(
+                        opacity: 0.1,
+                        child: Container(
+                          width: Get.width,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/noticias.jpg"),
+                            ),
                           ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
                 Divider(height: 1, indent: 1.0, endIndent: 1.0),
                 GestureDetector(
                   onTap: () {
-                    Get.offAndToNamed("/nextpartido");
+                    Get.toNamed("/nextpartido");
                   },
                   child: Stack(
                     children: [
@@ -84,7 +85,7 @@ class AppDrawer extends GetView {
                 Divider(height: 1, indent: 100.0, endIndent: 100.0),
                 GestureDetector(
                   onTap: () {
-                    Get.offAndToNamed("/clasificacion");
+                    Get.toNamed("/clasificacion");
                   },
                   child: Stack(
                     children: [
@@ -115,7 +116,7 @@ class AppDrawer extends GetView {
                 Divider(height: 1, indent: 100.0, endIndent: 100.0),
                 GestureDetector(
                   onTap: () {
-                    Get.offAndToNamed("/resultadosTemporada");
+                    Get.toNamed("/resultadosTemporada");
                   },
                   child: Stack(
                     children: [
@@ -146,7 +147,7 @@ class AppDrawer extends GetView {
                 Divider(height: 1, indent: 1.0, endIndent: 1.0),
                 GestureDetector(
                   onTap: () {
-                    Get.offAndToNamed("/plantilla");
+                    Get.toNamed("/plantilla");
                   },
                   child: Stack(
                     children: [
@@ -176,7 +177,7 @@ class AppDrawer extends GetView {
                 Divider(height: 1, indent: 1.0, endIndent: 1.0),
                 GestureDetector(
                   onTap: () {
-                    Get.offAndToNamed("/patrocinadores");
+                    Get.toNamed("/patrocinadores");
                   },
                   child: Stack(
                     children: [
@@ -207,7 +208,7 @@ class AppDrawer extends GetView {
                 Divider(height: 1, indent: 1.0, endIndent: 1.0),
                 GestureDetector(
                   onTap: () {
-                    Get.offAndToNamed("/contacto");
+                    Get.toNamed("/contacto");
                   },
                   child: Stack(
                     children: [
@@ -244,35 +245,35 @@ class AppDrawer extends GetView {
               children: [
                 Divider(height: 1, indent: 100.0, endIndent: 100.0),
                 themeListTile(context),
-                GestureDetector(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Cambiar a: '),
-                      // Container(
-                      //     child: isModoDark
-                      //         ? Text('Tema Claro')
-                      //         : Text('Tema Oscuro')),
-                      // SizedBox(
-                      //   width: 8.0,
-                      // ),
-                      // Icon(
-                      //   Icons.brightness_4,
-                      //   color: isModoDark ? Colors.white : Colors.black,
-                      // ),
-                    ],
-                  ),
-                  onTap: () {
-                    Get.offAndToNamed("/news");
-                    // ThemeController.to.modoDark.value =
-                    //     !ThemeController.to.modoDark.value;
-                    // if (ThemeController.to.modoDark.value) {
-                    //   ThemeController.to.changeTheme(ThemeMode.dark);
-                    // } else {
-                    //   ThemeController.to.changeTheme(ThemeMode.light);
-                    // }
-                  },
-                ),
+                // GestureDetector(
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.center,
+                //     children: [
+                //       Text('Cambiar a: '),
+                //       // Container(
+                //       //     child: isModoDark
+                //       //         ? Text('Tema Claro')
+                //       //         : Text('Tema Oscuro')),
+                //       // SizedBox(
+                //       //   width: 8.0,
+                //       // ),
+                //       // Icon(
+                //       //   Icons.brightness_4,
+                //       //   color: isModoDark ? Colors.white : Colors.black,
+                //       // ),
+                //     ],
+                //   ),
+                //   onTap: () {
+                //     Get.offAndToNamed("/news");
+                //     // ThemeController.to.modoDark.value =
+                //     //     !ThemeController.to.modoDark.value;
+                //     // if (ThemeController.to.modoDark.value) {
+                //     //   ThemeController.to.changeTheme(ThemeMode.dark);
+                //     // } else {
+                //     //   ThemeController.to.changeTheme(ThemeMode.light);
+                //     // }
+                //   },
+                // ),
                 Divider(height: 1, indent: 100.0, endIndent: 100.0),
                 SizedBox(
                   height: 12.0,

@@ -72,6 +72,7 @@ class NextPartidoController extends GetxController {
   }
 
   void getPartidoHome() async {
+    _isLoading.value = true;
     _modelNexPartido.value = await repository.getPartidoHome();
   }
 

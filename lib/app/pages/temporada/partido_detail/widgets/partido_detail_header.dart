@@ -48,7 +48,6 @@ class MatchHead extends GetView<ResultadosController> {
                 partido.competitors[0].name,
                 style: TextStyle(
                   fontSize: 14.0,
-                  color: Colors.white,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -91,7 +90,8 @@ class MatchHead extends GetView<ResultadosController> {
               padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 30),
               child: Text(
                 partido.competitors[1].name,
-                style: TextStyle(fontSize: 14.0, color: Colors.white,
+                style: TextStyle(
+                  fontSize: 14.0,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -145,8 +145,8 @@ class MatchDetailStatus extends StatelessWidget {
                   " : " +
                   partido.competitors[1].score.toString(),
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 30.0,
+
+              fontSize: 30.0,
                 fontWeight: FontWeight.bold,
               )),
         ),
@@ -157,7 +157,6 @@ class MatchDetailStatus extends StatelessWidget {
               child: Text('Minuto: ',
                   style: TextStyle(
                     fontSize: 16.0,
-                    color: Colors.white,
 
                     // fontWeight: FontWeight.bold,
                   )),
@@ -166,8 +165,6 @@ class MatchDetailStatus extends StatelessWidget {
               padding: const EdgeInsets.only(top: 14),
               child: Text((partido.clock != 'in') ? partido.clock : '-',
                   style: TextStyle(
-                    color: Colors.white,
-
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   )),

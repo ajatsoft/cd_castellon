@@ -1,10 +1,9 @@
 import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
+import 'package:cd_castellon/app/data/model/partido.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/config.dart';
-import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
-import 'package:cd_castellon/app/data/model/partido.dart';
 
 class PartidoAlineacion extends StatelessWidget {
   final Event jornada;
@@ -270,8 +269,9 @@ Widget eventosAlineacion(List<Play> player) {
                 Container(
                     child: Icon(
                       Icons.fiber_manual_record,
-                      size: 14,
-                    )),
+                            size: 16,
+                            color: Colors.white,
+                          )),
                 Container(
                     child: Text(
                       player2.clock.displayValue, style: TextStyle(fontSize: 12),

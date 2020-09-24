@@ -2,12 +2,10 @@ import 'package:cd_castellon/app/data/model/players.dart';
 import 'package:cd_castellon/app/pages/plantilla/jugador_detail/jugadorDetail_controller.dart';
 import 'package:cd_castellon/app/pages/plantilla/jugador_detail/widgets/itemStats.dart';
 import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
-import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:cd_castellon/app/pages/widgets_general/appBar.dart';
 import 'package:cd_castellon/app/pages/widgets_general/customAppBarAction.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
@@ -30,9 +28,18 @@ class DetailPlayer extends StatelessWidget {
             "${player.displayName}",
             leadings: [
               CustomAppBarAction(
-                () => Get.back(),
+                    () => Get.back(),
                 Icons.arrow_back_ios,
               )
+            ],
+            actions: [
+              Text(
+                (player.jersey == null) ? '' : player.jersey,
+                style: TextStyle(
+                    color: AppThemes.redCS.withAlpha(200),
+                    fontFamily: 'Juventus',
+                    fontSize: 24),
+              ),
             ],
           ),
           body: Container(
@@ -98,7 +105,7 @@ class DetailPlayer extends StatelessWidget {
                           ),
                           Positioned.fill(
                             child: Align(
-                              alignment: Alignment.bottomLeft,
+                              alignment: Alignment.topRight,
                               child: Opacity(
                                 opacity: 0.6,
                                 child: Container(
@@ -111,17 +118,7 @@ class DetailPlayer extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Positioned(
-                            top: 0,
-                            right: 10,
-                            child: Text(
-                              (player.jersey == null) ? '' : player.jersey,
-                              style: TextStyle(
-                                  color: AppThemes.redCS.withAlpha(200),
-                                  fontFamily: 'Juventus',
-                                  fontSize: 60),
-                            ),
-                          ),
+                          //
                           Positioned(
                             top: 0,
                             left: 10,
@@ -324,7 +321,8 @@ class EstadisticasGeneralesPlayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return (player.statistics.splits != null)
+        ? Padding(
       padding: EdgeInsets.only(top: 10.0),
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -346,7 +344,8 @@ class EstadisticasGeneralesPlayer extends StatelessWidget {
         shrinkWrap: true,
         physics: ClampingScrollPhysics(),
       ),
-    );
+    )
+        : Container();
   }
 }
 
