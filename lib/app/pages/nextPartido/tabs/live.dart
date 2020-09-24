@@ -23,38 +23,38 @@ class NextPartidoLive extends GetView<NextPartidoController> {
         backgroundColor: Colors.transparent,
         extendBodyBehindAppBar: false,
         body: Obx(
-              () => Column(
+          () => Column(
             children: <Widget>[
               (controller.eventos != null)
                   ? Expanded(
-                child: CustomScrollView(
-                  slivers: <Widget>[
-                    SliverList(
-                      delegate: SliverChildListDelegate(<Widget>[
-                        const _MessageTimeline(
-                          message: 'Inicio del partido!',
-                        ),
-                      ]),
-                    ),
-                    _TimelineFootball(
-                      data: controller.eventos,
-                      partido: partido,
-                    ),
-                    (partido.header.competitions[0].status.type
-                        .completed ==
-                        true)
-                        ? SliverList(
-                      delegate: SliverChildListDelegate(<Widget>[
-                        const _MessageTimeline(
-                          message: 'Fin del partido!',
-                        ),
-                      ]),
-                    )
-                        : SliverList(
-                      delegate: SliverChildListDelegate(<Widget>[
-                        _MessageTimeline(
-                          message: partido.header.competitions[0]
-                              .status.type.shortDetail,
+                      child: CustomScrollView(
+                        slivers: <Widget>[
+                          SliverList(
+                            delegate: SliverChildListDelegate(<Widget>[
+                              const _MessageTimeline(
+                                message: 'Inicio del partido!',
+                              ),
+                            ]),
+                          ),
+                          _TimelineFootball(
+                            data: controller.eventos,
+                            partido: partido,
+                          ),
+                          (partido.header.competitions[0].status.type
+                                      .completed ==
+                                  true)
+                              ? SliverList(
+                                  delegate: SliverChildListDelegate(<Widget>[
+                                    const _MessageTimeline(
+                                      message: 'Fin del partido!',
+                                    ),
+                                  ]),
+                                )
+                              : SliverList(
+                                  delegate: SliverChildListDelegate(<Widget>[
+                                    _MessageTimeline(
+                                      message: partido.header.competitions[0]
+                                          .status.type.shortDetail,
                                     ),
                                   ]),
                                 ),

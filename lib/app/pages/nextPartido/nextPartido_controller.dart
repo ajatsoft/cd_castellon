@@ -11,6 +11,8 @@ class NextPartidoController extends GetxController {
     this.repository,
   });
 
+  static final controller = Get.find<NextPartidoController>();
+
   NextPartidoRepository repository;
 
   final _isLoading = true.obs;
@@ -43,6 +45,9 @@ class NextPartidoController extends GetxController {
 
   List<KeyEvent> get eventos => _livePartidoDataDetail.value.keyEvents;
 
+  String get clock =>
+      _livePartidoDataDetail.value.header.competitions[0].status.displayClock;
+
   List<LivePartidoDataDetailRoster> get alineacionPH =>
       _livePartidoDataDetail.value.rosters;
 
@@ -62,11 +67,12 @@ class NextPartidoController extends GetxController {
     await getPartidoHome();
     await getLivePartidoDetail();
     print('%%%%%%%%% INIT NextPartidoController  %%%%%%%%%%%%%${idPartido}');
+    print('% NextPartidoController  %%%¨${partidolive.header.competitions[0]
+        .status.displayClock}');
   }
 
   @override
   void onReady() {
-    print('%%%%%%%%%%%% ready NextPartidoController  %%%%%%%%%%%%%%%');
 
     super.onReady();
   }

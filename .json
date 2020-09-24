@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-09-19T21:38:46Z",
+  "timestamp": "2020-09-24T14:30:06Z",
   "status": "success",
   "season": {
     "year": 2020,
@@ -922,8 +922,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -1021,8 +1021,8 @@
                   "shortDisplayName": "GA",
                   "description": "The number of goals allowed by the goalkeeper.",
                   "abbreviation": "GA",
-                  "value": 0,
-                  "displayValue": "0"
+                  "value": 1,
+                  "displayValue": "1"
                 }
               ]
             }
@@ -2309,8 +2309,8 @@
                   "shortDisplayName": "TA",
                   "description": "El número de tarjetas amarillas acumuladas",
                   "abbreviation": "TA",
-                  "value": 0,
-                  "displayValue": "0"
+                  "value": 1,
+                  "displayValue": "1"
                 },
                 {
                   "name": "ownGoals",
@@ -2327,8 +2327,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -2426,8 +2426,8 @@
                   "shortDisplayName": "GA",
                   "description": "The number of goals allowed by the goalkeeper.",
                   "abbreviation": "GA",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             }
@@ -2863,8 +2863,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -2962,8 +2962,8 @@
                   "shortDisplayName": "GA",
                   "description": "The number of goals allowed by the goalkeeper.",
                   "abbreviation": "GA",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             }
@@ -3688,6 +3688,178 @@
         "leaf": true
       },
       "injuries": [],
+      "statistics": {
+        "splits": {
+          "id": "0",
+          "name": "Total",
+          "abbreviation": "Total",
+          "type": "total",
+          "categories": [
+            {
+              "name": "general",
+              "displayName": "General",
+              "shortDisplayName": "General",
+              "abbreviation": "gen",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "foulsCommitted",
+                  "displayName": "Faltas cometidas",
+                  "shortDisplayName": "FC",
+                  "description": "Total de faltas cometidas por un jugador o equipo",
+                  "abbreviation": "FC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "foulsSuffered",
+                  "displayName": "Faltas sufridas",
+                  "shortDisplayName": "FS",
+                  "description": "Total de faltas sufridas por un jugador o equipo",
+                  "abbreviation": "FS",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "redCards",
+                  "displayName": "Tarjetas Rojas",
+                  "shortDisplayName": "TR",
+                  "description": "Tarjetas rojas",
+                  "abbreviation": "TR",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "yellowCards",
+                  "displayName": "Tarjetas amarillas",
+                  "shortDisplayName": "TA",
+                  "description": "El número de tarjetas amarillas acumuladas",
+                  "abbreviation": "TA",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "ownGoals",
+                  "displayName": "Goles en contra",
+                  "shortDisplayName": "EC",
+                  "description": "El número de goles en contra concedidos.",
+                  "abbreviation": "EC",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "appearances",
+                  "displayName": "Apariciones",
+                  "shortDisplayName": "Ap",
+                  "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
+                  "abbreviation": "Ap",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "subIns",
+                  "displayName": "Apariciones como Sustituto",
+                  "shortDisplayName": "Sub",
+                  "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
+                  "abbreviation": "SUB",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "offensive",
+              "displayName": "Ofensiva",
+              "shortDisplayName": "Ofensivo",
+              "abbreviation": "off",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "goalAssists",
+                  "displayName": "Asistencias",
+                  "shortDisplayName": "A",
+                  "description": "El número de asistencias",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "offsides",
+                  "displayName": "Fuera de lugar",
+                  "shortDisplayName": "OF",
+                  "description": "Número de veces que un jugador es sorprendido fuera de lugar",
+                  "abbreviation": "FL",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsOnTarget",
+                  "displayName": "Tiros a meta",
+                  "shortDisplayName": "ST",
+                  "description": "El número de remates al arco",
+                  "abbreviation": "TM",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalShots",
+                  "displayName": "Tiros",
+                  "shortDisplayName": "SH",
+                  "description": "El número de intentos de tiros",
+                  "abbreviation": "TT",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "totalGoals",
+                  "displayName": "Total de goles",
+                  "shortDisplayName": "G",
+                  "description": "El número de goles anotados contra el equipo contrario.",
+                  "abbreviation": "G",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            },
+            {
+              "name": "goalKeeping",
+              "displayName": "Goal Keeping",
+              "shortDisplayName": "Keeper",
+              "abbreviation": "gk",
+              "summary": "",
+              "stats": [
+                {
+                  "name": "saves",
+                  "displayName": "Atajadas",
+                  "shortDisplayName": "SV",
+                  "description": "The number of times a goalkeeper makes a save.",
+                  "abbreviation": "A",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "shotsFaced",
+                  "displayName": "Shots Faced",
+                  "shortDisplayName": "SHF",
+                  "description": "The number of shots on target a goalkeeper has faced.",
+                  "abbreviation": "SHF",
+                  "value": 0,
+                  "displayValue": "0"
+                },
+                {
+                  "name": "goalsConceded",
+                  "displayName": "Goles Concedidos",
+                  "shortDisplayName": "GA",
+                  "description": "The number of goals allowed by the goalkeeper.",
+                  "abbreviation": "GA",
+                  "value": 0,
+                  "displayValue": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "status": {
         "id": "1",
         "name": "Activo",
@@ -3931,8 +4103,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -4030,8 +4202,8 @@
                   "shortDisplayName": "GA",
                   "description": "The number of goals allowed by the goalkeeper.",
                   "abbreviation": "GA",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             }
@@ -4285,8 +4457,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -4294,8 +4466,8 @@
                   "shortDisplayName": "Sub",
                   "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
                   "abbreviation": "SUB",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             },
@@ -4639,8 +4811,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -4738,8 +4910,8 @@
                   "shortDisplayName": "GA",
                   "description": "The number of goals allowed by the goalkeeper.",
                   "abbreviation": "GA",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             }
@@ -4993,8 +5165,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -5002,8 +5174,8 @@
                   "shortDisplayName": "Sub",
                   "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
                   "abbreviation": "SUB",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             },
@@ -5325,8 +5497,8 @@
                   "shortDisplayName": "TA",
                   "description": "El número de tarjetas amarillas acumuladas",
                   "abbreviation": "TA",
-                  "value": 0,
-                  "displayValue": "0"
+                  "value": 1,
+                  "displayValue": "1"
                 },
                 {
                   "name": "ownGoals",
@@ -5343,8 +5515,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -5442,8 +5614,8 @@
                   "shortDisplayName": "GA",
                   "description": "The number of goals allowed by the goalkeeper.",
                   "abbreviation": "GA",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             }
@@ -5697,8 +5869,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -5796,8 +5968,8 @@
                   "shortDisplayName": "GA",
                   "description": "The number of goals allowed by the goalkeeper.",
                   "abbreviation": "GA",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             }
@@ -6033,8 +6205,8 @@
                   "shortDisplayName": "TA",
                   "description": "El número de tarjetas amarillas acumuladas",
                   "abbreviation": "TA",
-                  "value": 0,
-                  "displayValue": "0"
+                  "value": 1,
+                  "displayValue": "1"
                 },
                 {
                   "name": "ownGoals",
@@ -6051,8 +6223,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -6150,8 +6322,8 @@
                   "shortDisplayName": "GA",
                   "description": "The number of goals allowed by the goalkeeper.",
                   "abbreviation": "GA",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             }
@@ -6759,8 +6931,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 0,
-                  "displayValue": "0"
+                  "value": 1,
+                  "displayValue": "1"
                 },
                 {
                   "name": "subIns",
@@ -6768,8 +6940,8 @@
                   "shortDisplayName": "Sub",
                   "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
                   "abbreviation": "SUB",
-                  "value": 0,
-                  "displayValue": "0"
+                  "value": 1,
+                  "displayValue": "1"
                 }
               ]
             },
@@ -7109,8 +7281,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -7208,8 +7380,8 @@
                   "shortDisplayName": "GA",
                   "description": "The number of goals allowed by the goalkeeper.",
                   "abbreviation": "GA",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             }
@@ -7463,8 +7635,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -7562,8 +7734,8 @@
                   "shortDisplayName": "GA",
                   "description": "The number of goals allowed by the goalkeeper.",
                   "abbreviation": "GA",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             }
@@ -7996,8 +8168,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -8095,8 +8267,8 @@
                   "shortDisplayName": "GA",
                   "description": "The number of goals allowed by the goalkeeper.",
                   "abbreviation": "GA",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             }
@@ -8336,8 +8508,8 @@
                   "shortDisplayName": "Ap",
                   "description": "El número de veces que un jugador ha hecho una aparición en un juego.",
                   "abbreviation": "Ap",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 },
                 {
                   "name": "subIns",
@@ -8345,8 +8517,8 @@
                   "shortDisplayName": "Sub",
                   "description": "El número de veces que un jugador ha entrado como sustitutlo en un juego.",
                   "abbreviation": "SUB",
-                  "value": 1,
-                  "displayValue": "1"
+                  "value": 2,
+                  "displayValue": "2"
                 }
               ]
             },
@@ -8465,16 +8637,198 @@
       "defaultTeam": {
         "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/teams/4438?lang=es"
       }
+    },
+    {
+      "id": "272185",
+      "uid": "s:600~a:272185",
+      "guid": "e2d72f218b1e66d0408b86f9cb71c169",
+      "firstName": "Igor",
+      "middleName": "",
+      "lastName": "Zlatanovic",
+      "fullName": "Igor Zlatanovic",
+      "displayName": "Igor Zlatanovic",
+      "shortName": "I Zlatanovic",
+      "weight": 172,
+      "displayWeight": "78 kg",
+      "height": 71,
+      "displayHeight": "1.8 m",
+      "age": 22,
+      "dateOfBirth": "1998-02-10T08:00Z",
+      "gender": "MALE",
+      "links": [
+        {
+          "language": "es",
+          "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/_/id/272185/igor-zlatanovic",
+          "text": "Perfil jugador",
+          "shortText": "Perfil jugador",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "stats",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/estadisticas/_/id/272185/igor-zlatanovic",
+          "text": "Estadísticas",
+          "shortText": "Estadísticas",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "splits",
+            "desktop",
+            "athlete"
+          ],
+          "href": "http://espndeportes.espn.com/soccer/player/splits/_/id/272185/igor-zlatanovic",
+          "text": "Splits",
+          "shortText": "Splits",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "gamelog",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/partidos/_/id/272185/igor-zlatanovic",
+          "text": "Partidos",
+          "shortText": "Partidos",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "news",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/noticias/_/id/272185/igor-zlatanovic",
+          "text": "Noticias",
+          "shortText": "Noticias",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "bio",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/bio/_/id/272185/igor-zlatanovic",
+          "text": "Bio",
+          "shortText": "Bio",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "overview",
+            "desktop",
+            "athlete"
+          ],
+          "href": "https://espndeportes.espn.com/futbol/jugador/_/id/272185/igor-zlatanovic",
+          "text": "Perfil de Jugador",
+          "shortText": "Perfil de Jugador",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "transfers",
+            "desktop",
+            "athlete"
+          ],
+          "href": "http://espndeportes.espn.com/soccer/player/transfers/_/id/272185/igor-zlatanovic",
+          "text": "Transfers",
+          "shortText": "Transfers",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "es",
+          "rel": [
+            "transfers",
+            "mobile",
+            "athlete"
+          ],
+          "href": "http://espndeportes.espn.com/soccer/player/transfers/_/id/272185/igor-zlatanovic",
+          "text": "Transfers",
+          "shortText": "Transfers",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "birthPlace": {},
+      "citizenship": "Serbia",
+      "citizenshipCountry": {
+        "alternateId": "436",
+        "abbreviation": "SRB"
+      },
+      "slug": "igor-zlatanovic",
+      "flag": {
+        "href": "https://a.espncdn.com/i/teamlogos/countries/500/sba.png",
+        "alt": "Serbia",
+        "rel": [
+          "country-flag"
+        ]
+      },
+      "position": {
+        "id": "19",
+        "name": "Forward",
+        "displayName": "Atacante",
+        "abbreviation": "A",
+        "leaf": true
+      },
+      "injuries": [],
+      "status": {
+        "id": "1",
+        "name": "Activo",
+        "type": "active",
+        "abbreviation": "Activo"
+      },
+      "seasons": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2/athletes/272185/seasons?lang=es"
+      },
+      "leagues": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/athletes/272185/leagues?lang=es"
+      },
+      "events": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/athletes/272185/events?lang=es"
+      },
+      "defaultLeague": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/esp.2?lang=es"
+      },
+      "profiled": false,
+      "defaultTeam": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/teams/4438?lang=es"
+      }
     }
   ],
   "team": {
     "id": "4438",
     "abbreviation": "CAS",
-    "location": "Castellon",
-    "name": "Castellon",
-    "displayName": "Castellon",
+    "location": "Castellón",
+    "name": "Castellón",
+    "displayName": "Castellón",
     "clubhouse": "http://espndeportes.espn.com/futbol/equipo/_/id/4438/castellon",
     "color": "000000",
+    "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4438.png",
     "recordSummary": "1-0-1",
     "seasonSummary": "2020-21",
     "standingSummary": "7° en Segunda División de España",

@@ -29,201 +29,197 @@ class NextPartidoPage extends StatelessWidget {
                   initialIndex: 1,
                   length: 3,
                   child: SmartRefresher(
-              header: WaterDropMaterialHeader(),
-              controller: _.refreshController,
-              enablePullUp: false,
-              enablePullDown: true,
-              onRefresh: () => _.refresh(),
-              // onLoading: () => controller.load(),
-              child: Scaffold(
-                key: _scaffoldKey,
-                drawer: AppDrawer(),
-                appBar: AppBar(
-                  leading: CustomAppBarAction(
-                        () => _scaffoldKey.currentState.openDrawer(),
-                    Icons.menu,
-                  ),
-                  bottom: PreferredSize(
-                      child: Container(
-                        color: Colors.transparent,
-                        padding: const EdgeInsets.only(
-                            top: 0, left: 8, right: 8),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              children: [
-                                Padding(
-                                    padding:
-                                    const EdgeInsets.only(left: 4.0),
-                                    child: (_.partidolive.boxscore.form[0]
-                                        .team.logo !=
-                                        null)
-                                        ? LogoIcon(
-                                        _.partidolive.boxscore.form[0]
-                                            .team.logo,
-                                        60,
-                                        false)
-                                        : LogoIconAsset(
-                                        _.partidolive.boxscore.form[0]
-                                            .team.id,
-                                        60,
-                                        false)),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 0, horizontal: 30),
-                                  child: Text(
-                                    _.partidolive.boxscore.form[0].team
-                                        .displayName,
-                                    style: TextStyle(fontSize: 14.0),
-                                    textAlign: TextAlign.center,
+                    header: WaterDropMaterialHeader(),
+                    controller: _.refreshController,
+                    enablePullUp: false,
+                    enablePullDown: true,
+                    onRefresh: () => _.refresh(),
+                    // onLoading: () => controller.load(),
+                    child: Scaffold(
+                      key: _scaffoldKey,
+                      drawer: AppDrawer(),
+                      appBar: AppBar(
+                        leading: CustomAppBarAction(
+                          () => _scaffoldKey.currentState.openDrawer(),
+                          Icons.menu,
+                        ),
+                        bottom: PreferredSize(
+                            child: Container(
+                              color: Colors.transparent,
+                              padding: const EdgeInsets.only(
+                                  top: 0, left: 8, right: 8),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Column(
+                                    children: [
+                                      Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 4.0),
+                                          child: (_.partidolive.boxscore.form[0]
+                                                      .team.logo !=
+                                                  null)
+                                              ? LogoIcon(
+                                                  _.partidolive.boxscore.form[0]
+                                                      .team.logo,
+                                                  60,
+                                                  false)
+                                              : LogoIconAsset(
+                                                  _.partidolive.boxscore.form[0]
+                                                      .team.id,
+                                                  60,
+                                                  false)),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 0, horizontal: 30),
+                                        child: Text(
+                                          _.partidolive.boxscore.form[0].team
+                                              .displayName,
+                                          style: TextStyle(fontSize: 14.0),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      )
+                                    ],
                                   ),
-                                )
-                              ],
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment:
-                              CrossAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 25),
-                                  child: (_.scoreHome != null)
-                                      ? Text(
-                                      _.scoreHome +
-                                          " : " +
-                                          _.scoreAway,
-                                      style: TextStyle(
-                                        fontSize: 30.0,
-                                        fontWeight: FontWeight.bold,
-                                      ))
-                                      : Text('' + " : " + '',
-                                      style: TextStyle(
-                                        fontSize: 30.0,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                ),
-                                Row(
-                                  children: [
-                                    Padding(
-                                      padding:
-                                      const EdgeInsets.only(top: 14),
-                                      child: Text('Minuto: ',
-                                          style: TextStyle(
-                                            fontSize: 16.0,
-                                            // fontWeight: FontWeight.bold,
-                                          )),
-                                    ),
-                                    Padding(
-                                      padding:
-                                      const EdgeInsets.only(top: 14),
-                                      child: Text(
-                                          (_.nexPartido.status == 'in')
-                                              ? _
-                                              .partidolive
-                                              .header
-                                              .competitions[0]
-                                              .status
-                                              .displayClock
-                                              : '-',
-                                          style: TextStyle(
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Padding(
-                                    padding:
-                                    const EdgeInsets.only(left: 4.0),
-                                    child: (_.partidolive.boxscore.form[1]
-                                        .team.logo !=
-                                        null)
-                                        ? LogoIcon(
-                                        _.partidolive.boxscore.form[1]
-                                            .team.logo,
-                                        60,
-                                        false)
-                                        : LogoIconAsset(
-                                        _.partidolive.boxscore.form[1]
-                                            .team.id,
-                                        60,
-                                        false)),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 0, horizontal: 30),
-                                  child: Text(
-                                    _.partidolive.boxscore.form[1].team
-                                        .displayName,
-                                    style: TextStyle(fontSize: 14.0),
-                                    textAlign: TextAlign.center,
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 25),
+                                        child: (_.scoreHome != null)
+                                            ? Text(
+                                                _.scoreHome +
+                                                    " : " +
+                                                    _.scoreAway,
+                                                style: TextStyle(
+                                                  fontSize: 30.0,
+                                                  fontWeight: FontWeight.bold,
+                                                ))
+                                            : Text('' + " : " + '',
+                                                style: TextStyle(
+                                                  fontSize: 30.0,
+                                                  fontWeight: FontWeight.bold,
+                                                )),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(top: 14),
+                                            child: Text('Minuto: ',
+                                                style: TextStyle(
+                                                  fontSize: 16.0,
+                                                  // fontWeight: FontWeight.bold,
+                                                )),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(top: 14),
+                                            child: Text(
+                                                (_.nexPartido.status == 'in')
+                                                    ? _.clock
+                                                    : '-',
+                                                style: TextStyle(
+                                                  fontSize: 18.0,
+                                                  fontWeight: FontWeight.bold,
+                                                )),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
-                                )
-                              ],
+                                  Column(
+                                    children: [
+                                      Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 4.0),
+                                          child: (_.partidolive.boxscore.form[1]
+                                                      .team.logo !=
+                                                  null)
+                                              ? LogoIcon(
+                                                  _.partidolive.boxscore.form[1]
+                                                      .team.logo,
+                                                  60,
+                                                  false)
+                                              : LogoIconAsset(
+                                                  _.partidolive.boxscore.form[1]
+                                                      .team.id,
+                                                  60,
+                                                  false)),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 0, horizontal: 30),
+                                        child: Text(
+                                          _.partidolive.boxscore.form[1].team
+                                              .displayName,
+                                          style: TextStyle(fontSize: 14.0),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                          ],
+                            preferredSize: Size.fromHeight(80.0)),
+                        backgroundColor: Colors.transparent,
+                        elevation: 0,
+                        iconTheme: IconThemeData(
+                          color:
+                              Get.isDarkMode ? Colors.white70 : Colors.black54,
                         ),
                       ),
-                      preferredSize: Size.fromHeight(80.0)),
-                  backgroundColor: Colors.transparent,
-                  elevation: 0,
-                  iconTheme: IconThemeData(
-                    color:
-                    Get.isDarkMode ? Colors.white70 : Colors.black54,
-                  ),
-                ),
-                backgroundColor: Get.isDarkMode
-                    ? Color(0xFF1E1E1E)
-                    : Color(0xFFe0e5ec),
-                body: Column(
-                  children: <Widget>[
-                    Container(
-                      constraints: BoxConstraints(maxHeight: 50.0),
-                      child: Material(
-                        color: Colors.transparent,
-                        child: TabBar(
-                          isScrollable: true,
-                          // labelPadding: EdgeInsets.symmetric(horizontal: 20),
-                          tabs: [
-                            Tab(
-                                child: Text("Live",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline6)),
-                            Tab(
-                                child: Text("Info",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline6)),
-                            Tab(
-                                child: Text("Alineacion",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline6)),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: TabBarView(
-                        children: [
-                          NextPartidoLive(_.partidolive),
-                          NextPartidoInfo(),
-                          NextPartidoAlineacion()
+                      backgroundColor: Get.isDarkMode
+                          ? Color(0xFF1E1E1E)
+                          : Color(0xFFe0e5ec),
+                      body: Column(
+                        children: <Widget>[
+                          Container(
+                            constraints: BoxConstraints(maxHeight: 50.0),
+                            child: Material(
+                              color: Colors.transparent,
+                              child: TabBar(
+                                isScrollable: true,
+                                // labelPadding: EdgeInsets.symmetric(horizontal: 20),
+                                tabs: [
+                                  Tab(
+                                      child: Text("Live",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline6)),
+                                  Tab(
+                                      child: Text("Info",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline6)),
+                                  Tab(
+                                      child: Text("Alineacion",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline6)),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: TabBarView(
+                              children: [
+                                NextPartidoLive(_.partidolive),
+                                NextPartidoInfo(),
+                                NextPartidoAlineacion()
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                  ],
-                ),
-              ),
+                  ),
+                )
+              ],
             ),
-          )
-        ],
-      ),
     );
   }
 }

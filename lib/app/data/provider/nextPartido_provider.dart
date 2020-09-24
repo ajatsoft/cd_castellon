@@ -4,13 +4,13 @@ import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 import 'package:cd_castellon/app/data/model/nextPartidoModel.dart';
 import 'package:http/http.dart' as http;
 
-const baseUrl = 'https://www.espn.com/soccer/team/_/id/4438&xhr=1';
+const nextPartidoUrl = 'https://www.espn.com/soccer/team/_/id/4438&xhr=1';
 
 class NextPartidoProvider {
   var client = new http.Client();
 
   Future<NextPartido> getPartidoHome() async {
-    var response = await http.get(baseUrl, headers: {
+    var response = await http.get(nextPartidoUrl, headers: {
       'user-agent':
           'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.2 Safari/605.1.15'
     });

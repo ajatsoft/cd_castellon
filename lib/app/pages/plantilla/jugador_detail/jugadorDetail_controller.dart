@@ -53,7 +53,7 @@ class JugadorDetailController extends GetxController {
         return 'assets/jugadores/307382.png';
         break;
       case '194182':
-        return 'assets/jugadores/194182.jpg';
+        return 'assets/jugadores/194182.png';
         break;
       case '155725':
         return 'assets/jugadores/155725.png';
@@ -80,7 +80,7 @@ class JugadorDetailController extends GetxController {
         return 'assets/jugadores/176748.png';
         break;
       case '259139':
-        return 'assets/jugadores/259139.jpg';
+        return 'assets/jugadores/259139.png';
         break;
       case '265776':
         return 'assets/jugadores/265776.png';
@@ -123,6 +123,9 @@ class JugadorDetailController extends GetxController {
         break;
       case '275934':
         return 'assets/jugadores/275934.png';
+        break;
+      case '272185':
+        return 'assets/jugadores/272185.png';
         break;
     }
   }
