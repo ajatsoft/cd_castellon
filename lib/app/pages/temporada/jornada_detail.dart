@@ -1,21 +1,19 @@
 import 'dart:ui';
+
+import 'package:cd_castellon/app/data/model/partido.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
-import 'package:cd_castellon/app/data/model/partido.dart';
 import 'package:intl/intl.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class JornadaDetail extends StatelessWidget{
-
+class JornadaDetail extends StatelessWidget {
   final ResultadosController controller = Get.put(ResultadosController());
 
   @override
   Widget build(BuildContext context) {
     Week jornadaName = Get.arguments;
-    // print(controller.partidos[0].competitors[0].logo);
     var dateFormat = new DateFormat('dd-MM-yyyy HH:mm:ss');
-
     return SafeArea(
         bottom: false,
         top: false,

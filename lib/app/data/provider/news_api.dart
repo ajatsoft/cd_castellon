@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import '../../config.dart';
+import '../../utils/config.dart';
 import '../model/post_entity.dart';
 
 class WpApi {

@@ -1,10 +1,9 @@
 import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:cd_castellon/app/data/model/partido.dart';
 import 'package:cd_castellon/app/pages/temporada/partido_detail/partido_detail_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class PartidoLive extends StatelessWidget {
   final Event partido;
@@ -46,21 +45,21 @@ class PartidoLive extends StatelessWidget {
                               ),
                             ]),
                           ),
-                        _TimelineFootball(
-                          data: c.firstHalf,
-                          partido: partido,
-                        ),
-                        SliverList(
-                          delegate: SliverChildListDelegate(<Widget>[
-                            const _MessageTimeline(
-                              message: 'Fin del partido!',
-                            ),
-                          ]),
-                        ),
-                        const SliverPadding(
-                            padding: EdgeInsets.only(top: 20)),
-                      ],
-                    ),
+                          _TimelineFootball(
+                            data: c.firstHalf,
+                            partido: partido,
+                          ),
+                          // SliverList(
+                          //   delegate: SliverChildListDelegate(<Widget>[
+                          //     const _MessageTimeline(
+                          //       message: 'Fin del partido!',
+                          //     ),
+                          //   ]),
+                          // ),
+                          const SliverPadding(
+                              padding: EdgeInsets.only(top: 20)),
+                        ],
+                      ),
                   )
                       : Container(
                       child: Center(child: Text('Partido no iniciado'))),

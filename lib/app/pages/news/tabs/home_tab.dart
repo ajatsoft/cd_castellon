@@ -1,14 +1,14 @@
+import 'package:cd_castellon/app/data/model/post_entity.dart';
+import 'package:cd_castellon/app/pages/news/news_controller.dart';
+import 'package:cd_castellon/app/pages/news/widgets/featured_category_list.dart';
+import 'package:cd_castellon/app/pages/news/widgets/posts_list.dart';
+import 'package:cd_castellon/app/pages/news/widgets/single_category.dart';
 import 'package:cd_castellon/app/pages/theme/app_theme.dart';
+import 'package:cd_castellon/app/pages/widgets_general/nativeAds.dart';
+import 'package:cd_castellon/app/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
-import 'package:cd_castellon/app/config.dart';
-import 'package:cd_castellon/app/pages/news/news_controller.dart';
-import 'package:cd_castellon/app/data/model/post_entity.dart';
-import 'package:cd_castellon/app/pages/news/widgets/single_category.dart';
-import 'package:cd_castellon/app/pages/news/widgets/featured_category_list.dart';
-import 'package:cd_castellon/app/pages/news/widgets/posts_list.dart';
-import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 
 class HomeTab extends StatelessWidget {
   @override
@@ -29,6 +29,13 @@ class HomeTab extends StatelessWidget {
                   Container(
                     height: 250.0,
                     child: FeaturedCategoryList(),
+                  ),
+                  CustomAd(
+                    adUnitID: _.adNewsPage,
+                    height: MediaQuery
+                        .of(context)
+                        .size
+                        .height * .1,
                   ),
                   ListHeading('Últimas', 0),
                   Flexible(

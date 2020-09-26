@@ -6,9 +6,11 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 class PartidoDetailController extends GetxController {
   RefreshController refreshController = RefreshController();
 
-  static final controller = Get.find<ResultadosController>();
+  static final c = Get.find<ResultadosController>();
 
-  RxList<KeyEvent> _firstHalf = controller.evento;
+  List<KeyEvent> get eventos => c.livePartidoDataDetail.value.keyEvents;
+
+  RxList<KeyEvent> _firstHalf = c.evento;
 
   List<KeyEvent> get firstHalf => _firstHalf?.value ?? new List<KeyEvent>();
 

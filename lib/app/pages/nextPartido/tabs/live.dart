@@ -86,17 +86,12 @@ class _TimelineFootball extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(data.length);
-    print(data[0].team.id);
     return SliverList(
       delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
           final KeyEvent event = data[index];
-
           final isLeftChild =
               event.team.id == partido.header.competitions[0].competitors[0].id;
-          print(event.type.text.toString());
-
           final child = _TimelineFootballChild(
             action: event.type.text,
             title: event.type.text,
@@ -334,29 +329,29 @@ enum Team {
   home,
   away,
 }
-
-enum Action {
-  goal,
-  yellowCard,
-  redCard,
-  offside,
-  foul,
-  injury,
-  stoppageTime,
-}
-
-class FootballData {
-  const FootballData({
-    this.team,
-    this.action,
-    this.title,
-    this.subtitle,
-    this.time,
-  });
-
-  final Team team;
-  final Action action;
-  final String title;
-  final String subtitle;
-  final String time;
-}
+//
+// enum Action {
+//   goal,
+//   yellowCard,
+//   redCard,
+//   offside,
+//   foul,
+//   injury,
+//   stoppageTime,
+// }
+//
+// class FootballData {
+//   const FootballData({
+//     this.team,
+//     this.action,
+//     this.title,
+//     this.subtitle,
+//     this.time,
+//   });
+//
+//   final Team team;
+//   final Action action;
+//   final String title;
+//   final String subtitle;
+//   final String time;
+// }

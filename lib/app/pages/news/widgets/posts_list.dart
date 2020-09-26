@@ -1,9 +1,10 @@
+import 'package:cd_castellon/app/data/model/post_entity.dart';
+import 'package:cd_castellon/app/pages/news/news_controller.dart';
+import 'package:cd_castellon/app/pages/news/widgets/post_list_item.dart';
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
+import 'package:cd_castellon/app/pages/widgets_general/nativeAds.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/news/news_controller.dart';
-import 'package:cd_castellon/app/data/model/post_entity.dart';
-import 'package:cd_castellon/app/pages/news/widgets/post_list_item.dart';
 
 class PostsList extends StatelessWidget {
   PostsList({this.category = 0});
@@ -27,7 +28,17 @@ class PostsList extends StatelessWidget {
               if (index == _.news.length) {
                 return _buildProgressIndicator();
               } else {
-                return PostListItem(_.news[index]);
+                return Column(
+                  children: [
+                    PostListItem(_.news[index]),
+                    index != 0 && index % 4 == 0
+                        ? CustomAd(
+                            adUnitID: _.adNewsList,
+                            height: MediaQuery.of(context).size.height * .1,
+                          )
+                        : Container()
+                  ],
+                );
               }
             },
             itemCount: _.news.length + 1,

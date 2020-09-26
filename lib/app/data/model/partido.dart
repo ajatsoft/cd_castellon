@@ -872,10 +872,10 @@ class DrawOddsClass {
   int handicap;
 
   factory DrawOddsClass.fromJson(Map<String, dynamic> json) => DrawOddsClass(
-    summary: json["summary"],
-    value: json["value"].toDouble(),
-    handicap: json["handicap"].toInt(),
-  );
+        summary: json["summary"] == null ? null : json["summary"],
+        value: json["value"].toDouble(),
+        handicap: json["handicap"].toInt(),
+      );
 
   Map<String, dynamic> toJson() => {
     "summary": summary,

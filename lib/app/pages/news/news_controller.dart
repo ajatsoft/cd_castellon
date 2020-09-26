@@ -1,11 +1,12 @@
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
-import 'package:cd_castellon/app/config.dart';
 import 'package:cd_castellon/app/data/model/post_entity.dart';
 import 'package:cd_castellon/app/data/provider/news_api.dart';
+import 'package:cd_castellon/app/utils/config.dart';
+import 'package:cd_castellon/app/utils/native_ad_config.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 class NewsController extends GetxController {
-
   static NewsController get to => Get.find();
 
   List<PostEntity> _news = [];
@@ -95,9 +96,7 @@ class NewsController extends GetxController {
   }
 
   final _currentIndex = 0.obs;
-
   set currentIndex(value) => this._currentIndex.value = value;
-
   get currentIndex => this._currentIndex.value;
 
   changeTab(int index) {
@@ -114,4 +113,12 @@ class NewsController extends GetxController {
   RxBool visible = RxBool(false);
 
   setVisible(bool visible) => this.visible.value = visible;
+
+
+  final adNewsPage = AdsConfiguration.getNativeAdNewsPage();
+  final adNewsList = AdsConfiguration.getNativeAdNewsPage();
+
+
 }
+
+

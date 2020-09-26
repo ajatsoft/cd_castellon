@@ -1,8 +1,8 @@
 import 'dart:ui';
 
-import 'package:cd_castellon/app/config.dart';
 import 'package:cd_castellon/app/data/model/partido.dart';
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
+import 'package:cd_castellon/app/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

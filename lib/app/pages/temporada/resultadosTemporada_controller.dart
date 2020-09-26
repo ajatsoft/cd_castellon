@@ -1,9 +1,7 @@
 import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
-import 'package:get/get.dart';
-
-// import 'package:cd_castellon/app/data/model/livePartidoModel2.bak';
 import 'package:cd_castellon/app/data/model/partido.dart';
 import 'package:cd_castellon/app/data/repository/partido_repository.dart';
+import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class ResultadosController extends GetxController {
@@ -24,9 +22,21 @@ class ResultadosController extends GetxController {
 
   get livePartidoDataDetail => _modelPratidoDataDetail;
 
-  Boxscore form;
-  Header header;
-  Play _play;
+  //
+  // LivePartidoDataDetail get partidolive => _modelPratidoDataDetail.value;
+
+  // get scoreHome =>
+  //     _modelPratidoDataDetail.value.header?.competitions[0].competitors[0].score;
+  //
+  // get scoreAway =>
+  //     _modelPratidoDataDetail.value.header?.competitions[0].competitors[1].score;
+  //
+  // String get clock =>
+  //     _modelPratidoDataDetail.value.header.competitions[0].status.displayClock;
+
+  // Boxscore form;
+  // Header header;
+  // Play _play;
 
   @override
   void onInit() {
@@ -48,8 +58,8 @@ class ResultadosController extends GetxController {
     update();
   }
 
-  Future refreshJornada(jornada) async {
-    modelJornada.value = await repository.getDataPartidos(jornada);
+  Future refreshJornada(jornada) {
+    getDataPartidos(jornada);
     refreshController.refreshCompleted();
     print('refresh');
     update();

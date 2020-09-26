@@ -1,6 +1,7 @@
 import 'package:cd_castellon/app/data/model/livePartidoModel.dart';
 import 'package:cd_castellon/app/data/model/nextPartidoModel.dart';
 import 'package:cd_castellon/app/data/repository/nextPartido_repository.dart';
+import 'package:cd_castellon/app/utils/native_ad_config.dart';
 import 'package:get/state_manager.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -19,6 +20,10 @@ class NextPartidoController extends GetxController {
 
   get isLoading => _isLoading.value;
 
+  ///      banner
+
+  final adNewsPage = AdsConfiguration.getBanerNextPartido();
+
   ///      next_PARTIDO
 
   final _modelNexPartido = NextPartido().obs;
@@ -32,7 +37,6 @@ class NextPartidoController extends GetxController {
   ///      LIVE_PARTIDO
 
   final _livePartidoDataDetail = LivePartidoDataDetail().obs;
-
   get livePartidoDataDetail => _livePartidoDataDetail;
 
   LivePartidoDataDetail get partidolive => _livePartidoDataDetail.value;

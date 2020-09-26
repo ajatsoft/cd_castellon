@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "313285022532",
+    "firebase_url": "https://cdcastellon-48aa3.firebaseio.com",
+    "project_id": "cdcastellon-48aa3",
+    "storage_bucket": "cdcastellon-48aa3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313285022532:android:2a4c21ba206cc02e30bd11",
+        "android_client_info": {
+          "package_name": "ajatsoft.cd_castellon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313285022532-j83up995r5dq1s098drupd0i3kjboptb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjQvLLBDY3PhCxX79fRJ4vqNQpPF_ENTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313285022532-j83up995r5dq1s098drupd0i3kjboptb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

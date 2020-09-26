@@ -1,13 +1,13 @@
+import 'package:cd_castellon/app/data/model/partido.dart';
+import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/temporada/resultadosTemporada_controller.dart';
-import 'package:cd_castellon/app/data/model/partido.dart';
 import 'package:intl/intl.dart';
 
-class PartidoEstadisticas extends StatelessWidget {
+class PartidoInfo extends StatelessWidget {
   final Event partido;
 
-  PartidoEstadisticas(this.partido);
+  PartidoInfo(this.partido);
 
   final ResultadosController c = Get.put(ResultadosController());
 
