@@ -12,7 +12,6 @@ class NextPartidoController extends GetxController {
     this.repository,
   });
 
-  static final controller = Get.find<NextPartidoController>();
 
   NextPartidoRepository repository;
 

@@ -101,18 +101,18 @@ class _TimelineFootball extends StatelessWidget {
 
           return TimelineTile(
             alignment: TimelineAlign.center,
-            rightChild: isLeftChild ? null : child,
-            leftChild: isLeftChild ? child : null,
+            endChild: isLeftChild ? null : child,
+            startChild: isLeftChild ? child : null,
             indicatorStyle: IndicatorStyle(
               width: 40,
               height: 40,
               indicator:
-              _TimelineFootballIndicator(time: event.clock.displayValue),
+                  _TimelineFootballIndicator(time: event.clock.displayValue),
               drawGap: true,
             ),
-            topLineStyle: LineStyle(
+            beforeLineStyle: LineStyle(
               color: Colors.white.withOpacity(0.2),
-              width: 3,
+              thickness: 3,
             ),
           );
         },

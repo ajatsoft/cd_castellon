@@ -59,14 +59,6 @@ class ThemeController extends GetxController {
 
   String get currentTheme => theme.value;
 
-  Future<void> setThemeMode(String value) async {
-    theme.value = value;
-    _themeMode = getThemeModeFromString(value);
-    Get.changeThemeMode(_themeMode);
-    await store.write('theme', value);
-    update();
-  }
-
   ThemeMode getThemeModeFromString(String themeString) {
     ThemeMode _setThemeMode = ThemeMode.system;
     if (themeString == 'light') {
@@ -76,6 +68,14 @@ class ThemeController extends GetxController {
       _setThemeMode = ThemeMode.dark;
     }
     return _setThemeMode;
+  }
+
+  Future<void> setThemeMode(String value) async {
+    theme.value = value;
+    _themeMode = getThemeModeFromString(value);
+    Get.changeThemeMode(_themeMode);
+    await store.write('theme', value);
+    update();
   }
 
   getThemeModeFromStore() async {

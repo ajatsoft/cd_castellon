@@ -1,8 +1,9 @@
+import 'dart:ui';
+
 import 'package:cd_castellon/app/data/model/players.dart';
 import 'package:cd_castellon/app/pages/plantilla/jugador_detail/jugadorDetail_controller.dart';
 import 'package:cd_castellon/app/pages/plantilla/jugador_detail/jugador_detail.dart';
 import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
-import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,7 +24,7 @@ class PlantillaTab extends StatelessWidget {
           // }
           return GridView.builder(
             gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
             itemBuilder: (context, index) {
               final AthleteCS jugador = _.modelJugadores.athletes[index];
               return ItemPlayer(
@@ -49,56 +50,88 @@ class ItemPlayer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        // controller.loadJugadorDetail(player.url);
-        // controller.loadJugadorDetail2(player.url);
+        onTap: () {
+          // controller.loadJugadorDetail(player.url);
+          // controller.loadJugadorDetail2(player.url);
 
 //        JugadorDetailController.to.setUrl(player.url);
-        Get.to(DetailPlayer(player: player));
+          Get.to(DetailPlayer(player: player));
 //        print('plantilla_send_url=====================================================${player.url}');
-      },
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 4.0),
-        width: 150,
-        child: Stack(
-          children: <Widget>[
-            Hero(
-              tag: player.id,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12.0),
-                child: Image.asset(
-                  controller.getPlayerIMG(player.id),
-                ),
+        },
+        child: ClipRect(
+            child: new BackdropFilter(
+          filter: new ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+          child: new Container(
+            // padding: EdgeInsets.all( 20),
+            width: MediaQuery.of(context).size.width * 0.65,
+            height: MediaQuery.of(context).size.height * 0.35,
+            // decoration: new BoxDecoration(
+            //     shape: BoxShape.circle,
+            //     color: Colors.grey.shade200.withOpacity(0.5)
+            // ),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 4.0),
+              width: 150,
+              child: Stack(
+                children: <Widget>[
+                  Hero(
+                    tag: player.id,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12.0),
+                      child: Image.asset(
+                        controller.getPlayerIMG(player.id),
+                      ),
+                    ),
+                  ),
+
+                  /// todo permiso de cd castellon
+                  ///
+                  /// borrrando cara jugadores
+                  ///
+                  new ClipRect(
+                    child: new BackdropFilter(
+                      filter: new ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                      child: new Container(
+                        // decoration: new BoxDecoration(
+                        //     color: Colors.black.withOpacity(0.5)
+                        // ),
+                        child: new Center(
+                          child: new Text(
+                              'Esperando permiso \nde CD CASTELLÓN\npara usar imagen',
+                              style: TextStyle(fontSize: 10)),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    child: Text((player.jersey == null) ? '' : player.jersey,
+                        style: TextStyle(
+                            color: AppThemes.redCS,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 8),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(player.displayName,
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                                background: Paint()..color = Colors.black54,
+                                fontFamily: 'Oswald',
+                                fontWeight: FontWeight.bold,
+                                color: AppThemes.yellowCS,
+                                fontSize: 22)),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
-            Positioned(
-              right: 0,
-              child: Text((player.jersey == null) ? '' : player.jersey,
-                  style: TextStyle(
-                      color: AppThemes.redCS,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold)),
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 8),
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(player.displayName,
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                          background: Paint()..color = Colors.black54,
-                          fontFamily: 'Oswald',
-                          fontWeight: FontWeight.bold,
-                          color: AppThemes.yellowCS,
-                          fontSize: 22)),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
+          ),
+        )));
   }
 }

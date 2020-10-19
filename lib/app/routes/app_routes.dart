@@ -3,11 +3,14 @@ part of './app_pages.dart';
 abstract class Routes{
 
   static const initial = '/';
+
   // static const details = '/details';
   static const news = '/news';
+  static const twitter = '/twitter';
 
   // static const newsDetail = '/newsDetail';
   static const plantilla = '/plantilla';
+
   // static const mainPartido = '/mainPartido';
 
   // static const partido = '/partido';

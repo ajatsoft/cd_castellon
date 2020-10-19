@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:get/get.dart';
@@ -17,7 +16,7 @@ class SplashController extends GetxController {
   }
 
   route() {
-    Get.offNamed("/news");
+    Get.offNamed("/twitter");
   }
 
 }

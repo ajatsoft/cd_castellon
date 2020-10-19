@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cd_castellon/app/data/model/players.dart';
 import 'package:cd_castellon/app/pages/plantilla/jugador_detail/jugadorDetail_controller.dart';
 import 'package:cd_castellon/app/pages/plantilla/jugador_detail/widgets/itemStats.dart';
@@ -99,6 +101,43 @@ class DetailPlayer extends StatelessWidget {
                                 tag: player.id,
                                 child: Image.asset(
                                   _.getPlayerIMG(player.id),
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          /// todo permiso de cd castellon
+                          ///
+                          /// borrrando cara jugadores
+                          ///
+                          new Center(
+                            child: new ClipRect(
+                              child: new BackdropFilter(
+                                filter: new ImageFilter.blur(
+                                    sigmaX: 10.0, sigmaY: 10.0),
+                                child: new Container(
+                                  // padding: EdgeInsets.all( 20),
+                                  width: MediaQuery
+                                      .of(context)
+                                      .size
+                                      .width * 0.80,
+                                  height: MediaQuery
+                                      .of(context)
+                                      .size
+                                      .height * 0.40,
+                                  // decoration: new BoxDecoration(
+                                  //     shape: BoxShape.circle,
+                                  //     color: Colors.grey.shade200.withOpacity(0.5)
+                                  // ),
+                                  child: new Center(
+                                    child: new Text(
+                                        'Esperando permiso \nde CD CASTELLÓN\npara usar imagen.',
+                                        style: Theme
+                                            .of(context)
+                                            .textTheme
+                                            .caption
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -229,16 +268,16 @@ class Info extends StatelessWidget {
                         Text("Nacionalidad:", style: TextStyle(fontSize: 12)),
                         (player.flag == null)
                             ? Padding(
-                                padding: EdgeInsets.only(left: 0),
-                                child: CircularProgressIndicator())
+                            padding: EdgeInsets.only(left: 0),
+                            child: CircularProgressIndicator())
                             : Row(
-                                children: [
-                                  Image.network(
-                                    player.flag.href,
-                                    height: 30,
-                                  ),
-                                ],
-                              )
+                          children: [
+                            Image.network(
+                              player.flag.href,
+                              height: 30,
+                            ),
+                          ],
+                        )
                       ]),
                 ),
               ),

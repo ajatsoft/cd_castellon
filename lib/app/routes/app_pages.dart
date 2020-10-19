@@ -10,6 +10,8 @@ import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_detail/patr
 import 'package:cd_castellon/app/pages/patrocinadores/patrocinadores_page.dart';
 import 'package:cd_castellon/app/pages/plantilla/binding.dart';
 import 'package:cd_castellon/app/pages/plantilla/plantilla.dart';
+import 'package:cd_castellon/app/pages/redes/redes_binding.dart';
+import 'package:cd_castellon/app/pages/redes/redes_view.dart';
 import 'package:cd_castellon/app/pages/splash/splash.dart';
 import 'package:cd_castellon/app/pages/temporada/jornada_detail.dart';
 import 'package:cd_castellon/app/pages/temporada/partido_detail/partidoDetail_page.dart';
@@ -28,6 +30,11 @@ class AppPages {
     GetPage(
       name: Routes.news,
       page: () => HomePage(),
+    ),
+    GetPage(
+      name: Routes.twitter,
+      page: () => RedesView(),
+      binding: RedesBinding(),
     ),
     GetPage(
         name: Routes.plantilla,

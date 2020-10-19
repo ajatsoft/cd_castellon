@@ -1,8 +1,10 @@
+import 'dart:ui';
+
+import 'package:cd_castellon/app/data/model/cuerpo_tecnico.dart';
+import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/plantilla/plantilla_controller.dart';
-import 'package:cd_castellon/app/data/model/cuerpo_tecnico.dart';
 
 class CuerpoTecTab extends StatelessWidget {
   @override
@@ -54,6 +56,27 @@ class ItemPersonal extends StatelessWidget {
             borderRadius: BorderRadius.circular(12.0),
             child: Image.network(
               personal.imageurl,
+            ),
+          ),
+          Center(
+            child: new ClipRect(
+              child: new BackdropFilter(
+                filter: new ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                child: new Container(
+                  // padding: EdgeInsets.all( 20),
+                  width: MediaQuery.of(context).size.width * 0.80,
+                  height: MediaQuery.of(context).size.height * 0.40,
+                  // decoration: new BoxDecoration(
+                  //     shape: BoxShape.circle,
+                  //     color: Colors.grey.shade200.withOpacity(0.5)
+                  // ),
+                  child: new Center(
+                    child: new Text(
+                        'Esperando permiso \nde CD CASTELLÓN\npara usar imagen.',
+                        style: Theme.of(context).textTheme.caption),
+                  ),
+                ),
+              ),
             ),
           ),
           Padding(

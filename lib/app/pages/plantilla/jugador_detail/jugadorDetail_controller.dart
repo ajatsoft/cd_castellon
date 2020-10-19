@@ -127,6 +127,9 @@ class JugadorDetailController extends GetxController {
       case '272185':
         return 'assets/jugadores/272185.png';
         break;
+      default:
+        return 'assets/jugadores/default.png';
+        break;
     }
   }
 

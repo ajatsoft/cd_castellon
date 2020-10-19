@@ -1,8 +1,7 @@
+import 'package:cd_castellon/app/pages/splash/splash_controller.dart';
 import 'package:cd_castellon/app/pages/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/splash/splash_controller.dart';
-import 'package:cd_castellon/app/pages/theme/app_colors.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -16,7 +15,7 @@ class SplashScreen extends StatelessWidget {
               alignment: Alignment.center,
               color: Get.isDarkMode ? AppThemes.blackCS : AppThemes.whiteCS,
               child: GestureDetector(
-                onTap: () => Get.offNamed("/news"),
+                onTap: () => Get.offNamed("/twitter"),
                 child: Hero(
                   tag: "logo",
                   child: Image.asset(

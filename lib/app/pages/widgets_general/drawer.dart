@@ -24,13 +24,58 @@ class AppDrawer extends GetView {
                 FittedBox(child: CustomDrawerHeaderWidget()),
                 GestureDetector(
                   onTap: () {
-                    Get.toNamed("/news");
+                    // Get.toNamed("/news");
+
+                    Get.dialog(Container(
+                      child: AlertDialog(
+                        title: Text('En proceso'),
+                        content: Container(
+                          width: 100,
+                          child: Text(
+                              'Hemos solicitado al CD Castellon que nos permita publicar las noticias que tienen en su página web, en cuanto nos den permiso estará disponible esta sección, mientras puedes consultar las ultimas noticias en redes'),
+                        ),
+                        actions: <Widget>[
+                          FlatButton(
+                              onPressed: () => Get.back(), child: Text('Ok'))
+                        ],
+                      ),
+                    ));
                   },
                   child: Stack(
                     children: [
                       ListTile(
                         title: Text(
                           "Noticias",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(FontAwesomeIcons.newspaper),
+                      ),
+                      Opacity(
+                        opacity: 0.1,
+                        child: Container(
+                          width: Get.width,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/noticias.jpg"),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Divider(height: 1, indent: 1.0, endIndent: 1.0),
+                GestureDetector(
+                  onTap: () {
+                    Get.offAllNamed("/twitter");
+                  },
+                  child: Stack(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          "Redes",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         trailing: Icon(FontAwesomeIcons.newspaper),
@@ -302,16 +347,16 @@ themeListTile(BuildContext context) {
           selectedOption: controller.currentTheme,
           menuOptions: themeOptions,
           onValueChanged: (value) {
-            if (value == 'system') {
-              Get.dialog(AlertDialog(
-                title: Text('Tema Automático'),
-                content: Text(
-                    'Se obtendrá automaticamente el tema de tu dispositivo.'),
-              ));
-              controller.setThemeMode(value);
-            } else {
-              controller.setThemeMode(value);
-            }
+            // if (value == 'system') {
+            //   Get.dialog(AlertDialog(
+            //     title: Text('Tema Automático'),
+            //     content: Text(
+            //         'Se obtendrá automaticamente el tema de tu dispositivo.'),
+            //   ));
+            //   controller.setThemeMode(value);
+            // } else {
+            controller.setThemeMode(value);
+            // }
           },
         ),
       ],

@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:cd_castellon/app/data/model/modelClasificacion.dart';
 import 'package:cd_castellon/app/pages/clasificacion/clasificacion_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CompetitionTable extends GetView<ClasificacionController> {
   final List<Entry> entries;
+
   // final bool showCompetition;
 
   const CompetitionTable(this.entries);
@@ -254,8 +255,8 @@ class CompetitionTable extends GetView<ClasificacionController> {
             // 7: IntrinsicColumnWidth(),
             8: IntrinsicColumnWidth(),
             9: IntrinsicColumnWidth(),
-            // 10: IntrinsicColumnWidth(),
-            // 11: IntrinsicColumnWidth(),
+            10: IntrinsicColumnWidth(),
+            11: IntrinsicColumnWidth(),
           },
           children: rows),
     );
