@@ -26,7 +26,7 @@ class PlantillaController extends GetxController {
   void getJugadores() async {
     _isLoadingj.value = true;
     modelJugadores = await repository.getJugadores();
-    print(playerCS[0].displayName);
+    // print(playerCS[0].displayName);
     _isLoadingj.value = false;
   }
 

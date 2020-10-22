@@ -69,12 +69,12 @@ class ResultadosTemporadaPage extends GetWidget<ResultadosController> {
 
                       return GestureDetector(
                         onTap: () async {
-                          print(temporada.urlJornada);
+                          // prinzt(temporada.urlJornada);
 
                           await controller
                               .getDataPartidos(temporada.urlJornada);
 
-                          print(temporada.urlJornada);
+                          // print(tempzorada.urlJornada);
                           Get.toNamed('/jornada_detail', arguments: temporada);
                         },
                         child: Container(

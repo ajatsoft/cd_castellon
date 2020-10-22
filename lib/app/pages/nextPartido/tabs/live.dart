@@ -173,7 +173,6 @@ class _TimelineFootballChild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(action);
     final rowChildren = <Widget>[
       _buildIconByAction(action),
       const SizedBox(width: 8),
@@ -218,7 +217,6 @@ class _TimelineFootballChild extends StatelessWidget {
   Widget _buildIconByAction(action) {
     final imageAsset =
         'assets/football/${action.toString().split('.').last}.png';
-    print(imageAsset);
     return Image.asset(
       imageAsset,
       height: 20,

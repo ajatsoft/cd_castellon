@@ -37,7 +37,7 @@ class VideoItemComponent extends StatelessWidget {
       {this.id, this.title, this.thumbnail, this.channel, this.published});
 
   playVideo() {
-    print('playvideo function');
+    // print('playvideo function');
     return FlutterYoutube.playYoutubeVideoById(
       apiKey: 'AIzaSyDzdN4sWztq5BK3Db-p4w9r3Dk9sSoyxiA',
       videoId: id,

@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math';
+
+import 'package:flutter/material.dart';
 
 enum DotType { square, circle, diamond, icon }
 
@@ -30,7 +31,7 @@ class _ColorLoaderState extends State<ColorLoader>
     radius = widget.radius;
     dotRadius = widget.dotRadius;
 
-    print(dotRadius);
+    // print(dotzRadius);
 
     controller = AnimationController(
         lowerBound: 0.0,

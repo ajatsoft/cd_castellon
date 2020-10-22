@@ -16,7 +16,6 @@ class PlantillaProvider {
     var response = await http.get(baseUrl);
     if (response.statusCode == 200) {
       var body = json.decode(response.body);
-      print(body);
       return Jugadores.fromJson(body);
     } else {
       return throw Exception('Error getting scoreboard');

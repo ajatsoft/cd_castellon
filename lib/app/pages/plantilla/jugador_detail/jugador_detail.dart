@@ -243,11 +243,11 @@ class Info extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var dateFormat = new DateFormat('dd-MM-yyyy');
-    print('===== ===== init infoPlayer ===== ===== ');
+    // print('===== ===== init infoPlayer ===== ===== ');
     return GetBuilder<JugadorDetailController>(
         init: JugadorDetailController(),
         builder: (_) {
-          print('===== ===== init JugadorDetailController ===== ===== ');
+          // print('===== ===== init JugadorDetailController ===== ===== ');
 
           return Column(
             mainAxisAlignment: MainAxisAlignment.start,

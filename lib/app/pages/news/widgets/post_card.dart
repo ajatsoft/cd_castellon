@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:cd_castellon/app/data/model/post_entity.dart';
 import 'package:cd_castellon/app/pages/news/news_detail/post_details.dart';
 import 'package:cd_castellon/app/pages/widgets_general/cache_image.dart';
-
-
+import 'package:flutter/material.dart';
 
 class PostCard extends StatelessWidget {
   PostEntity post;
@@ -58,7 +56,9 @@ class PostCard extends StatelessWidget {
                               child: Text(
                                 post.title,
                                 textAlign: TextAlign.left,
-                                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18.0),
+                                style: TextStyle(color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18.0),
                               ),
                             ),
                           ],
@@ -66,9 +66,9 @@ class PostCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
-                    child: Hero(tag: '${post.id}_author', child: Author(post: post)),
-                  )
+                  // Positioned(
+                  //   child: Hero(tag: '${post.id}_author', child: Author(post: post)),
+                  // )
                 ],
               ),
             ),

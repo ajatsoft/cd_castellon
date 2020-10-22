@@ -86,7 +86,7 @@ class _TimelineFootball extends StatelessWidget {
           final KeyEvent event = data[index];
 
           final isLeftChild = event.team.id == partido.competitors[0].id;
-          print(event.type.text.toString());
+          // print(event.type.text.toString());
 
           final child = _TimelineFootballChild(
             action: event.type.text,
@@ -169,7 +169,7 @@ class _TimelineFootballChild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(action);
+    // print(action);
     final rowChildren = <Widget>[
       _buildIconByAction(action),
       const SizedBox(width: 8),
@@ -214,7 +214,7 @@ class _TimelineFootballChild extends StatelessWidget {
   Widget _buildIconByAction(action) {
     if (action == 'Sustitución') {
       final imageAsset = 'assets/football/Sustitucion.png';
-      print(imageAsset);
+      // print(imzageAsset);
       return Image.asset(
         imageAsset,
         height: 20,
@@ -223,7 +223,7 @@ class _TimelineFootballChild extends StatelessWidget {
     }
     final imageAsset =
         'assets/football/${action.toString().split('.').last}.png';
-    print(imageAsset);
+    // print(imageAsset);
     return Image.asset(
       imageAsset,
       height: 20,

@@ -35,9 +35,9 @@ class HomeTab extends StatelessWidget {
                     height: MediaQuery
                         .of(context)
                         .size
-                        .height * .1,
+                        .height * .14,
                   ),
-                  ListHeading('Últimas', 0),
+                  ListHeading(FEATURED_CATEGORY_TITLE2, FEATURED_CATEGORY_ID2),
                   Flexible(
                     fit: FlexFit.loose,
                     child: PostsList(),

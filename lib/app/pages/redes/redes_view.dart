@@ -33,7 +33,7 @@ class RedesView extends StatelessWidget {
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             elevation: 0,
             title: Text(
-              'Noticias',
+              'Redes',
               style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w700),
             ),
             leading: CustomAppBarAction(

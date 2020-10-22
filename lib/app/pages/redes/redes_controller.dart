@@ -75,7 +75,7 @@ class RedesController extends GetxController {
 
   getTweetsAficcion() async {
     final result = await api.getTweet();
-    print(result);
+    // print(result);
 
     tweets = result;
     _loading = false;
@@ -104,7 +104,7 @@ class RedesController extends GetxController {
   @override
   void onInit() {
     pageController = PageController();
-    print('oninit twiter controller');
+    // print('oninit twiter controller');
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       getTweets(false);
     });

@@ -69,9 +69,6 @@ class NextPartidoController extends GetxController {
   void onInit() async {
     await getPartidoHome();
     await getLivePartidoDetail();
-    print('%%%%%%%%% INIT NextPartidoController  %%%%%%%%%%%%%${idPartido}');
-    print('% NextPartidoController  %%%¨${partidolive.header.competitions[0]
-        .status.displayClock}');
   }
 
   @override
@@ -98,7 +95,7 @@ class NextPartidoController extends GetxController {
     _livePartidoDataDetail.value =
         await repository.getLivePartidoDetail(nexPartido.id);
     refreshController.refreshCompleted();
-    print('refresh');
+    // print('refresh');
     update();
   }
 }

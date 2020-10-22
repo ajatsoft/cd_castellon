@@ -16,7 +16,6 @@ class NextPartidoRepository {
 //     return nextPartidoProvider.getPartidoDetail(id);
 //   }
   Future<LivePartidoDataDetail> getLivePartidoDetail(id) async {
-    print(id);
     return nextPartidoProvider.getLivePartidoDataDetail(id);
   }
 }

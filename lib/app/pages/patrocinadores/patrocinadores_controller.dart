@@ -40,11 +40,11 @@ class PatrocinadoresController extends GetxController {
     await getPartidoDetail();
     await getLivePartidoDetail();
     await _showAfter();
-    print(products.value.length);
+    // print(products.value.length);
   }
 
   onReady() async {
-    print(products.value.length);
+    // print(products.value.length);
   }
 
   ///GET DATA
@@ -59,7 +59,7 @@ class PatrocinadoresController extends GetxController {
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var body = json.decode(utf8.decode(response.bodyBytes));
-      print(body);
+      // print(body);
       return Patrocinadores.fromJson(body).empresa;
     } else {
       return throw Exception('Error getting scoreboard');

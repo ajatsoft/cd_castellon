@@ -61,7 +61,7 @@ class ResultadosController extends GetxController {
   Future refreshJornada(jornada) {
     getDataPartidos(jornada);
     refreshController.refreshCompleted();
-    print('refresh');
+    // print('refresh');
     update();
   }
 
@@ -77,7 +77,7 @@ class ResultadosController extends GetxController {
     _modelPratidoDataDetail.value =
     await repository.getPartidoDetail(id);
     refreshController.refreshCompleted();
-    print('refresh');
+    // print('refresh');
     update();
   }
 

@@ -1,13 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cd_castellon/app/data/model/post_entity.dart';
+import 'package:cd_castellon/app/pages/news/widgets/post_card.dart';
+import 'package:cd_castellon/app/pages/widgets_general/cache_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_html/html_parser.dart';
-import 'package:flutter_html/style.dart';
-import 'package:get/get.dart';
-import 'package:cd_castellon/app/data/model/post_entity.dart';
-import 'package:cd_castellon/app/pages/widgets_general/cache_image.dart';
-import 'package:cd_castellon/app/pages/news/widgets/post_card.dart';
-import 'package:photo_view/photo_view.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:url_launcher/url_launcher.dart';
 
@@ -52,10 +48,10 @@ class PostDetails extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Positioned(
-                      bottom: 0,
-                      child: Author(post: post),
-                    ),
+                    // Positioned(
+                    //   bottom: 0,
+                    //   child: Author(post: post),
+                    // ),
                     Positioned(
                       bottom: 35.0,
                       child: Container(
@@ -90,83 +86,62 @@ class PostDetails extends StatelessWidget {
         body: SingleChildScrollView(
           child: Html(
             data: post.content,
-            //Optional parameters:
-            customRender: {
-//              'div': _alignmentRender,
-//              'span': _fontSizeRender,
-//              'font': _fontColorRender,
-//              'collapse': _collapseRender,
-              'img': _imageRender,
-//              'emoticon': _emoticonRender,
-//              'blockquote': _blockquoteRender,
-//              'album': _albumRender,
+            // onLinkTap: (url) => _launchUrl(url),
+            // useRichText: false,
+
+            padding: EdgeInsets.all(8.0),
+            linkStyle: const TextStyle(
+              color: Colors.redAccent,
+              decorationColor: Colors.redAccent,
+              decoration: TextDecoration.underline,
+            ),
+            //Must have useRichText set to false for this to work
+            customRender: (node, children) {
+              if (node is dom.Element) {
+                switch (node.localName) {
+                  case "custom_tag":
+                    return Column(children: children);
+                }
+              }
+              return null;
             },
-            style: {
-              "html": Style(
-                backgroundColor: Colors.transparent,
-                fontSize: FontSize(18),
-              ),
-              "body": Style(
-                  margin: EdgeInsets.symmetric(vertical: 15, horizontal: 3),
-                  padding: EdgeInsets.zero),
-              "a": Style(
-                  color: Colors.blueAccent,
-                  textDecoration: TextDecoration.none),
-              "blockquote": Style(
-                  border:
-                      Border(left: BorderSide(color: Colors.grey, width: 2.3)),
-                  padding: EdgeInsets.only(left: 8),
-                  margin:
-                      EdgeInsets.only(left: 10, right: 0, bottom: 15, top: 0)),
-              "div.quoteName": Style(
-                  fontSize: FontSize.smaller,
-                  color: Colors.grey,
-                  margin: EdgeInsets.symmetric(vertical: 4)),
-              "div.center": Style(alignment: Alignment.center),
-              "div.right": Style(alignment: Alignment.centerRight),
-              "h1, h2, h3": Style(
-                margin: EdgeInsets.zero,
-                padding: EdgeInsets.zero,
-              ),
-              "p": Style(margin: EdgeInsets.symmetric(vertical: 0)),
+            customTextAlign: (dom.Node node) {
+              if (node is dom.Element) {
+                switch (node.localName) {
+                  case "p":
+                    return TextAlign.justify;
+                }
+              }
+              return null;
             },
-            onLinkTap: (url) => _launchUrl(url),
+            customTextStyle: (dom.Node node, TextStyle baseStyle) {
+              if (node is dom.Element) {
+                switch (node.localName) {
+                  case "p":
+                    return baseStyle.merge(TextStyle(height: 1, fontSize: 16));
+                }
+              }
+              return baseStyle;
+            },
+
+            onImageTap: (src) {
+              // Display the image in large form.
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) {
+                    return FullScreenImagePage(src);
+                  },
+                ),
+              );
+            },
+
           ),
         ),
       ),
     );
   }
 
-  Widget _imageRender(RenderContext context, Widget parsedChild,
-      Map<String, String> attributes, dom.Element element) {
-    return Builder(builder: (context) {
-      String urlimg = attributes["src"];
-      Uri uri = Uri.parse(urlimg);
-      if (uri.host == "") urlimg = "http://www.cdcastellon.com" + urlimg;
-      return CachedNetworkImage(
-        imageUrl: urlimg,
-        imageBuilder: (context, provider) {
-          return InkWell(
-            onTap: () {
-              Get.to(PhotoView(
-                imageProvider: provider,
-              ));
-            },
-            child: Image(
-              image: provider,
-            ),
-          );
-        },
-        placeholder: (ctx, url) => CircularProgressIndicator(),
-        errorWidget: (ctx, str, obj) => Column(
-          children: <Widget>[
-//            Text("error loading : $str => $obj"),
-            Icon(Icons.error)
-          ],
-        ),
-      );
-    });
-  }
 
   _launchUrl(String url) async {
     if (await canLaunch(url)) {
@@ -174,5 +149,29 @@ class PostDetails extends StatelessWidget {
     } else {
       throw 'Could not launch $url';
     }
+  }
+}
+
+class FullScreenImagePage extends StatelessWidget {
+  final String url;
+
+  FullScreenImagePage(this.url);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: CachedNetworkImageProvider(url),
+            fit: BoxFit.fitWidth,
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(7)),
+        ),
+      ),
+      onTap: () {
+        Navigator.pop(context);
+      },
+    );
   }
 }

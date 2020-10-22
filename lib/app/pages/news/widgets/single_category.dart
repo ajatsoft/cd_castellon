@@ -1,8 +1,8 @@
+import 'package:cd_castellon/app/data/model/post_entity.dart';
+import 'package:cd_castellon/app/pages/news/news_controller.dart';
+import 'package:cd_castellon/app/pages/news/widgets/posts_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/news/news_controller.dart';
-import 'package:cd_castellon/app/data/model/post_entity.dart';
-import 'package:cd_castellon/app/pages/news/widgets/posts_list.dart';
 
 class SingleCategory extends StatelessWidget {
   PostCategory category;
@@ -11,7 +11,7 @@ class SingleCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(category.id);
+    // print(category.id);
     return GetBuilder<NewsController>(
         init: NewsController(),
         builder: (_) {

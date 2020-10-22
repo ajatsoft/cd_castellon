@@ -13,318 +13,255 @@ class AppDrawer extends GetView {
       height: Get.height,
       child: Drawer(
           child: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListView(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              children: <Widget>[
-                FittedBox(child: CustomDrawerHeaderWidget()),
-                GestureDetector(
-                  onTap: () {
-                    // Get.toNamed("/news");
-
-                    Get.dialog(Container(
-                      child: AlertDialog(
-                        title: Text('En proceso'),
-                        content: Container(
-                          width: 100,
-                          child: Text(
-                              'Hemos solicitado al CD Castellon que nos permita publicar las noticias que tienen en su página web, en cuanto nos den permiso estará disponible esta sección, mientras puedes consultar las ultimas noticias en redes'),
-                        ),
-                        actions: <Widget>[
-                          FlatButton(
-                              onPressed: () => Get.back(), child: Text('Ok'))
-                        ],
-                      ),
-                    ));
-                  },
-                  child: Stack(
-                    children: [
-                      ListTile(
-                        title: Text(
-                          "Noticias",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        trailing: Icon(FontAwesomeIcons.newspaper),
-                      ),
-                      Opacity(
-                        opacity: 0.1,
-                        child: Container(
-                          width: Get.width,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("assets/images/noticias.jpg"),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: <Widget>[
+            FittedBox(child: CustomDrawerHeaderWidget()),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed("/news");
+              },
+              child: Stack(
+                children: [
+                  ListTile(
+                    title: Text(
+                      "Noticias",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    trailing: Icon(FontAwesomeIcons.newspaper),
                   ),
-                ),
-                Divider(height: 1, indent: 1.0, endIndent: 1.0),
-                GestureDetector(
-                  onTap: () {
-                    Get.offAllNamed("/twitter");
-                  },
-                  child: Stack(
-                    children: [
-                      ListTile(
-                        title: Text(
-                          "Redes",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                  Opacity(
+                    opacity: 0.1,
+                    child: Container(
+                      width: Get.width,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/noticias.jpg"),
                         ),
-                        trailing: Icon(FontAwesomeIcons.newspaper),
                       ),
-                      Opacity(
-                        opacity: 0.1,
-                        child: Container(
-                          width: Get.width,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("assets/images/noticias.jpg"),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Divider(height: 1, indent: 1.0, endIndent: 1.0),
-                GestureDetector(
-                  onTap: () {
-                    Get.toNamed("/nextpartido");
-                  },
-                  child: Stack(
-                    children: [
-                      ListTile(
-                        title: Text(
-                          "Próximo partido",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        trailing: Icon(FontAwesomeIcons.futbol),
-                      ),
-                      Opacity(
-                        opacity: 0.1,
-                        child: Container(
-                          width: Get.width,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image:
-                                  AssetImage("assets/images/campo_futbol.jpg"),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Divider(height: 1, indent: 100.0, endIndent: 100.0),
-                GestureDetector(
-                  onTap: () {
-                    Get.toNamed("/clasificacion");
-                  },
-                  child: Stack(
-                    children: [
-                      ListTile(
-                        title: Text(
-                          "Clasificación",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        trailing: Icon(FontAwesomeIcons.list),
-                      ),
-                      Opacity(
-                        opacity: 0.1,
-                        child: Container(
-                          width: Get.width,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image:
-                                  AssetImage("assets/images/campo_futbol.jpg"),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Divider(height: 1, indent: 100.0, endIndent: 100.0),
-                GestureDetector(
-                  onTap: () {
-                    Get.toNamed("/resultadosTemporada");
-                  },
-                  child: Stack(
-                    children: [
-                      ListTile(
-                        title: Text(
-                          "Resultados Temporada",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        trailing: Icon(FontAwesomeIcons.calendar),
-                      ),
-                      Opacity(
-                        opacity: 0.1,
-                        child: Container(
-                          width: Get.width,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image:
-                                  AssetImage("assets/images/campo_futbol.jpg"),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Divider(height: 1, indent: 1.0, endIndent: 1.0),
-                GestureDetector(
-                  onTap: () {
-                    Get.toNamed("/plantilla");
-                  },
-                  child: Stack(
-                    children: [
-                      ListTile(
-                        title: Text(
-                          "Plantilla",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        trailing: Icon(FontAwesomeIcons.userFriends),
-                      ),
-                      Opacity(
-                        opacity: 0.1,
-                        child: Container(
-                          width: Get.width,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("assets/images/plantilla.jpeg"),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Divider(height: 1, indent: 1.0, endIndent: 1.0),
-                GestureDetector(
-                  onTap: () {
-                    Get.toNamed("/patrocinadores");
-                  },
-                  child: Stack(
-                    children: [
-                      ListTile(
-                        title: Text(
-                          "Patrocinadores",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        trailing: Icon(FontAwesomeIcons.moneyBill),
-                      ),
-                      Opacity(
-                        opacity: 0.1,
-                        child: Container(
-                          width: Get.width,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage(
-                                  "assets/images/patrocinadores.jpeg"),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Divider(height: 1, indent: 1.0, endIndent: 1.0),
-                GestureDetector(
-                  onTap: () {
-                    Get.toNamed("/contacto");
-                  },
-                  child: Stack(
-                    children: [
-                      ListTile(
-                        title: Text(
-                          "Contacto",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        trailing: Icon(Icons.alternate_email),
-                      ),
-                      Opacity(
-                        opacity: 0.1,
-                        child: Container(
-                          width: Get.width,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("assets/images/contacto.jpg"),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Divider(height: 1, indent: 1.0, endIndent: 1.0),
-                SizedBox(
-                  height: 32,
-                ),
-              ],
+                    ),
+                  )
+                ],
+              ),
             ),
-            Column(
-              children: [
-                Divider(height: 1, indent: 100.0, endIndent: 100.0),
-                themeListTile(context),
-                // GestureDetector(
-                //   child: Row(
-                //     mainAxisAlignment: MainAxisAlignment.center,
-                //     children: [
-                //       Text('Cambiar a: '),
-                //       // Container(
-                //       //     child: isModoDark
-                //       //         ? Text('Tema Claro')
-                //       //         : Text('Tema Oscuro')),
-                //       // SizedBox(
-                //       //   width: 8.0,
-                //       // ),
-                //       // Icon(
-                //       //   Icons.brightness_4,
-                //       //   color: isModoDark ? Colors.white : Colors.black,
-                //       // ),
-                //     ],
-                //   ),
-                //   onTap: () {
-                //     Get.offAndToNamed("/news");
-                //     // ThemeController.to.modoDark.value =
-                //     //     !ThemeController.to.modoDark.value;
-                //     // if (ThemeController.to.modoDark.value) {
-                //     //   ThemeController.to.changeTheme(ThemeMode.dark);
-                //     // } else {
-                //     //   ThemeController.to.changeTheme(ThemeMode.light);
-                //     // }
-                //   },
-                // ),
-                Divider(height: 1, indent: 100.0, endIndent: 100.0),
-                SizedBox(
-                  height: 12.0,
-                )
-              ],
+            Divider(height: 1, indent: 1.0, endIndent: 1.0),
+            GestureDetector(
+              onTap: () {
+                Get.offAllNamed("/twitter");
+              },
+              child: Stack(
+                children: [
+                  ListTile(
+                    title: Text(
+                      "Redes",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    trailing: Icon(FontAwesomeIcons.newspaper),
+                  ),
+                  Opacity(
+                    opacity: 0.1,
+                    child: Container(
+                      width: Get.width,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/noticias.jpg"),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
+            Divider(height: 1, indent: 1.0, endIndent: 1.0),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed("/nextpartido");
+              },
+              child: Stack(
+                children: [
+                  ListTile(
+                    title: Text(
+                      "Próximo partido",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    trailing: Icon(FontAwesomeIcons.futbol),
+                  ),
+                  Opacity(
+                    opacity: 0.1,
+                    child: Container(
+                      width: Get.width,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/campo_futbol.jpg"),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Divider(height: 1, indent: 100.0, endIndent: 100.0),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed("/clasificacion");
+              },
+              child: Stack(
+                children: [
+                  ListTile(
+                    title: Text(
+                      "Clasificación",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    trailing: Icon(FontAwesomeIcons.list),
+                  ),
+                  Opacity(
+                    opacity: 0.1,
+                    child: Container(
+                      width: Get.width,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/campo_futbol.jpg"),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Divider(height: 1, indent: 100.0, endIndent: 100.0),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed("/resultadosTemporada");
+              },
+              child: Stack(
+                children: [
+                  ListTile(
+                    title: Text(
+                      "Resultados Temporada",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    trailing: Icon(FontAwesomeIcons.calendar),
+                  ),
+                  Opacity(
+                    opacity: 0.1,
+                    child: Container(
+                      width: Get.width,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/campo_futbol.jpg"),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Divider(height: 1, indent: 1.0, endIndent: 1.0),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed("/plantilla");
+              },
+              child: Stack(
+                children: [
+                  ListTile(
+                    title: Text(
+                      "Plantilla",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    trailing: Icon(FontAwesomeIcons.userFriends),
+                  ),
+                  Opacity(
+                    opacity: 0.1,
+                    child: Container(
+                      width: Get.width,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/plantilla.jpeg"),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Divider(height: 1, indent: 1.0, endIndent: 1.0),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed("/patrocinadores");
+              },
+              child: Stack(
+                children: [
+                  ListTile(
+                    title: Text(
+                      "Patrocinadores",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    trailing: Icon(FontAwesomeIcons.moneyBill),
+                  ),
+                  Opacity(
+                    opacity: 0.1,
+                    child: Container(
+                      width: Get.width,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image:
+                              AssetImage("assets/images/patrocinadores.jpeg"),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Divider(height: 1, indent: 1.0, endIndent: 1.0),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed("/contacto");
+              },
+              child: Stack(
+                children: [
+                  ListTile(
+                    title: Text(
+                      "Contacto",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    trailing: Icon(Icons.alternate_email),
+                  ),
+                  Opacity(
+                    opacity: 0.1,
+                    child: Container(
+                      width: Get.width,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/contacto.jpg"),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 12.0),
+            Divider(height: 1, indent: 100.0, endIndent: 100.0),
+            themeListTile(context),
+            Divider(height: 1, indent: 100.0, endIndent: 100.0),
+            SizedBox(height: 12.0),
           ],
         ),
       )),

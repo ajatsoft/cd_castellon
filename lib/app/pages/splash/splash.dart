@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
               alignment: Alignment.center,
               color: Get.isDarkMode ? AppThemes.blackCS : AppThemes.whiteCS,
               child: GestureDetector(
-                onTap: () => Get.offNamed("/twitter"),
+                onTap: () => Get.offNamed("/news"),
                 child: Hero(
                   tag: "logo",
                   child: Image.asset(

@@ -1,43 +1,84 @@
+import 'package:cd_castellon/app/pages/news/news_controller.dart';
+import 'package:cd_castellon/app/pages/news/widgets/single_category.dart';
 import 'package:cd_castellon/app/pages/widgets_general/dots_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cd_castellon/app/pages/news/news_controller.dart';
-import 'package:cd_castellon/app/data/model/post_entity.dart';
-
-import 'package:cd_castellon/app/pages/news/widgets/single_category.dart';
 
 class CategoriesTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<NewsController>(
-        init: NewsController(),
-        initState: (_) {
-          NewsController.to.loadCategories();
-        },
-        builder: (_) {
-          if (_.loading) {
-            return Center(
-              child: ColorLoader(),
-            );
-          }
-          return ListView.builder(
-            itemBuilder: (context, index) {
-              final PostCategory category = _.categories[index];
-              return ListTile(
-                title: Text(category.name),
-                onTap: () {
-                  Get.to(
-                    SingleCategory(category),
-                  );
-                },
-              );
-            },
-            itemCount: _.categories.length,
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            physics: ClampingScrollPhysics(),
-          );
-        });
+        builder: (_) => Column(
+              children: [
+                if (_.categories != [])
+                  Column(
+                    children: [
+                      ListTile(
+                        title: Text(_.categories[0].name),
+                        onTap: () {
+                          Get.to(
+                            SingleCategory(_.categories[0]),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        title: Text(_.categories[1].name),
+                        onTap: () {
+                          Get.to(
+                            SingleCategory(_.categories[1]),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        title: Text(_.categories[2].name),
+                        onTap: () {
+                          Get.to(
+                            SingleCategory(_.categories[2]),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        title: Text(_.categories[3].name),
+                        onTap: () {
+                          Get.to(
+                            SingleCategory(_.categories[3]),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        title: Text(_.categories[4].name),
+                        onTap: () {
+                          Get.to(
+                            SingleCategory(_.categories[4]),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        title: Text(_.categories[5].name),
+                        onTap: () {
+                          Get.to(
+                            SingleCategory(_.categories[5]),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        title: Text(_.categories[6].name),
+                        onTap: () {
+                          Get.to(
+                            SingleCategory(_.categories[6]),
+                          );
+                        },
+                      ),
+                    ],
+                  )
+                else
+                  (Center(
+                    child: ColorLoader(),
+                  ))
+
+                //
+              ],
+            ));
   }
 }
 

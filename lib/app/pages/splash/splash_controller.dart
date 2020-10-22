@@ -16,7 +16,7 @@ class SplashController extends GetxController {
   }
 
   route() {
-    Get.offNamed("/twitter");
+    Get.offNamed("/news");
   }
 
 }

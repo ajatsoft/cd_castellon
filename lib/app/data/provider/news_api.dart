@@ -23,7 +23,6 @@ class WpApi {
       dynamic response =
           await http.get(BASE_URL + 'posts?_embed&page=$page' + extra);
       dynamic json = jsonDecode(response.body);
-
       (json as List).forEach((v) {
         posts.add(PostEntity.fromJson(v));
       });
@@ -41,6 +40,7 @@ class WpApi {
       dynamic json = jsonDecode(response.body);
 
       (json as List).forEach((v) {
+        print(json);
         categories.add(PostCategory.fromJson(v));
       });
     } catch (e) {

@@ -9,11 +9,18 @@ import 'package:get/get.dart';
 class NewsController extends GetxController {
   static NewsController get to => Get.find();
 
+  bool _loading = true;
+
+  bool get loading => _loading;
+
+  bool _loadingCat = true;
+
+  bool get loadingCat => _loadingCat;
+
   List<PostEntity> _news = [];
   List<PostEntity> _featuredNews = [];
   List<PostEntity> _categoryNews2 = [];
   List<PostCategory> _categories = [];
-  bool _loading = true;
 
   int categoriaActualizada;
   int page = 1;
@@ -22,14 +29,13 @@ class NewsController extends GetxController {
   List<PostEntity> get featuredNews => _featuredNews;
   List<PostEntity> get categoryNews2 => _categoryNews2;
   List<PostCategory> get categories => _categories;
-  bool get loading => _loading;
 
   ScrollController _scrollController = new ScrollController();
   ScrollController get scrollController => _scrollController;
 
   @override
   void onInit() {
-    print('onInit $categoriaActualizada');
+    // print('onInit $categoriaActualizada');
     this.loadNews();
 //    this.loadFeaturedNews();
     this.loadCategories();
@@ -50,7 +56,7 @@ class NewsController extends GetxController {
 
   void getData() {
     if (!_loading) {
-      print('getData $categoriaActualizada');
+      // print('getData $categoriaActualizada');
 
       page++;
       WpApi.instance
@@ -84,14 +90,14 @@ class NewsController extends GetxController {
     this._categoryNews2 = data;
     this._loading = false;
     update(["categoryNews"]);
-    print('loadCategoryNews....category $category');
-    print('loadCategoryNews....categoriaActualizada $categoriaActualizada');
+    // print('loadCategoryNews....category $category');
+    // print('loadCategoryNews....categoriaActualizada $categoriaActualizada');
   }
 
   Future<void> loadCategories() async {
     final data = await WpApi.instance.getCategoriesList();
     this._categories = data;
-    this._loading = false;
+    this._loadingCat = false;
     update();
   }
 
