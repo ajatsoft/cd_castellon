@@ -1,7 +1,8 @@
-import 'package:get/state_manager.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:share/share.dart';
 import 'dart:core';
+
+import 'package:get/state_manager.dart';
+import 'package:share/share.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactoController extends GetxController {
   String url = 'https://www.ajatsoft.com';
@@ -26,14 +27,14 @@ class ContactoController extends GetxController {
 
   void share() {
     Share.share(
-        'Descarga aqui la aplicacion del CD Castellon https://www.ajatsot.com');
+        'Descarga aqui la aplicacion del CD Castellon https://play.google.com/store/apps/details?id=ajatsoft.cd_castellon');
   }
 
   void launchSocial(String url, String fallbackUrl) async {
     // Don't use canLaunch because of fbProtocolUrl (fb://)
     try {
       bool launched =
-          await launch(url, forceSafariVC: false, forceWebView: false);
+      await launch(url, forceSafariVC: false, forceWebView: false);
       if (!launched) {
         await launch(fallbackUrl, forceSafariVC: false, forceWebView: false);
       }
